@@ -1,19 +1,66 @@
-<mat-card>
-    <mat-action-list>
-      <div mat-subheader>Menu</div>
-      
-      <button mat-list-item routerLink = "/admin/profile">
-        <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
-      </button>
-      <button mat-list-item routerLink = "/admin/categorias">
-        <mat-icon mat-list-icon>list</mat-icon>Categorias
-      </button>
-     
-      <button mat-list-item routerLink = "/admin/examenes">
-        <mat-icon mat-list-icon>quizz</mat-icon>Cuestionarios
-      </button>
-     
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-accordion>
 
-    </mat-action-list>
-  </mat-card>
-  
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <img src="../../../../assets/libros.png" class="menu-icon"/> <!-- Imagen personalizada para Mis asignaturas -->
+            <mat-panel-title routerLinkActive="active-link">
+              Mis asignaturas
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/admin/asignaturas" routerLinkActive="active-link">
+            <span>Listado de asignaturas</span>
+          </a>
+          <a mat-list-item routerLink="/admin/add-asignatura" routerLinkActive="active-link">
+            <span>Agregar asignatura</span>
+          </a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <img src="/assets/cuestionarios_icon.png" class="menu-icon"/> <!-- Imagen personalizada para Cuestionarios -->
+            <mat-panel-title routerLinkActive="active-link">
+              Cuestionarios
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/admin/cuestionarios" routerLinkActive="active-link">
+            <span>Listado de cuestionarios</span>
+          </a>
+          <a mat-list-item routerLink="/admin/add-cuestionario" routerLinkActive="active-link">
+            <span>Crear Cuestionario</span>
+          </a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <img src="/assets/recursos_educativos_icon.png" class="menu-icon"/> <!-- Imagen personalizada para Recursos educativos -->
+            <mat-panel-title routerLinkActive="active-link">
+              Recursos educativos
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/admin/recursos-educativos" routerLinkActive="active-link">
+            <span>Ver recursos</span>
+          </a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <img src="/assets/mis_datos_personales_icon.png" class="menu-icon"/> <!-- Imagen personalizada para Mis datos personales -->
+            <mat-panel-title routerLinkActive="active-link">
+              Mis datos personales
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/admin/datos-personales" routerLinkActive="active-link">
+            <span>Ver datos personales</span>
+          </a>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Aquí va el contenido principal de tu aplicación -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

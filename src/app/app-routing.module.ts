@@ -68,25 +68,25 @@ const routes: Routes = [
         component : WelcomeComponent
       },
       {
-        path : 'categorias',
+        path : 'asignaturas',
         component : ViewCategoriaComponent
       },
       {
-        path:"add-categoria",
+        path:"add-asignatura",
         component: AddCategoriaComponent
       },
       {
-        path:"examenes",
+        path:"cuestionarios",
         component: ViewExamenesComponent
       }
       ,
       {
-        path:"add-examen",
+        path:"add-cuestionario",
         component: AddExamenComponent
       }
       ,
       {
-        path:"examen/:examenId",
+        path:"cuestionario/:examenId",
         component: ActualizarExamenComponent
       },
       {

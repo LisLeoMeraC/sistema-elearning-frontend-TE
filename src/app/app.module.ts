@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //componente de un boton de angular material
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
@@ -113,6 +117,9 @@ import { YoutubeVideosComponent } from './pages/user/youtube-videos/youtube-vide
     MatProgressSpinnerModule,
     MatGridListModule,
     MatProgressBarModule,
+    MatSidenavModule,
+    MatExpansionModule
+
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

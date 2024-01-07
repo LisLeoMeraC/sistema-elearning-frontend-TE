@@ -1,41 +1,47 @@
-<mat-card>
-    <h1>Agregar nueva Categoria</h1>
-    <mat-card-content>
-      <div class="bootstrap-wrapper">
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
-            <form (ngSubmit)= "formSubmit()">
-              <mat-form-field class="w100" appearance="outline">
-                <mat-label>Titulo</mat-label>
-                <input
-                required
-                autofocus
-                type="text"
-                name="titulo"
-                matInput
-                placeholder="Digite el título de la categoría"
-                [(ngModel)] = "categoria.titulo"
-                >
-              </mat-form-field>
-              <mat-form-field class="w100" appearance="outline">
-                <mat-label>Descripción</mat-label>
-                <textarea
-                name="descripcion"
-                matInput
-                placeholder="Digite la descripción de la categoría"
-                rows="15"
-                [(ngModel)] = "categoria.descripcion"
-                >
-                </textarea>
-              </mat-form-field>
-  
-              <div class="container text-center mt15">
-                <button mat-raised-button color="primary">Guardar</button>
-              </div>
-            </form>
-          </div>
+<mat-card class="container">
+  <div class="header">
+    <h1>Agregar nueva asignatura</h1>
+  </div>
+  <mat-card-content>
+    <div class="form-container">
+      <form #form="ngForm" (ngSubmit)="formSubmit()" novalidate>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nombre de la asignatura</mat-label>
+          <input
+            required
+            autofocus
+            type="text"
+            name="titulo"
+            matInput
+            placeholder="Ejemplo: Matemáticas"
+            [(ngModel)]="categoria.titulo"
+            #titulo="ngModel"
+          >
+          <mat-error *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">El nombre de la asignatura es requerido.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Descripción</mat-label>
+          <textarea
+            name="descripcion"
+            matInput
+            placeholder="Ejemplo: Una breve descripción de la materia"
+            rows="5"
+            [(ngModel)]="categoria.descripcion"
+          ></textarea>
+        </mat-form-field>
+
+        <div class="unique-code-generator">
+          <button mat-button (click)="generateUniqueCode()" [disabled]="!categoria.titulo" type="button" class="generate-button">Código de asignatura</button>
+          <input matInput placeholder="Código único" [value]="categoria.uniqueCode" readonly class="code-input">
         </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-  
+        
+        
+        <br>
+
+        <div class="button-container">
+          <button mat-raised-button color="primary" [disabled]="!categoria.uniqueCode" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

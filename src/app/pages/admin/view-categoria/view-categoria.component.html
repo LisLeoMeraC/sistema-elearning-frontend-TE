@@ -1,25 +1,30 @@
-<mat-card>
-  <mat-card-content>
-    <mat-list>
-      <div mat-subheader>
-        Todas las categorías
+<div class="categorias-container">
+  <mat-card *ngFor="let c of categorias" class="categoria-card">
+    <div class="card-content">
+      
+      <!-- Contenedor para la imagen y el título -->
+      <div class="image-and-title">
+        <div class="card-image">
+          <img src="../../../../assets/books.png" alt="{{ c.titulo }}" class="categoria-image"/>
+        </div>
+        <mat-card-header>
+          <mat-card-title>
+            {{ c.titulo }}
+          </mat-card-title>
+        </mat-card-header>
       </div>
-      <mat-list-item *ngFor="let c of categorias">
-        
-        <div class="icon-title-container">
-          <mat-icon mat-list-icon>folder</mat-icon>
-          <b>{{ c.titulo }}</b>
-        </div>
+      
+      <!-- Contenedor para la descripción -->
+      <mat-card-content>
+        <p>{{ c.descripcion }}</p>
+      </mat-card-content>
 
-        <div mat-line>
-          {{ c.descripcion }}
-        </div>
-        <mat-divider></mat-divider>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-  
-  <div class="container text-center mt20">
-    <button routerLink="/admin/add-categoria" mat-raised-button color="primary">Agregar categoría</button>
-  </div>
-</mat-card>
+      <!-- Acciones -->
+      <mat-card-actions class="card-actions">
+        <button mat-button>VER MÁS</button>
+        <button mat-button>EDITAR</button>
+      </mat-card-actions>
+
+    </div>
+  </mat-card>
+</div>

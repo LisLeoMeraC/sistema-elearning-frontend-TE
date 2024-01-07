@@ -1,35 +1,50 @@
-<div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row mt20">
-            <div class="col-md-4 offset-md-4">
-                <mat-card>
-                    <div class="container text-center">
-                        <img src="../../../assets/acceso.png" width="100" height="100">
-                    </div>
-                    <h1 class="text-center">Inicio de sesión</h1>
-                    <form (ngSubmit)="formSubmit()">
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Nombre de Usuario</mat-label> 
-                            <input [(ngModel)]="loginData.username" name="username" required matInput placeholder="Escriba su nombre de usuario">
-                            <mat-hint>El nombre del usuario debe ser valido</mat-hint>
-                        </mat-form-field>
-
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Contraseña</mat-label>
-                            <input [(ngModel)]="loginData.password" name="password" required type="password" matInput placeholder="Digite su contraseña">
-                            <mat-hint>La contraseña debe ser valida</mat-hint>
-                        </mat-form-field>
-
-                        <br><br>
-                        <div class="container text-center">
-                            <button mat-raised-button color="primary">Ingresar</button>
-                            <button type="reset" style="margin-left: 20px;" mat-raised-button color="warn">Limpiar</button>
-                        </div>
-                        <br>
-
-                    </form>
-                </mat-card>
-            </div>
+<div class="login-wrapper">
+  <div class="login-container">
+    <mat-card class="login-card">
+      <div class="card-content">
+        <div class="image-section">
+          <!-- Asumiendo que tienes una imagen llamada 'login-image.png' en tu carpeta de assets -->
+          <img src="../../../assets/acceso.png" alt="Login" class="login-image" />
         </div>
-    </div>
+        <div class="form-section">
+          <h1 class="login-title">Iniciar Sesión</h1>
+          <form (ngSubmit)="formSubmit()" class="login-form">
+            <mat-form-field class="full-width">
+              <input
+                [(ngModel)]="loginData.username"
+                name="username"
+                required
+                matInput
+                placeholder="Nombre de usuario"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input
+                [(ngModel)]="loginData.password"
+                name="password"
+                required
+                type="password"
+                matInput
+                placeholder="Contraseña"
+              />
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" class="login-btn">
+              Entrar
+            </button>
+            <div class="additional-options">
+              <a  class="forgot-password">Olvidé mi contraseña</a>
+              <a [routerLink]="'/signup'" class="create-account">¿Sin cuenta? ¡Crear una ahora!</a>
+            </div>
+
+            <div class="social-login">
+              <button mat-button class="social-btn google">G+</button>
+              <button mat-button class="social-btn facebook">f</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-card>
+  </div>
 </div>

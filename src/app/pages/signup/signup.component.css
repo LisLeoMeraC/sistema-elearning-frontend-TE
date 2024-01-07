@@ -1,0 +1,45 @@
+/* Estilos para el mat-card de registro */
+.login-card {
+    background-color: #ffffff; /* Color de fondo similar al del login */
+    color: white; /* Texto blanco */
+    border-radius: 16px; /* Bordes redondeados para el card */
+    padding: 16px; /* Espaciado interno */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  }
+  
+  /* Estilos para el título "Regístrate aquí" */
+  .login-card h1 {
+    font-size: 24px; /* Tamaño de fuente más grande */
+    margin-top: 16px; /* Espacio superior */
+  }
+  
+  /* Estilos para los campos de formulario */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Estilos para los botones siguiendo el estilo del login */
+  .custom-orange-btn {
+    background-color: #FF5733;
+    color: white;
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+  
+  .custom-orange-btn:hover {
+    background-color: #E65C00;
+  }
+  
+  .custom-clear-btn {
+    background-color: #ffffff;
+    color: #FF5733;
+    border: 1px solid #FF5733;
+    border-radius: 20px;
+  }
+  
+  .custom-clear-btn:hover {
+    background-color: #E65C00;
+    color: white;
+  }
+  

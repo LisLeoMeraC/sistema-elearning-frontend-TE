@@ -1,3 +1,38 @@
-.example-spacer{
-    width: 900px;
+/* Estilos Base para mat-toolbar */
+mat-toolbar {
+  /* Color de fondo del encabezado */
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+  mat-toolbar {
+    padding: 0 2rem; /* Aumenta el padding para pantallas grandes si es necesario */
   }
+}
+
+/* Estilos para pantallas aún más grandes */
+@media (min-width: 1024px) {
+  mat-toolbar {
+    padding: 0 3rem; /* Aumenta aún más el padding para pantallas muy grandes si es necesario */
+  }
+}
+
+/* Asegurarse de que el contenido se mantiene centrado */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.custom-button {
+   /* Letras blancas */
+  
+  margin-left: 8px; /* Espacio entre los botones */
+  padding: 8px 16px; /* Espaciado interno para los botones */
+  box-shadow: none; /* Sin sombra */
+  border: none; /* Sin bordes */
+  
+}
+
+
+.example-icon {
+  color: #fdf7f5; /* Asegúrate de que los iconos también sean blancos si es necesario */
+}

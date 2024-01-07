@@ -13,8 +13,10 @@ export class AddCategoriaComponent implements OnInit {
 
    categoria = {
     titulo : '',
-    descripcion : ''
+    descripcion : '',
+    uniqueCode: ''
   }
+  
 
   constructor(private CategoriaService:CategoriaService,private snack:MatSnackBar,private router:Router) { }
 
@@ -33,6 +35,7 @@ export class AddCategoriaComponent implements OnInit {
       (dato:any) => {
         this.categoria.titulo = '';
         this.categoria.descripcion = '';
+        this.categoria.uniqueCode='',
         Swal.fire('Categoría agregada','La categoría ha sido agregada con éxito','success');
         this.router.navigate(['/admin/categorias']);
       },
@@ -41,6 +44,11 @@ export class AddCategoriaComponent implements OnInit {
         Swal.fire('Error !!','Error al guardar la categoría','error')
       }
     )
+  }
+
+  //Generar un codigo unico para cada asignatura que se registre
+  generateUniqueCode(){
+    this.categoria.uniqueCode=Math.random().toString(36).substr(2,9);
   }
 
 }

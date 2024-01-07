@@ -1,32 +1,34 @@
-<div class="container text-center mt20">
-  <mat-form-field class="custom-input-field">
-    <input matInput [(ngModel)]="nombreABuscar" placeholder="Buscar por título del examen" (input)="filtrarExamenes()">
-  </mat-form-field>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Management</title>
+</head>
+<body>
+
+<div class="search-container">
+  <input type="text" id="searchBox" placeholder="Buscar por título del examen" oninput="filtrarExamenes()">
 </div>
 
-
-<mat-card class="mt10" *ngFor = "let e of examenesFiltrados">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>
-          {{ e.titulo }}
-        </mat-card-title>
-        <mat-card-subtitle>
-          {{ e.categoria.titulo }}
-        </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-card-actions>
-        <button mat-flat-button color="primary" [routerLink] = "'/admin/ver-preguntas/'+e.examenId+'/'+e.titulo">Preguntas</button>
-        <button mat-stroked-button color="primary" class="ml20">Puntos máximos {{ e.puntosMaximos }}</button>
-        <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numeroDePreguntas }}</button>
-        <button [routerLink] = "'/admin/examen/'+e.examenId" mat-flat-button color="primary" class="ml20">Actualizar</button>
-        <button mat-flat-button color="warn" class="ml10" (click) = "eliminarExamen(e.examenId)">Eliminar</button>
-      </mat-card-actions>
-    </mat-card-content>
-  </mat-card>
-  
-  <div class="container text-center mt20">
-    <button routerLink="/admin/add-examen" mat-raised-button color="primary">Agregar cuestionario</button>
+<div class="cards-container">
+  <!-- Dynamic card generation start -->
+  <div class="card" *ngFor="let e of examenesFiltrados">
+    <div class="card-header">
+      <h2 class="card-title">{{ e.titulo }}</h2>
+      <h3 class="card-subtitle">{{ e.categoria.titulo }}</h3>
+    </div>
+    <div class="card-body">
+      <button class="btn primary"[routerLink] = "'/admin/ver-preguntas/'+e.examenId+'/'+e.titulo">Preguntas</button>
+      <button class="btn info" [disabled]="true">Puntos máximos {{ e.puntosMaximos }}</button>
+      <button class="btn info" [disabled]="true">Preguntas {{ e.numeroDePreguntas }}</button>
+      <button  [routerLink] = "'/admin/cuestionario/'+e.examenId" class="btn secondary">Actualizar</button>
+      <button class="btn danger" onclick="eliminarExamen(examen)">Eliminar</button>
+    </div>
   </div>
-  
+  <!-- Dynamic card generation end -->
+</div>
+
+<button id="addButton" onclick="agregarCuestionario()">Agregar cuestionario</button>
+</body>
+</html>
