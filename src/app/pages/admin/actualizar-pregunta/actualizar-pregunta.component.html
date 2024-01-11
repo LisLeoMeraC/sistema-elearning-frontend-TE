@@ -1,80 +1,56 @@
-<div class="bootstrap-wrapper">
-    <div class="row mt20">
-      <div class="col-md-12">
-        <h1>Actualizar preguntas a <span style="font-weight: bold;">{{ pregunta.examen.titulo }}</span></h1>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-subtitle>
-              Digite los detalles de la pregunta
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <form class="mt20" *ngIf = "pregunta" (ngSubmit) = "actualizarDatosDeLaPregunta()">
-              <mat-form-field class="w100">
-                <mat-label>Digite el contenido de la pregunta</mat-label>
-                <textarea rows="8" matInput placeholder="Escribe aquí" name="contenido" [(ngModel)] = "pregunta.contenido"></textarea>
-              </mat-form-field>
-  
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field class="w100">
-                    <mat-label>Digite la opción 1</mat-label>
-                    <input
-                    type="text"
-                    matInput
-                    name="opcion1"
-                    [(ngModel)] = "pregunta.opcion1">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field class="w100">
-                    <mat-label>Digite la opción 2</mat-label>
-                    <input
-                    type="text"
-                    matInput
-                    name="opcion2"
-                    [(ngModel)] = "pregunta.opcion2">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field class="w100">
-                    <mat-label>Digite la opción 3</mat-label>
-                    <input
-                    type="text"
-                    matInput
-                    name="opcion3"
-                    [(ngModel)] = "pregunta.opcion3">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field class="w100">
-                    <mat-label>Digite la opción 4</mat-label>
-                    <input
-                    type="text"
-                    matInput
-                    name="opcion4"
-                    [(ngModel)] = "pregunta.opcion4">
-                  </mat-form-field>
-                </div>
+<div class="question-form-container">
+  <div class="question-form">
+    <h1 class="question-title">Actualizar preguntas a <span class="highlight">{{ pregunta.examen.titulo }}</span></h1>
+    <div class="card">
+      <div class="card-header">
+        <h2>Digite los detalles de la pregunta</h2>
+      </div>
+      <div class="card-content">
+        <form (submit)="actualizarDatosDeLaPregunta()">
+          <div class="form-group">
+            <label for="preguntaContenido">Contenido de la pregunta</label>
+            <textarea rows="8" id="preguntaContenido" placeholder="Escribe aquí" name="contenido" [(ngModel)]="pregunta.contenido"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="opcion1">Opción 1</label>
+                <input type="text" id="opcion1" name="opcion1" [(ngModel)]="pregunta.opcion1">
               </div>
-  
-              <mat-form-field class="w100">
-                <mat-label>Seleccione la respuesta</mat-label>
-                <mat-select [(ngModel)] = "pregunta.respuesta" name="respuesta">
-                  <mat-option *ngIf = "pregunta.opcion1" [value] = "pregunta.opcion1">{{ pregunta.opcion1 }}</mat-option>
-                  <mat-option *ngIf = "pregunta.opcion2" [value] = "pregunta.opcion2">{{ pregunta.opcion2 }}</mat-option>
-                  <mat-option *ngIf = "pregunta.opcion3" [value] = "pregunta.opcion3">{{ pregunta.opcion3 }}</mat-option>
-                  <mat-option *ngIf = "pregunta.opcion4" [value] = "pregunta.opcion4">{{ pregunta.opcion4 }}</mat-option>
-                </mat-select>
-              </mat-form-field>
-  
-              <div class="container text-center">
-                <button mat-raised-button color="primary">Actualizar</button>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="opcion2">Opción 2</label>
+                <input type="text" id="opcion2" name="opcion2" [(ngModel)]="pregunta.opcion2">
               </div>
-            </form>
-          </mat-card-content>
-        </mat-card>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="opcion3">Opción 3</label>
+                <input type="text" id="opcion3" name="opcion3" [(ngModel)]="pregunta.opcion3">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="opcion4">Opción 4</label>
+                <input type="text" id="opcion4" name="opcion4" [(ngModel)]="pregunta.opcion4">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="respuesta">Seleccionar respuesta</label>
+            <select id="respuesta" [(ngModel)]="pregunta.respuesta" name="respuesta">
+              <option *ngIf="pregunta.opcion1" [value]="pregunta.opcion1">{{ pregunta.opcion1 }}</option>
+              <option *ngIf="pregunta.opcion2" [value]="pregunta.opcion2">{{ pregunta.opcion2 }}</option>
+              <option *ngIf="pregunta.opcion3" [value]="pregunta.opcion3">{{ pregunta.opcion3 }}</option>
+              <option *ngIf="pregunta.opcion4" [value]="pregunta.opcion4">{{ pregunta.opcion4 }}</option>
+            </select>
+          </div>
+          <div class="container text-center">
+            <button mat-raised-button color="primary">Actualizar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-  
+</div>

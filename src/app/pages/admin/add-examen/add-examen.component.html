@@ -1,71 +1,36 @@
-<mat-card>
-  <h1>Agregar nuevo Test</h1>
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <form (ngSubmit) = "guardarCuestionario()">
-        <mat-form-field class="w100" appearance="fill">
-          <mat-label>Título</mat-label>
-          <input
-          [(ngModel)] = "examenData.titulo"
-          type="text"
-          name="titulo"
-          required
-          placeholder="Digite el título"
-          matInput>
-        </mat-form-field>
-        <mat-form-field class="w100" appearance="fill">
-          <mat-label>Descripción</mat-label>
-          <textarea
-          [(ngModel)] = "examenData.descripcion"
-          type="text"
-          name="descripcion"
-          placeholder="Digite la descripción"
-          matInput
-          rows="8"></textarea>
-        </mat-form-field>
-
-        <div class="row">
-          <div class="col-md-6">
-            <mat-form-field class="w100" appearance="fill">
-              <mat-label>Puntos máximos</mat-label>
-              <input
-              [(ngModel)] = "examenData.puntosMaximos"
-              type="text"
-              name="puntosMaximos"
-              placeholder="Digite la cantidad de puntos"
-              matInput>
-            </mat-form-field>
-          </div>
-          <div class="col-md-6">
-            <mat-form-field class="w100" appearance="fill">
-              <mat-label>Número de preguntas</mat-label>
-              <input
-              [(ngModel)] = "examenData.numeroDePreguntas"
-              type="text"
-              name="numeroDePreguntas"
-              placeholder="Digite el número de preguntas"
-              matInput>
-            </mat-form-field>
-          </div>
-        </div>
-
-        <mat-slide-toggle class="mt20" name = "activo" [(ngModel)] = "examenData.activo" color="primary">
-          Estado de publicación
-        </mat-slide-toggle>
-
-        <mat-form-field appearance="fill" class="mt20 w100">
-          <mat-label>Categorías</mat-label>
-          <mat-select name="categoria" [(ngModel)] = "examenData.categoria.categoriaId">
-            <mat-option *ngFor = "let c of categorias" [value] = "c.categoriaId">
-              {{ c.titulo }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <div class="container text-center">
-          <button mat-raised-button color="primary">Guardar</button>
-        </div>
-      </form>
+<br>
+<mat-card class="test-form-card">
+  <form (ngSubmit)="guardarCuestionario()" class="test-form">
+    <h1 class="form-title">Agregar nuevo Cuestionario</h1>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Título</mat-label>
+      <input matInput [(ngModel)]="examenData.titulo" name="titulo" required placeholder="Ej: Matemáticas Avanzadas">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput [(ngModel)]="examenData.descripcion" name="descripcion" rows="4" placeholder="Ej: Examen final del curso de matemáticas."></textarea>
+    </mat-form-field>
+    <div class="form-row">
+      <mat-form-field class="half-width" appearance="outline">
+        <mat-label>Puntos máximos</mat-label>
+        <input matInput [(ngModel)]="examenData.puntosMaximos" name="puntosMaximos" placeholder="Ej: 100">
+      </mat-form-field>
+      <mat-form-field class="half-width" appearance="outline">
+        <mat-label>Número de preguntas</mat-label>
+        <input matInput [(ngModel)]="examenData.numeroDePreguntas" name="numeroDePreguntas" placeholder="Ej: 20">
+      </mat-form-field>
     </div>
-  </div>
+    <mat-slide-toggle class="publish-toggle" [(ngModel)]="examenData.activo" name="activo" color="primary">
+      Estado de publicación
+    </mat-slide-toggle>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Categorías</mat-label>
+      <mat-select [(ngModel)]="examenData.categoria.categoriaId" name="categoria">
+        <mat-option *ngFor="let c of categorias" [value]="c.categoriaId">{{ c.titulo }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="submit-container">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+    </div>
+  </form>
 </mat-card>

@@ -1,3 +1,59 @@
-.w100{
-    width: 100%;
+
+  .test-form-card {
+    
+    padding: 50px;
+    margin: auto;
+    max-width: 700px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+
+    
+    
   }
+  
+  .form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .half-width {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .publish-toggle {
+    margin: 20px 0;
+  }
+
+  .container{
+    margin-top: 100px;
+  }
+  
+  .submit-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 600px) {
+    .half-width {
+      width: 100%;
+    }
+    
+    .form-row {
+      flex-direction: column;
+    }
+  }
+
+ 

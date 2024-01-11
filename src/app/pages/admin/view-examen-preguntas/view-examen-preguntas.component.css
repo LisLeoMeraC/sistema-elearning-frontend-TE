@@ -1,0 +1,92 @@
+.page-title {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.add-question-button {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.question-card {
+  width: 900px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.question-card:hover {
+  transform: translateY(-5px);
+}
+
+.question-card-content {
+  padding: 20px;
+}
+
+.question-number {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.question-content {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.option {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.correct-answer {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-card-actions button {
+  font-weight: bold;
+}
+
+button[mat-raised-button] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #0056b3;
+}
+
+button[mat-button][color="warn"] {
+  color: #f44336;
+}
+
+button[mat-button][color="warn"]:hover {
+  color: #d32f2f;
+}
