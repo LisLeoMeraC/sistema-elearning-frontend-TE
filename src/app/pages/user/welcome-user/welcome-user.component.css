@@ -1,19 +1,25 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
+.content-flex {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.imagenReducida {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+@media (max-width: 600px) {
+  .content-flex {
+      flex-direction: column;
   }
-  
-  .flex-wrapper {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100%; 
-    padding: 20px; 
+
+  .imagenReducida {
+      margin-right: 0;
+      margin-bottom: 20px;
   }
-  
-  mat-card {
-    max-width: 800px; 
-    width: 100%; 
-  }
-  
+}
+.flex-wrapper {
+  margin-top: 20px; 
+}

@@ -1,21 +1,33 @@
-<mat-card>
-  <mat-action-list>
-    <div mat-subheader>Menú</div>
-    <button routerLink="/user-dashboard/load-examen" mat-list-item>
-      <mat-icon mat-list-icon>assignment</mat-icon>Lecciones
-    </button>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-accordion>
 
-    <button routerLink="/user-dashboard/resources" mat-list-item>
-      <mat-icon mat-list-icon>perm_media</mat-icon> Resources
-    </button>
-
-    <button routerLink="/user-dashboard/profile-user" mat-list-item>
-      <mat-icon mat-list-icon>account_circle</mat-icon> Perfil
-    </button>
-    
-    
-  </mat-action-list>
-</mat-card>
-
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <img src="../../../../assets/libros.png" class="menu-icon"/> <!-- Imagen personalizada para Mis asignaturas -->
+            <mat-panel-title routerLinkActive="active-link">
+              Actividades
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/user-dashboard/load-examen" routerLinkActive="active-link">
+            <span>Mis asignaturas</span>
+          </a>
+          <a mat-list-item routerLink="/user-dashboard/asignaturas" routerLinkActive="active-link">
+            <span>Mis cuestionarios</span>
+          </a>
+          <a mat-list-item routerLink="/user-dashboard/organizador-grafico" routerLinkActive="active-link">
+            <span>Organizadores Gráficos</span>
+          </a>
+          <a mat-list-item routerLink="/user-dashboard/profile-user" routerLinkActive="active-link">
+            <span>Mis Datos</span>
+          </a>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
   
   

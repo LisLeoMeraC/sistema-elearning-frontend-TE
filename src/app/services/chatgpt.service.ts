@@ -10,6 +10,7 @@ import baseURL from './helper';
 export class ChatgptService {
 
   private endpoint: string = `${baseURL}/api/chatgpt/generate-question`;
+  private generateContentEndpoint: string = `${baseURL}/api/chatgpt/generate-contenido`;
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +20,15 @@ export class ChatgptService {
     };
 
     return this.http.post<any>(this.endpoint, body);
+  }
+
+  generateContent(tema: string, asignatura: string): Observable<any> {
+    const body = {
+      tema: tema,
+      asignatura: asignatura
+    };
+
+    return this.http.post<any>(this.generateContentEndpoint, body);
   }
 }
 

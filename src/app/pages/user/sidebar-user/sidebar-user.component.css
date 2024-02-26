@@ -1,0 +1,80 @@
+mat-sidenav-container {
+    height: 100vh;
+    width: 30vh;
+    font-family: 'Roboto', sans-serif;
+   
+}
+  
+  mat-sidenav {
+    width: 300px; /* Ajusta el ancho para que coincida con tus opciones desplegadas */
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.24);
+  }
+  
+  .mat-expansion-panel-header {
+    background-color: #eff0f3; /* Un azul más oscuro similar al de la imagen */
+    color: white;
+
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    border-radius: 4px; /* Esquinas redondeadas para los headers */
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 
+                0 4px 5px 0 rgba(0,0,0,0.14), 
+                0 1px 10px 0 rgba(0,0,0,0.12); /* Sombra para dar efecto de elevación */
+
+    
+  }
+  
+  .mat-expansion-panel-header.mat-expanded {
+    color: #1E88E5; /* Color cuando el panel está expandido */
+  }
+  
+  .mat-expansion-panel-body {
+    background-color: #E8EAF6; /* Fondo claro para el cuerpo del panel */
+    padding: 0; /* Elimina el padding para que las opciones ocupen todo el ancho */
+  }
+  
+  mat-icon {
+    color: white; /* Iconos en blanco para contrastar con el fondo azul */
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87); /* Color del texto de los enlaces */
+    width: 100%; /* Asegura que el enlace ocupe todo el ancho disponible */
+  }
+  
+  a mat-list-item {
+    height: 48px; /* Altura estándar para los ítems */
+    border-radius: 4px; /* Esquinas redondeadas para los ítems */
+  }
+  
+  a mat-list-item.active, a mat-list-item:hover {
+    background-color: #303F9F; /* Color de fondo para el ítem activo o con hover */
+  }
+  
+  /* Estilos para el icono y texto de las opciones del menú */
+  .mat-list-icon {
+    color: #1E88E5; /* Color del ícono */
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+  }
+  .mat-line {
+    line-height: 20px; /* Altura de línea para el texto */
+    font-size: 14px; /* Tamaño de fuente para el texto */
+  }
+  
+
+  .active-link {
+    border-left: 5px solid rgb(95, 95, 212); /* Ajusta el grosor y el color de la línea según sea necesario */
+}
+  
+  /* Establece el color de fondo blanco para el contenido principal */
+  mat-sidenav-content {
+    background-color: white;
+    padding: 20px; /* Agrega un espacio de relleno para separar el contenido del borde */
+  }
+
+  .menu-icon {
+    height: 24px; /* Ajusta el tamaño según necesites */
+    width: 24px;  /* Ajusta el tamaño según necesites */
+    margin-right: 12px; /* Ajusta el margen a tu preferencia */
+  }

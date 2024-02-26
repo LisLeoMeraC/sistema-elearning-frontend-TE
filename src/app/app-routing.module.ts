@@ -29,6 +29,8 @@ import { StartComponent } from './pages/user/start/start.component';
 import { ResourcesComponent } from './pages/user/resources/resources.component';
 import { ProfileUserComponent } from './pages/user/profile-user/profile-user.component';
 import { RecomendacionesComponent } from './pages/user/recomendaciones/recomendaciones.component';
+import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.component';
+import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
 
 
 const routes: Routes = [
@@ -137,6 +139,14 @@ const routes: Routes = [
       {
         path:'recomendaciones',
         component:RecomendacionesComponent
+      },
+      {
+        path:'asignaturas',
+        component:AsignaturasComponent
+      },
+      {
+        path:'organizador-grafico',
+        component:OrganizadorGraficoComponent
       }
 
     ]

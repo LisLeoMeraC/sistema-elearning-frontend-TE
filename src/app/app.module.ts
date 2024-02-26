@@ -57,6 +57,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ResourcesComponent } from './pages/user/resources/resources.component';
 import { RecomendacionesComponent } from './pages/user/recomendaciones/recomendaciones.component';
 import { YoutubeVideosComponent } from './pages/user/youtube-videos/youtube-videos.component';
+import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.component';
+import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
 
 
 @NgModule({
@@ -91,7 +93,9 @@ import { YoutubeVideosComponent } from './pages/user/youtube-videos/youtube-vide
     StartComponent,
     ResourcesComponent,
     RecomendacionesComponent,
-    YoutubeVideosComponent
+    YoutubeVideosComponent,
+    AsignaturasComponent,
+    OrganizadorGraficoComponent
     
     
   ],

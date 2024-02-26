@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="personal-container">
+    <mat-card class="datos-personales-card">
+      <mat-card-title>Datos para generar el organizador gráfico</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Tema</mat-label>
+          <input matInput [(ngModel)]="tema" placeholder="Ejemplo: Tecnología" required>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Asignatura</mat-label>
+          <input matInput [(ngModel)]="asignatura" placeholder="Ejemplo: Informática" required>
+
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary" (click)="toggleMap()" (click)=" generarContenido()"
+        [disabled]="!tema || !asignatura">
+          Mostrar Mapa Conceptual
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <br>
+  <br>
+  <div *ngIf="loading" class="loading-message">Cargando...</div>
+  <div class="map-container" *ngIf="!loading && showMap" [ngClass]="{'hidden': !showMap}">
+    <div *ngIf="loading" class="loading-message">Cargando...</div>
+    <!-- Aquí va el contenido del mapa conceptual -->
+    <div class="rectangletitulo">
+      <input type="text" id="rectangleimput_titulo" [(ngModel)]="tema" style="text-align: center;">
+    </div>
+    
+    <div class="rectangle_definition">
+      <textarea id="rectangleimput_definition" [(ngModel)]="contenido1" readonly></textarea>
+    </div>
+    
+    <div class="rectangle_uno">
+     <textarea id="rectangleimput_uno" [(ngModel)]="contenido2" readonly></textarea>
+    </div>
+    
+    <div class="rectangle_dos">
+      <textarea id="rectangleimput_dos" [(ngModel)]="contenido3" readonly></textarea>
+    </div>
+    
+    <div class="rectangle_tres">
+      <textarea id="rectangleimput_tres" [(ngModel)]="contenido4" readonly></textarea>
+    </div>
+    
+    <div class="rectangle_cuatro">
+      <textarea id="rectangleimput_cuatro" [(ngModel)]="contenido5" readonly></textarea>
+    </div>
+    
+    <hr class="horizontal-lineOne">
+    <hr class="horizontal-lineTwo">
+    
+    <div class="vertical-lineOne"></div>
+    <div class="vertical-linePrincipal"></div>
+    <div class="vertical-lineDos"></div>
+    <div class="vertical-lineTres"></div>
+    <div class="vertical-lineCuatro"></div>
+  </div>
+</div>
+
+
+
+
+
