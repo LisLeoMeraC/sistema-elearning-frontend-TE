@@ -59,6 +59,7 @@ import { RecomendacionesComponent } from './pages/user/recomendaciones/recomenda
 import { YoutubeVideosComponent } from './pages/user/youtube-videos/youtube-videos.component';
 import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.component';
 import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
+import { ReportePreguntasComponent } from './pages/admin/reporte-preguntas/reporte-preguntas.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/or
     RecomendacionesComponent,
     YoutubeVideosComponent,
     AsignaturasComponent,
-    OrganizadorGraficoComponent
+    OrganizadorGraficoComponent,
+    ReportePreguntasComponent
     
     
   ],

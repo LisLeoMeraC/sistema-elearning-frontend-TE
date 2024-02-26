@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import Swal from 'sweetalert2';
+import { ReportePreguntasComponent } from '../reporte-preguntas/reporte-preguntas.component';
 
 @Component({
   selector: 'app-view-examen-preguntas',
@@ -15,7 +17,8 @@ export class ViewExamenPreguntasComponent implements OnInit {
   titulo:any;
   preguntas:any = [];
 
-  constructor(private route:ActivatedRoute,private preguntaService:PreguntaService,private snack:MatSnackBar) { }
+  constructor(private route:ActivatedRoute,private preguntaService:PreguntaService,private snack:MatSnackBar
+    ,public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.examenId = this.route.snapshot.params['examenId'];
@@ -29,6 +32,17 @@ export class ViewExamenPreguntasComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ReportePreguntasComponent, {
+      width: '1000%',
+      data: { preguntas: this.preguntas } // Pasas las preguntas al modal
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El dialogo fue cerrado');
+    });
   }
 
   eliminarPregunta(preguntaId:any){
@@ -60,5 +74,7 @@ export class ViewExamenPreguntasComponent implements OnInit {
       }
     })
   }
+
+ 
 }
 

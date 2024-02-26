@@ -1,0 +1,15 @@
+
+<mat-dialog-content class="mat-typography">
+    <!-- Solo las preguntas y opciones, sin botones ni acciones -->
+    <h2>Nombre:__________________________     Curso:____________________    Fecha:__________________</h2>
+    <div *ngFor="let pregunta of data.preguntas; let i = index" class="pregunta">
+        
+      <p class="pregunta-titulo"><strong>Pregunta {{ i + 1 }}:</strong> {{ pregunta.contenido }}</p>
+      <ul class="opciones">
+        <li>a) {{ pregunta.opcion1 }}</li>
+        <li>b) {{ pregunta.opcion2 }}</li>
+        <li>c) {{ pregunta.opcion3 }}</li>
+        <li>d) {{ pregunta.opcion4 }}</li>
+      </ul>
+    </div>
+  </mat-dialog-content>

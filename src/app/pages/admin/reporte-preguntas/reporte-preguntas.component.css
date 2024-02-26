@@ -1,0 +1,32 @@
+/* Estilos para la pantalla normal */
+.pregunta-titulo {
+    font-weight: bold;
+  }
+  
+  .opciones {
+    list-style-type: none; /* Remover los bullets de la lista */
+    padding-left: 0; /* Alinear con el título de la pregunta */
+  }
+  
+  .opciones li {
+    padding-left: 1.5em; /* Espacio para la letra de la opción */
+    text-indent: -1.5em; /* Alinear el texto de la opción con su letra */
+  }
+  
+  /* Estilos específicos para la impresión */
+  @media print {
+    mat-dialog-title,
+    mat-dialog-actions {
+      display: none; /* Ocultar el título y las acciones al imprimir */
+    }
+  
+    .mat-typography {
+      font-size: 12pt; /* Ajustar al tamaño de letra deseado */
+    }
+  
+    .pregunta {
+      page-break-inside: avoid; /* Evitar que las preguntas se dividan entre páginas */
+      margin-bottom: 1em; /* Espacio después de cada pregunta */
+    }
+  }
+  
