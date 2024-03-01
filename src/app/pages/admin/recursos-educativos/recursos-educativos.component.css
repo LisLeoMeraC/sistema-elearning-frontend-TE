@@ -1,0 +1,76 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.file-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #2196f3;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-name {
+  margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-button {
+  width: 100%;
+}
+
+.content-flex {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.imagenReducida {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+@media (max-width: 600px) {
+  .content-flex {
+      flex-direction: column;
+  }
+
+  .imagenReducida {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+}
+.flex-wrapper {
+  margin-top: 20px; 
+}

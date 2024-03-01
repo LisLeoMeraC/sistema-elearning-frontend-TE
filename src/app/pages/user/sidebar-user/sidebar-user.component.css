@@ -1,12 +1,12 @@
 mat-sidenav-container {
-    height: 100vh;
-    width: 30vh;
+    height: 200vh;
+    width: 40vh;
     font-family: 'Roboto', sans-serif;
    
 }
   
   mat-sidenav {
-    width: 300px; /* Ajusta el ancho para que coincida con tus opciones desplegadas */
+    width: 270px; /* Ajusta el ancho para que coincida con tus opciones desplegadas */
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.24);
   }
   

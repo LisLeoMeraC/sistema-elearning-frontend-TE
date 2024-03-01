@@ -24,13 +24,13 @@
       Estado de publicación
     </mat-slide-toggle>
     <mat-form-field class="full-width" appearance="outline">
-      <mat-label>Categorías</mat-label>
-      <mat-select [(ngModel)]="examenData.categoria.categoriaId" name="categoria">
-        <mat-option *ngFor="let c of categorias" [value]="c.categoriaId">{{ c.titulo }}</mat-option>
+      <mat-label>Eliga la Asignatura</mat-label>
+      <mat-select [(ngModel)]="examenData.categoria.id" name="categoria">
+        <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.titulo}}</mat-option>
       </mat-select>
     </mat-form-field>
     <div class="submit-container">
-      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button color="primary"  type="submit" >Guardar</button>
     </div>
   </form>
 </mat-card>

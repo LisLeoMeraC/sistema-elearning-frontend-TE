@@ -1,13 +1,36 @@
 <div class="bootstrap-wrapper">
     <div class="container">
-        <div class="row mt20">
-            <div class="col-md-6 offset-md-3 text-center">
-                <h1>Sistema recomendador para mejorar el aprendizaje de fundamentos de informática</h1>
-               <img src="../../../assets/aprendizaje-digital.png" width="400px" height="400px" style="left: 50px;">
-               <!-- <button mat-raised-button color="primary">Inicio</button>-->
-            </div>
+      <div class="row align-items-center">
+        <!-- Contenido del texto -->
+        <div class="col-lg-6 col-md-12">
+          <mat-card class="welcome-card">
+            <mat-card-header>
+              <mat-card-title class="welcome-title">Bienvenido a EduGeniusAI</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="texto">
+                EduGeniusAI es un sistema web diseñado para mejorar 
+                las actividades educativas tanto de docentes como de estudiantes 
+                en las diferentes areas de estudio. Los docentes pueden crear y compartir
+                 cuestionarios y recursos didacticos, mientras que los estudiantes tienen 
+                 la oportunidad de medir su conocimiento a traves de cuestionarios y recibir recomendaciones 
+                 personalizadas de videos y enlaces para profundizar su aprendizaje. 
+                 Además, nuestro sistema facilita a los estudiantes la creación de organizadores 
+                 gráficos para cualquier tema de su elección. ¡Comienza a explorar todas 
+                 las funcionalidades que tenemos para ofrecerte!
+              </p>
+              <div class="actions-container">
+                <button mat-raised-button color="primary" routerLink="/login">Iniciar sesión</button>
+                <button mat-stroked-button color="accent" routerLink="/signup">Registrarse</button>
+              </div>
+            </mat-card-content>
+          </mat-card>
         </div>
+        <!-- Contenedor de la imagen -->
+        <div class="col-lg-6 col-md-12 align-self-start">
+          <img src="../../../assets/imagen.png" alt="Imagen educativa" class="img-fluid">
+        </div>
+      </div>
     </div>
-    
-</div>
-
+  </div>
+  

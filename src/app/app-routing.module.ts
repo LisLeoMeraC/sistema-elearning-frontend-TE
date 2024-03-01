@@ -31,6 +31,7 @@ import { ProfileUserComponent } from './pages/user/profile-user/profile-user.com
 import { RecomendacionesComponent } from './pages/user/recomendaciones/recomendaciones.component';
 import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.component';
 import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
+import { RecursosEducativosComponent } from './pages/admin/recursos-educativos/recursos-educativos.component';
 
 
 const routes: Routes = [
@@ -76,6 +77,10 @@ const routes: Routes = [
       {
         path:"add-asignatura",
         component: AddCategoriaComponent
+      },
+      {
+        path:"recursos-educativos",
+        component: RecursosEducativosComponent
       },
       {
         path:"cuestionarios",

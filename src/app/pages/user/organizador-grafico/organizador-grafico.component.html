@@ -11,12 +11,18 @@
         <mat-form-field appearance="fill">
           <mat-label>Asignatura</mat-label>
           <input matInput [(ngModel)]="asignatura" placeholder="Ejemplo: Informática" required>
-
         </mat-form-field>
     
-        <button mat-raised-button color="primary" (click)="toggleMap()" (click)=" generarContenido()"
-        [disabled]="!tema || !asignatura">
-          Mostrar Mapa Conceptual
+        <!-- Botones para seleccionar el tipo de organizador -->
+        <button mat-raised-button color="primary" (click)="toggleMapa(1)" (click)=" generarContenido()" [disabled]="!tema || !asignatura" class="btn-spacing">
+          Organizador 1
+        </button>
+        <button mat-raised-button color="primary" (click)="toggleMapa(2)" [disabled]="!tema || !asignatura" class="btn-spacing">
+          Organizador 2
+        </button>
+
+        <button mat-raised-button color="primary" (click)="resetMap()" class="btn-spacing">
+          Nuevo
         </button>
       </mat-card-content>
     </mat-card>
@@ -25,44 +31,107 @@
   <br>
   <div *ngIf="loading" class="loading-message">Cargando...</div>
   <div class="map-container" *ngIf="!loading && showMap" [ngClass]="{'hidden': !showMap}">
-    <div *ngIf="loading" class="loading-message">Cargando...</div>
-    <!-- Aquí va el contenido del mapa conceptual -->
-    <div class="rectangletitulo">
-      <input type="text" id="rectangleimput_titulo" [(ngModel)]="tema" style="text-align: center;">
+    
+    <!-- Contenido del organizador 1 -->
+    <div *ngIf="organizadorSeleccionado === 1">
+     
+      
+      <div class="rectangletitulo">
+        <input type="text" id="rectangleimput_titulo" [(ngModel)]="tema" style="text-align: center;">
+      </div>
+      
+      <div class="rectangle_definition">
+        <textarea id="rectangleimput_definition" [(ngModel)]="contenido1" readonly></textarea>
+      </div>
+      
+      <div class="rectangle_uno">
+       <textarea id="rectangleimput_uno" [(ngModel)]="contenido2" readonly></textarea>
+      </div>
+      
+      <div class="rectangle_dos">
+        <textarea id="rectangleimput_dos" [(ngModel)]="contenido3" readonly></textarea>
+      </div>
+      
+      <div class="rectangle_tres">
+        <textarea id="rectangleimput_tres" [(ngModel)]="contenido4" readonly></textarea>
+      </div>
+      
+      <div class="rectangle_cuatro">
+        <textarea id="rectangleimput_cuatro" [(ngModel)]="contenido5" readonly></textarea>
+      </div>
+      
+      <hr class="horizontal-lineOne">
+      <hr class="horizontal-lineTwo">
+      
+      <div class="vertical-lineOne"></div>
+      <div class="vertical-linePrincipal"></div>
+      <div class="vertical-lineDos"></div>
+      <div class="vertical-lineTres"></div>
+      <div class="vertical-lineCuatro"></div>
+      
     </div>
     
-    <div class="rectangle_definition">
-      <textarea id="rectangleimput_definition" [(ngModel)]="contenido1" readonly></textarea>
+    <!-- Contenido del organizador 2 -->
+    <div *ngIf="organizadorSeleccionado === 2">
+      
+      <div class="rectangle_titulo2">
+        <textarea id="rectangleimput_titulo2"  readonly></textarea>
+      </div>
+
+
+      <div class="rectangle_subtitulo1">
+        <textarea id="rectangleimput_subtitulo1"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_con_subtitulo1">
+        <textarea id="rectangleimput_con_subtitulo1"  readonly></textarea>
+      </div>
+
+
+      <div class="rectangle_subtitulo2">
+        <textarea id="rectangleimput_subtitulo2"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_con_subtitulo2">
+        <textarea id="rectangleimput_con_subtitulo2"  readonly></textarea>
+      </div>
+
+
+      <div class="rectangle_subtitulo3">
+        <textarea id="rectangleimput_subtitulo3"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_con_subtitulo3">
+        <textarea id="rectangleimput_con_subtitulo3"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_subtitulo4">
+        <textarea id="rectangleimput_subtitulo4"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_con_subtitulo4">
+        <textarea id="rectangleimput_con_subtitulo4"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_subtitulo5">
+        <textarea id="rectangleimput_subtitulo5"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_con_subtitulo5">
+        <textarea id="rectangleimput_con_subtitulo5"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_subtitulo6">
+        <textarea id="rectangleimput_subtitulo6"  readonly></textarea>
+      </div>
+
+      <div class="rectangle_con_subtitulo6">
+        <textarea id="rectangleimput_con_subtitulo6"  readonly></textarea>
+      </div>
+
+      
     </div>
-    
-    <div class="rectangle_uno">
-     <textarea id="rectangleimput_uno" [(ngModel)]="contenido2" readonly></textarea>
-    </div>
-    
-    <div class="rectangle_dos">
-      <textarea id="rectangleimput_dos" [(ngModel)]="contenido3" readonly></textarea>
-    </div>
-    
-    <div class="rectangle_tres">
-      <textarea id="rectangleimput_tres" [(ngModel)]="contenido4" readonly></textarea>
-    </div>
-    
-    <div class="rectangle_cuatro">
-      <textarea id="rectangleimput_cuatro" [(ngModel)]="contenido5" readonly></textarea>
-    </div>
-    
-    <hr class="horizontal-lineOne">
-    <hr class="horizontal-lineTwo">
-    
-    <div class="vertical-lineOne"></div>
-    <div class="vertical-linePrincipal"></div>
-    <div class="vertical-lineDos"></div>
-    <div class="vertical-lineTres"></div>
-    <div class="vertical-lineCuatro"></div>
   </div>
 </div>
-
-
-
 
 

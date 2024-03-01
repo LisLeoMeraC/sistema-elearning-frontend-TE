@@ -1,0 +1,44 @@
+
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/files.png" alt="Descripción de la imagen">
+      <div>
+        <h1 style="font-size: 30px;">Hola, Docente</h1>
+        <p style="font-size: 18px;">
+          Aquí podrás compartir tus recursos para que los estudiantes mejoren sus conocimientos. Sube archivos con extensiones PDF, XLS, DOCX, PTTX, etc.
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<br>
+<br>
+
+<div class="container">
+  
+
+  <mat-card class="card">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <mat-label>Eliga la Asignatura</mat-label>
+        <mat-select [(ngModel)]="categoriaId" name="categoria">
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.titulo}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="file-upload">
+        <label for="fileInput" class="file-label">
+          <mat-icon class="icon">attach_file</mat-icon>
+          Seleccionar Archivo
+        </label>
+        <input id="fileInput" type="file" class="file-input" (change)="onFileSelected($event)">
+        <span class="file-name">{{ selectedFileName }}</span>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" class="upload-button" (click)="onUpload()">Subir Archivo</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

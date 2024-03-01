@@ -21,7 +21,7 @@ export class AddExamenComponent implements OnInit {
     numeroDePreguntas:'',
     activo:true,
     categoria:{
-      categoriaId:''
+      id:''
     }
   }
 
@@ -31,17 +31,24 @@ export class AddExamenComponent implements OnInit {
     private examenService:ExamenService,
     private router:Router) { }
 
-  ngOnInit(): void {
-    this.categoriaService.listarCategorias().subscribe(
-      (dato:any) => {
-        this.categorias = dato;
-        console.log(this.categorias);
-      },(error) => {
-        console.log(error);
-        Swal.fire('Error !!','Error al cargar los datos','error');
-      }
-    )
-  }
+    ngOnInit(): void {
+      this.categoriaService.listarCategorias().subscribe(
+        (dato:any) => {
+          this.categorias = dato;
+          console.log(this.categorias);
+          // Agrega un log para ver el tipo de dato de categoriaId
+          console.log(typeof this.categorias[0].id); 
+        },
+        (error) => {
+          console.error('Error al cargar las categorías', error);
+          Swal.fire('Error !!', 'Error al cargar los datos', 'error');
+        }
+      );
+    }
+
+    onCategoriaChange() {
+      console.log(this.examenData.categoria.id);
+    }
 
   guardarCuestionario(){
     console.log(this.examenData);
@@ -63,10 +70,11 @@ export class AddExamenComponent implements OnInit {
           numeroDePreguntas : '',
           activo:true,
           categoria:{
-            categoriaId:''
+            id:''
           }
         }
-        this.router.navigate(['/admin/examenes']);
+        this.router.navigate(['/admin/cuestionarios']);
+        
       },
       (error) => {
         Swal.fire('Error','Error al guardar el test','error');

@@ -9,6 +9,7 @@ import { ChatgptService } from 'src/app/services/chatgpt.service';
 })
 export class OrganizadorGraficoComponent {
   showMap: boolean = false;
+  organizadorSeleccionado: number = 1;
 
   toggleMap() {
     this.showMap = !this.showMap;
@@ -80,5 +81,22 @@ export class OrganizadorGraficoComponent {
 
   ocultarMapa(): void {
     this.showMap = false;
+  }
+
+  toggleMapa(organizador: number) {
+    this.showMap = true;
+    this.organizadorSeleccionado = organizador;
+  }
+
+  resetMap() {
+    this.showMap = false; 
+    this.tema = ''; 
+    this.asignatura = ''; 
+    this.organizadorSeleccionado = 1; 
+    this.contenido1 = ''; 
+    this.contenido2 = '';
+    this.contenido3 = '';
+    this.contenido4 = '';
+    this.contenido5 = '';
   }
 }

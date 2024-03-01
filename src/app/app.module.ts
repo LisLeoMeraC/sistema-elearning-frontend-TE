@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
-
 import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
@@ -60,6 +59,7 @@ import { YoutubeVideosComponent } from './pages/user/youtube-videos/youtube-vide
 import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.component';
 import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
 import { ReportePreguntasComponent } from './pages/admin/reporte-preguntas/reporte-preguntas.component';
+import { RecursosEducativosComponent } from './pages/admin/recursos-educativos/recursos-educativos.component';
 
 
 @NgModule({
@@ -97,7 +97,8 @@ import { ReportePreguntasComponent } from './pages/admin/reporte-preguntas/repor
     YoutubeVideosComponent,
     AsignaturasComponent,
     OrganizadorGraficoComponent,
-    ReportePreguntasComponent
+    ReportePreguntasComponent,
+    RecursosEducativosComponent
     
     
   ],
