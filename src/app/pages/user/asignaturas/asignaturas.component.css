@@ -1,102 +1,72 @@
-.question-form-container {
-    display: flex;
-    align-items: center;
-    height: 80vh;
-    background-color: #f2f2f2;
+.categorias-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  margin-left: -50px;
+}
+
+.categoria-card {
+  width: calc(100% / 3 - 20px); /* Asume 3 tarjetas por fila, ajusta según tus necesidades */
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  overflow: hidden; /* Para evitar cualquier desbordamiento de contenido */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-and-title {
+  display: flex; /* Nuevo contenedor con flexbox para la imagen y el título */
+  align-items: center; /* Centra verticalmente la imagen y el título */
+}
+
+.card-image img {
+  width: auto; /* O un tamaño fijo para la imagen */
+  height: 80px; /* Altura fija para la imagen */
+  display: block;
+}
+
+.mat-card-header {
+  padding: 0 16px; /* Añade un padding si es necesario */
+}
+
+.mat-card-content {
+  padding: 16px;
+}
+
+.card-actions {
+  margin-top: auto; /* Empuja las acciones al fondo de la tarjeta */
+  padding: 12px;
+}
+
+
+.content-flex {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.imagenReducida {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+}
+
+@media (max-width: 600px) {
+  .content-flex {
+      flex-direction: column;
   }
-  
-  .question-form {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    padding: 40px;
-    width: 90%;
-    max-width: 1600px;
-    text-align: center;
+
+  .imagenReducida {
+      margin-right: 0;
+      margin-bottom: 20px;
   }
-  
-  .question-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .highlight {
-    color: #FF5722;
-  }
-  
-  .card {
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 20px;
-  }
-  
-  .card-header h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .generate-button-container {
-    text-align: right;
-  }
-  
-  .generate-button {
-    background-color: #FF5722;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .generate-button:hover {
-    background-color: #D84315;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  textarea, input[type="text"], select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .option {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .save-button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .save-button:hover {
-    background-color: #45a049;
-  }
-  
-  .button-space {
-    margin-left: 10px; /* Ajusta el valor según el espacio deseado */
-  }
-  
+}
+.flex-wrapper {
+  margin-top: 2px;
+  margin-left: -50px;
+}

@@ -1,0 +1,42 @@
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/book.png" alt="Descripción de la imagen">
+      <div>
+        <h2>Listado de asignatura</h2>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<div class="categorias-container">
+    <mat-card *ngFor="let c of categorias" class="categoria-card">
+      <div class="card-content">
+        
+        <!-- Contenedor para la imagen y el título -->
+        <div class="image-and-title">
+          <div class="card-image">
+            <img src="../../../../assets/books.png" alt="{{ c.titulo }}" class="categoria-image"/>
+          </div>
+          <mat-card-header>
+            <mat-card-title>
+              {{ c.titulo }}
+            </mat-card-title>
+          </mat-card-header>
+        </div>
+        
+        <!-- Contenedor para la descripción -->
+        <mat-card-content>
+          <p>{{ c.descripcion }}</p>
+        </mat-card-content>
+  
+        <!-- Acciones -->
+        <mat-card-actions class="card-actions">
+            <button mat-button (click)="verRecursos(c.id)">VER RECURSOS</button>
+        </mat-card-actions>
+  
+      </div>
+    </mat-card>
+  </div>
+  

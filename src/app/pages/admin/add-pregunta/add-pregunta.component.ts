@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import { ChatgptService } from 'src/app/services/chatgpt.service';
 import Swal from 'sweetalert2';
+import { ExamenService } from 'src/app/services/examen.service';
 
 @Component({
   selector: 'app-add-pregunta',
@@ -12,6 +13,10 @@ import Swal from 'sweetalert2';
 export class AddPreguntaComponent implements OnInit {
   examenId: any;
   titulo: any;
+  numeroDePreguntasActuales: number = 0;
+  preguntasAgregadas: number = 0;
+  showField = false; 
+  
   pregunta: any = {
     examen: {},
     contenido: '',
@@ -20,21 +25,45 @@ export class AddPreguntaComponent implements OnInit {
     opcion3: '',
     opcion4: '',
     respuesta: '',
+    url: '',
   };
 
   constructor(
     private route: ActivatedRoute,
     private preguntaService: PreguntaService,
-    private chatgptService: ChatgptService
+    private chatgptService: ChatgptService,
+    private examenService: ExamenService
   ) {}
 
   ngOnInit(): void {
     this.examenId = this.route.snapshot.params['examenId'];
     this.titulo = this.route.snapshot.params['titulo'];
     this.pregunta.examen['examenId'] = this.examenId;
+
+    // Obtener el examen actual desde la API
+    this.examenService.obtenerExamen(this.examenId).subscribe(
+      (data: any) => {
+        this.numeroDePreguntasActuales = parseInt(data.numeroDePreguntas, 10);
+        console.log('Número de preguntas actuales:', this.numeroDePreguntasActuales); // Imprimir en la consola
+        console.log('Respuesta del servidor:', data);
+      
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   formSubmit() {
+    if (this.preguntasAgregadas >= this.numeroDePreguntasActuales) { // Cambia el 10 al número máximo de preguntas que quieres permitir
+      Swal.fire(
+        'Límite alcanzado',
+        'Has alcanzado el número máximo de preguntas para este examen.',
+        'warning'
+      );
+      return;
+    }
+
     if (
       this.pregunta.contenido.trim() == '' ||
       this.pregunta.contenido == null
@@ -62,6 +91,7 @@ export class AddPreguntaComponent implements OnInit {
 
     this.preguntaService.guardarPregunta(this.pregunta).subscribe(
       (data) => {
+        this.preguntasAgregadas++;
         Swal.fire(
           'Pregunta guardada',
           'La pregunta ha sido agregada con éxito',
@@ -73,7 +103,9 @@ export class AddPreguntaComponent implements OnInit {
         this.pregunta.opcion3 = '';
         this.pregunta.opcion4 = '';
         this.pregunta.respuesta = '';
+        this.pregunta.url='';
       },
+      
       (error) => {
         Swal.fire(
           'Error',
@@ -89,7 +121,7 @@ export class AddPreguntaComponent implements OnInit {
     this.chatgptService
       .generateQuestion(
         `Hazme una pregunta con 4 opciones pero con texto no muy largos mas la respuesta que diga: 
-    Respuesta: sobre el tema de ${this.titulo} `
+        Respuesta: (....... con el literal por ejemplo a)) sobre el tema de ${this.titulo} mas la URL valida relacionada a la repuesta que no sea wikipedia con el formato URL: `
       )
       .subscribe(
         (response) => {
@@ -98,7 +130,7 @@ export class AddPreguntaComponent implements OnInit {
             const splitContent = content
               .split('\n')
               .filter((line: string) => line.trim() !== '');
-            if (splitContent.length >= 6) {
+            if (splitContent.length >= 7) {
               this.pregunta.contenido = splitContent[0]
                 .replace('Pregunta: ', '')
                 .trim();
@@ -106,10 +138,10 @@ export class AddPreguntaComponent implements OnInit {
               this.pregunta.opcion2 = this.extractOptionText(splitContent[2]);
               this.pregunta.opcion3 = this.extractOptionText(splitContent[3]);
               this.pregunta.opcion4 = this.extractOptionText(splitContent[4]);
-
               let correctAnswer = splitContent[5]
                 .replace('Respuesta: ', '')
                 .trim();
+                          this.pregunta.url = splitContent[6].replace('URL: ', '').trim(); // Añade esta línea para la URL
               const answerLetter = correctAnswer.charAt(0).toUpperCase();
 
               switch (answerLetter) {
@@ -169,3 +201,4 @@ export class AddPreguntaComponent implements OnInit {
     return option;
   }
 }
+

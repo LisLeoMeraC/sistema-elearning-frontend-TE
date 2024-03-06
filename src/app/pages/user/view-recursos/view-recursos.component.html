@@ -1,0 +1,34 @@
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/activo.png" alt="Descripción de la imagen">
+      <div>
+        <h2>Recursos compartidos por el docente</h2>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<div class="recursos-container">
+    <mat-card *ngFor="let archivo of archivos" class="archivo-card">
+      
+      <mat-card-header>
+        <mat-icon aria-hidden="false" aria-label="Icono archivo" class="archivo-icon">{{obtenerIcono(archivo)}}</mat-icon>
+        <mat-card-title>{{ archivo.nombreArchivo }}</mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <p>Una breve descripción del archivo o cualquier otra información relevante aquí.</p>
+      </mat-card-content>
+      
+      <mat-card-actions align="end">
+        <button mat-flat-button color="accent">
+          Descargar
+          <mat-icon>arrow_downward</mat-icon>
+        </button>
+      </mat-card-actions>
+  
+    </mat-card>
+  </div>
+  

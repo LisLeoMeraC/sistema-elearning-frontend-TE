@@ -45,3 +45,32 @@
   font-size: 14px; /* Tamaño de fuente ajustado */
   width: 120px; /* Ajustar el ancho del input según tus preferencias */
 }
+
+
+
+.content-flex {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.imagenReducida {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+  .content-flex {
+      flex-direction: column;
+  }
+
+  .imagenReducida {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+}
+.flex-wrapper {
+  margin-top: 5px; 
+  margin-left: -20px;
+}

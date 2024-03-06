@@ -1,0 +1,77 @@
+.recursos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 150px;
+    justify-content: flex-start; /* Cambiado de center a flex-start */
+    align-items: flex-start; /* Asegura que los elementos también se alineen al inicio verticalmente */
+  }
+  
+  .archivo-card {
+    max-width: 450px;
+    margin: 50x;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 30px;
+    margin-left: -50px;
+  }
+  
+  .archivo-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+  
+  .archivo-icon {
+    font-size: 24px;
+   
+    color: #2417e2;
+  }
+  
+  mat-card-title {
+    font-weight: bold;
+    margin-left: 15px;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button {
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff4081;
+    transform: scale(1.1);
+  }
+  
+  mat-icon {
+    margin-left: 8px;
+  }
+  
+
+  .content-flex {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .imagenReducida {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .content-flex {
+        flex-direction: column;
+    }
+  
+    .imagenReducida {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+  }
+  .flex-wrapper {
+    margin-top: 2px; 
+    margin-left: -50px;
+  }

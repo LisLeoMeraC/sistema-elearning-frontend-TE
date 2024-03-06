@@ -17,7 +17,7 @@
         <button mat-raised-button color="primary" (click)="toggleMapa(1)" (click)=" generarContenido()" [disabled]="!tema || !asignatura" class="btn-spacing">
           Organizador 1
         </button>
-        <button mat-raised-button color="primary" (click)="toggleMapa(2)" [disabled]="!tema || !asignatura" class="btn-spacing">
+        <button mat-raised-button color="primary" (click)="toggleMapa(2)" (click)=" generarContenido2()" [disabled]="!tema || !asignatura" class="btn-spacing">
           Organizador 2
         </button>
 
@@ -75,58 +75,58 @@
     <div *ngIf="organizadorSeleccionado === 2">
       
       <div class="rectangle_titulo2">
-        <textarea id="rectangleimput_titulo2"  readonly></textarea>
+        <textarea id="rectangleimput_titulo2"  [(ngModel)]="tema" readonly></textarea>
       </div>
 
 
       <div class="rectangle_subtitulo1">
-        <textarea id="rectangleimput_subtitulo1"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo1" [(ngModel)]="subtema1" readonly></textarea>
       </div>
 
       <div class="rectangle_con_subtitulo1">
-        <textarea id="rectangleimput_con_subtitulo1"  readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo1" [(ngModel)]="contSubtema1"  readonly></textarea>
       </div>
 
 
       <div class="rectangle_subtitulo2">
-        <textarea id="rectangleimput_subtitulo2"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo2"  [(ngModel)]="subtema2"  readonly></textarea>
       </div>
 
       <div class="rectangle_con_subtitulo2">
-        <textarea id="rectangleimput_con_subtitulo2"  readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo2"  [(ngModel)]="contSubtema2" readonly></textarea>
       </div>
 
 
       <div class="rectangle_subtitulo3">
-        <textarea id="rectangleimput_subtitulo3"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo3"  [(ngModel)]="subtema3"  readonly></textarea>
       </div>
 
       <div class="rectangle_con_subtitulo3">
-        <textarea id="rectangleimput_con_subtitulo3"  readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo3"  [(ngModel)]="contSubtema3" readonly></textarea>
       </div>
 
       <div class="rectangle_subtitulo4">
-        <textarea id="rectangleimput_subtitulo4"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo4"   [(ngModel)]="subtema4" readonly></textarea>
       </div>
 
       <div class="rectangle_con_subtitulo4">
-        <textarea id="rectangleimput_con_subtitulo4"  readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo4" [(ngModel)]="contSubtema4" readonly></textarea>
       </div>
 
       <div class="rectangle_subtitulo5">
-        <textarea id="rectangleimput_subtitulo5"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo5"  [(ngModel)]="subtema5"  readonly></textarea>
       </div>
 
       <div class="rectangle_con_subtitulo5">
-        <textarea id="rectangleimput_con_subtitulo5"  readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo5" [(ngModel)]="contSubtema5" readonly></textarea>
       </div>
 
       <div class="rectangle_subtitulo6">
-        <textarea id="rectangleimput_subtitulo6"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo6"  [(ngModel)]="subtema6"  readonly></textarea>
       </div>
 
       <div class="rectangle_con_subtitulo6">
-        <textarea id="rectangleimput_con_subtitulo6"  readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo6" [(ngModel)]="contSubtema6" readonly></textarea>
       </div>
 
       

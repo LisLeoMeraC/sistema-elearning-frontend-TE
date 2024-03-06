@@ -1,3 +1,15 @@
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/logolibro.png" alt="Descripción de la imagen">
+      <div>
+        <h3>Aquí estás en el panel de registro de asignaturas. Aquí podrás agregar las diferentes asignaturas impartidas.
+        </h3>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
 <mat-card class="container">
   <div class="header">
     <h1>Agregar nueva asignatura</h1>
@@ -30,16 +42,13 @@
           ></textarea>
         </mat-form-field>
 
-        <div class="unique-code-generator">
-          <button mat-button (click)="generateUniqueCode()" [disabled]="!categoria.titulo" type="button" class="generate-button">Código de asignatura</button>
-          <input matInput placeholder="Código único" [value]="categoria.uniqueCode" readonly class="code-input">
-        </div>
+        
         
         
         <br>
 
         <div class="button-container">
-          <button mat-raised-button color="primary" [disabled]="!categoria.uniqueCode" type="submit">Guardar</button>
+          <button mat-raised-button color="primary"  type="submit">Guardar</button>
         </div>
       </form>
     </div>

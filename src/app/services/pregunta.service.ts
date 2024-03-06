@@ -37,3 +37,4 @@ export class PreguntaService {
     return this.http.post(`${baserUrl}/pregunta/evaluar-examen`,preguntas);
   }
 }
+

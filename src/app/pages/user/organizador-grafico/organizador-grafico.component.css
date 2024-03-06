@@ -92,13 +92,16 @@ button.mat-raised-button {
   box-sizing: border-box; /* Incluye el borde en el cálculo del tamaño */
 }
 
+
+
+
 .rectangletitulo {
   width: 200px;
   height: 50px;
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 5%;
-  left: 40%;
+  left: 43%;
   background: linear-gradient(45deg, #889230, #c3e664);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -161,7 +164,7 @@ button.mat-raised-button {
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 35%;
-  left: 29%;
+  left: 31%;
   background: linear-gradient(45deg, #e7db7f, #e8eaeb);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -182,7 +185,7 @@ button.mat-raised-button {
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 35%;
-  left: 49%;
+  left: 52%;
   background: linear-gradient(45deg, #f19c9c, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -203,7 +206,7 @@ button.mat-raised-button {
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 35%;
-  left: 68%;
+  left: 73%;
   background: linear-gradient(45deg, #90c0a5, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -230,7 +233,7 @@ button.mat-raised-button {
 .horizontal-lineTwo {
   border-top: 3px solid black;
   width: 13%;
-  left: 66.1%;
+  left: 70.3%;
   top: 20%;
   transform: translateY(-50%);
 }
@@ -239,7 +242,7 @@ button.mat-raised-button {
   width: 2px;
   height: 2.5%;
   background-color: black;
-  left: 47.2%;
+  left: 50%;
   top: 10.5%;
 }
 
@@ -255,7 +258,7 @@ button.mat-raised-button {
   width: 2px;
   height: 5.5%;
   background-color: black;
-  left: 38.5%;
+  left: 41.5%;
   top: 29.5%;
 }
 
@@ -263,7 +266,7 @@ button.mat-raised-button {
   width: 2px;
   height: 5.5%;
   background-color: black;
-  left: 56%;
+  left: 62%;
   top: 29.5%;
 }
 
@@ -271,7 +274,7 @@ button.mat-raised-button {
   width: 2px;
   height: 14.5%;
   background-color: black;
-  left: 78.6%;
+  left: 83%;
   top: 20.5%;
 }
 
@@ -318,12 +321,13 @@ button.mat-raised-button {
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
-  top: 30%;
-  left: 37.9%;
+  top: 34%;
+  left: 3.9%;
   border-radius: 10px;
   background: linear-gradient(45deg, #0b8b3c, #90f07d);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 
@@ -334,16 +338,17 @@ button.mat-raised-button {
   outline: none; /* Sin contorno al recibir foco */
   font-size: 16px; /* Tamaño de la fuente */
   background-color: transparent; /* Fondo transparente */
+  text-align: center;
 }
 
 
 .rectangle_subtitulo1{
-  width: 250px; /*Largo*/
+  width: 350px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 5%;
-  left: 73%;
+  left: 70%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -357,15 +362,16 @@ button.mat-raised-button {
   outline: none; /* Sin contorno al recibir foco */
   font-size: 16px; /* Tamaño de la fuente */
   background-color: transparent; /* Fondo transparente */
+  text-align: center;
 }
 
 .rectangle_con_subtitulo1{
-  width: 250px; /*Largo*/
-  height: 150px; /*ancho*/
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 12%;
-  left: 73%;
+  left: 70%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -383,16 +389,17 @@ button.mat-raised-button {
 
 
 .rectangle_subtitulo2{
-  width: 250px; /*Largo*/
+  width: 350px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
-  top: 30%;
-  left: 73%;
+  top: 36%;
+  left: 70%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 #rectangleimput_subtitulo2 {
@@ -402,16 +409,17 @@ button.mat-raised-button {
   outline: none; /* Sin contorno al recibir foco */
   font-size: 16px; /* Tamaño de la fuente */
   background-color: transparent; /* Fondo transparente */
+  text-align: center;
 }
 
 
 .rectangle_con_subtitulo2{
-  width: 250px; /*Largo*/
-  height: 150px; /*ancho*/
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
-  top: 37%;
-  left: 73%;
+  top: 43%;
+  left: 70%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -433,8 +441,8 @@ button.mat-raised-button {
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
-  top: 40%;
-  left: 36%;
+  top: 45%;
+  left: 37%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -448,16 +456,17 @@ button.mat-raised-button {
   outline: none; /* Sin contorno al recibir foco */
   font-size: 16px; /* Tamaño de la fuente */
   background-color: transparent; /* Fondo transparente */
+  text-align: center;
 }
 
 
 .rectangle_con_subtitulo3{
   width: 400px; /*Largo*/
-  height: 150px; /*ancho*/
+  height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
-  top: 47%;
-  left: 36%;
+  top: 52%;
+  left: 37%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -480,7 +489,7 @@ button.mat-raised-button {
   border: 2px solid rgb(33, 185, 12);
   padding: 8px;
   top: 1%;
-  left: 36%;
+  left: 37%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -494,16 +503,17 @@ button.mat-raised-button {
   outline: none; /* Sin contorno al recibir foco */
   font-size: 16px; /* Tamaño de la fuente */
   background-color: transparent; /* Fondo transparente */
+  text-align: center;
 }
 
 
 .rectangle_con_subtitulo4{
   width: 400px; /*Largo*/
-  height: 150px; /*ancho*/
+  height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 8px;
   top: 8%;
-  left: 36%;
+  left: 37%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -521,12 +531,12 @@ button.mat-raised-button {
 
 
 .rectangle_subtitulo5{
-  width: 250px; /*Largo*/
+  width: 350px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 5%;
-  left: 10%;
+  left: 8%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -540,15 +550,16 @@ button.mat-raised-button {
   outline: none; /* Sin contorno al recibir foco */
   font-size: 16px; /* Tamaño de la fuente */
   background-color: transparent; /* Fondo transparente */
+  text-align: center;
 }
 
 .rectangle_con_subtitulo5{
-  width: 250px; /*Largo*/
-  height: 150px; /*ancho*/
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 12%;
-  left: 10%;
+  left: 8%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -566,12 +577,12 @@ button.mat-raised-button {
 
 
 .rectangle_subtitulo6{
-  width: 250px; /*Largo*/
+  width: 350px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
-  top: 30%;
-  left: 10%;
+  top: 36%;
+  left: 8%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -585,16 +596,17 @@ button.mat-raised-button {
   outline: none; /* Sin contorno al recibir foco */
   font-size: 16px; /* Tamaño de la fuente */
   background-color: transparent; /* Fondo transparente */
+  text-align: center;
 }
 
 
 .rectangle_con_subtitulo6{
-  width: 250px; /*Largo*/
-  height: 150px; /*ancho*/
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
-  top: 37%;
-  left: 10%;
+  top: 43%;
+  left: 8%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);

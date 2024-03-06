@@ -16,5 +16,9 @@ export class CategoriaService {
   public agregarCategoria(categoria:any){
     return this.http.post(`${baserUrl}/categoria/`,categoria);
   }
+
+  public listartodasCategorias(){
+    return this.http.get(`${baserUrl}/categoria/todas`);
+  }
 }
 

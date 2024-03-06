@@ -60,6 +60,7 @@ import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.compo
 import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
 import { ReportePreguntasComponent } from './pages/admin/reporte-preguntas/reporte-preguntas.component';
 import { RecursosEducativosComponent } from './pages/admin/recursos-educativos/recursos-educativos.component';
+import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.component';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { RecursosEducativosComponent } from './pages/admin/recursos-educativos/r
     AsignaturasComponent,
     OrganizadorGraficoComponent,
     ReportePreguntasComponent,
-    RecursosEducativosComponent
+    RecursosEducativosComponent,
+    ViewRecursosComponent
     
     
   ],

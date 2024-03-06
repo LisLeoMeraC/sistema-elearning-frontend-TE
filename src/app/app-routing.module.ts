@@ -32,6 +32,7 @@ import { RecomendacionesComponent } from './pages/user/recomendaciones/recomenda
 import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.component';
 import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
 import { RecursosEducativosComponent } from './pages/admin/recursos-educativos/recursos-educativos.component';
+import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.component';
 
 
 const routes: Routes = [
@@ -152,6 +153,10 @@ const routes: Routes = [
       {
         path:'organizador-grafico',
         component:OrganizadorGraficoComponent
+      },
+      {
+        path:'view-recursos/:id',
+        component:ViewRecursosComponent
       }
 
     ]
