@@ -46,10 +46,8 @@ export class LoginService {
   public logout(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    this.loginStatusSubjec.next(false);
-    this.router.navigate(['']).then(() => {
-      window.location.reload(); // Esto forzará la recarga de la aplicación y actualizará la URL
-    });
+    this.loginStatusSubjec.next(false); // Si estás utilizando esto para manejar el estado de la sesión
+    this.router.navigate(['']);
     return true;
   }
 
