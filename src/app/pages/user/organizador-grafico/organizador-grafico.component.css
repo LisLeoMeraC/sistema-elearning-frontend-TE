@@ -299,3 +299,310 @@ button.mat-raised-button {
 .mr-2 {
   margin-right: 8px; 
 }
+
+
+.rectangle_titulo2 {
+  width: 350px; /*Largo*/
+  height: 50px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 34%;
+  left: 3.9%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #0b8b3c, #90f07d);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+
+#rectangleimput_titulo2 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  text-align: center;
+}
+
+
+.rectangle_subtitulo1{
+  width: 350px; /*Largo*/
+  height: 50px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 5%;
+  left: 70%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_subtitulo1 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  text-align: center;
+}
+
+.rectangle_con_subtitulo1{
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 12%;
+  left: 70%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #cce4f1, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_con_subtitulo1 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+
+.rectangle_subtitulo2{
+  width: 350px; /*Largo*/
+  height: 50px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 36%;
+  left: 70%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+#rectangleimput_subtitulo2 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  text-align: center;
+}
+
+
+.rectangle_con_subtitulo2{
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 43%;
+  left: 70%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #cce4f1, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_con_subtitulo2 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+
+.rectangle_subtitulo3{
+  width: 400px; /*Largo*/
+  height: 50px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 45%;
+  left: 37%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_subtitulo3 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  text-align: center;
+}
+
+
+.rectangle_con_subtitulo3{
+  width: 400px; /*Largo*/
+  height: 180px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 52%;
+  left: 37%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #cce4f1, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_con_subtitulo3 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+
+.rectangle_subtitulo4{
+  width: 400px; /*Largo*/
+  height: 50px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 8px;
+  top: 1%;
+  left: 37%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_subtitulo4 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  text-align: center;
+}
+
+
+.rectangle_con_subtitulo4{
+  width: 400px; /*Largo*/
+  height: 180px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 8px;
+  top: 8%;
+  left: 37%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #cce4f1, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_con_subtitulo4 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+
+.rectangle_subtitulo5{
+  width: 350px; /*Largo*/
+  height: 50px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 5%;
+  left: 8%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_subtitulo5 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  text-align: center;
+}
+
+.rectangle_con_subtitulo5{
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 12%;
+  left: 8%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #cce4f1, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_con_subtitulo5 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+
+.rectangle_subtitulo6{
+  width: 350px; /*Largo*/
+  height: 50px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 36%;
+  left: 8%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_subtitulo6 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  text-align: center;
+}
+
+
+.rectangle_con_subtitulo6{
+  width: 350px; /*Largo*/
+  height: 180px; /*ancho*/
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 43%;
+  left: 8%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #cce4f1, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_con_subtitulo6 {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
