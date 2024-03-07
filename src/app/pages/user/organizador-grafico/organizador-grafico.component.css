@@ -1,1 +1,301 @@
-.container{display:flex;flex-direction:column;align-items:flex-start;width:100%}.personal-container{display:flex;justify-content:space-between}.map-container.hidden{display:none}.datos-personales-card{display:flex;flex-direction:column;padding:16px;margin:16px;box-shadow:0 4px 8px rgba(0,0,0,.12);border-radius:4px}mat-form-field{margin-right:10px}mat-form-field:last-child{margin-right:0}button.mat-raised-button{margin-top:25px}.map-container{position:relative;margin-top:10px;width:130%;height:900px;right:20%;background-color:#f0f0f0}.rectangletitulo,.rectangle_definition,.rectangle_uno,.rectangle_dos,.rectangle_tres,.rectangle_cuatro,.horizontal-lineOne,.horizontal-lineTwo,.vertical-linePrincipal,.vertical-lineOne,.vertical-lineDos,.vertical-lineTres,.vertical-lineCuatro,.rectangle_titulo2,.rectangle_subtitulo1,.rectangle_con_subtitulo1,.rectangle_con_subtitulo2,.rectangle_subtitulo2,.rectangle_con_subtitulo3,.rectangle_subtitulo3,.rectangle_con_subtitulo4,.rectangle_subtitulo4,.rectangle_con_subtitulo5,.rectangle_con_subtitulo6,.rectangle_subtitulo5,.rectangle_subtitulo6{position:absolute;box-sizing:border-box}.rectangletitulo{width:200px;height:50px;border:2px solid rgb(33,185,12);padding:10px;top:5%;left:43%;background:linear-gradient(45deg,#889230,#c3e664);box-shadow:0 4px 6px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:all 0.3s ease}#rectangleimput_titulo{width:100%;height:100%;border:none;outline:none;font-size:16px;background-color:transparent}.rectangle_definition{width:500px;height:150px;border:2px solid rgb(33,185,12);padding:10px;top:13%;left:30%;background:linear-gradient(45deg,#9ea09e,#dee2e4);box-shadow:0 4px 6px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:all 0.3s ease}#rectangleimput_definition{width:100%;height:100%;border:none;outline:none;font-size:16px;background-color:transparent}.rectangle_uno{width:250px;height:300px;border:2px solid rgb(33,185,12);padding:10px;top:35%;left:10%;background:linear-gradient(45deg,#3ea6dd,#dee2e4);box-shadow:0 4px 6px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:all 0.3s ease}#rectangleimput_uno{width:100%;height:100%;border:none;outline:none;font-size:16px;background-color:transparent}.rectangle_dos{width:250px;height:300px;border:2px solid rgb(33,185,12);padding:10px;top:35%;left:31%;background:linear-gradient(45deg,#e7db7f,#e8eaeb);box-shadow:0 4px 6px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:all 0.3s ease}#rectangleimput_dos{width:100%;height:100%;border:none;outline:none;font-size:16px;background-color:transparent}.rectangle_tres{width:250px;height:300px;border:2px solid rgb(33,185,12);padding:10px;top:35%;left:52%;background:linear-gradient(45deg,#f19c9c,#dee2e4);box-shadow:0 4px 6px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:all 0.3s ease}#rectangleimput_tres{width:100%;height:100%;border:none;outline:none;font-size:16px;background-color:transparent}.rectangle_cuatro{width:250px;height:300px;border:2px solid rgb(33,185,12);padding:10px;top:35%;left:73%;background:linear-gradient(45deg,#90c0a5,#dee2e4);box-shadow:0 4px 6px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.08);transition:all 0.3s ease}#rectangleimput_cuatro{width:100%;height:100%;border:none;outline:none;font-size:16px;background-color:transparent}.horizontal-lineOne{border-top:3px solid #000;width:13%;left:17%;top:20%;transform:translateY(-50%)}.horizontal-lineTwo{border-top:3px solid #000;width:13%;left:70.3%;top:20%;transform:translateY(-50%)}.vertical-linePrincipal{width:2px;height:2.5%;background-color:#000;left:50%;top:10.5%}.vertical-lineOne{width:2px;height:14.5%;background-color:#000;left:17%;top:20.5%}.vertical-lineDos{width:2px;height:5.5%;background-color:#000;left:41.5%;top:29.5%}.vertical-lineTres{width:2px;height:5.5%;background-color:#000;left:62%;top:29.5%}.vertical-lineCuatro{width:2px;height:14.5%;background-color:#000;left:83%;top:20.5%}#rectangleimput_definition,#rectangleimput_uno,#rectangleimput_dos,#rectangleimput_tres,#rectangleimput_cuatro{width:100%;height:100%;border:none;outline:none;font-size:16px;background-color:transparent;white-space:pre-wrap;text-align:justify;overflow:hidden;resize:none}.loading-message{font-size:24px;font-weight:700;text-align:center;margin-top:20px}.btn-spacing{margin-right:8px}.mr-2{margin-right:8px}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Contenedor para todos los campos de datos personales */
+.personal-container {
+  display: flex; /* Usa flexbox para alinear los elementos en línea */
+  justify-content: space-between; /* Espacia los elementos uniformemente */
+  /* Ajusta la anchura y el margen como sea necesario */
+}
+
+.map-container.hidden {
+  display:none;
+}
+
+
+.datos-personales-card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.12);
+  border-radius: 4px;
+}
+
+mat-form-field {
+  margin-right: 10px; /* Espacio entre los campos de entrada */
+}
+
+mat-form-field:last-child {
+  margin-right: 0;
+}
+
+button.mat-raised-button {
+  margin-top: 25px; /* Espacio por encima del botón */
+}
+
+.map-container {
+  position: relative; /* Cambiado a relativo para posicionar los elementos relativamente a este contenedor */
+  margin-top: 10px; /* Margen superior */
+  width: 130%; /* Ahora es 100% en lugar de 1500px */
+  height: 900px;
+  right: 20%;
+  background-color: #f0f0f0;
+}
+
+.rectangletitulo,
+.rectangle_definition,
+.rectangle_uno,
+.rectangle_dos,
+.rectangle_tres,
+.rectangle_cuatro,
+.horizontal-lineOne,
+.horizontal-lineTwo,
+.vertical-linePrincipal,
+.vertical-lineOne,
+.vertical-lineDos,
+.vertical-lineTres,
+.vertical-lineCuatro,
+.rectangle_titulo2,
+.rectangle_subtitulo1,
+.rectangle_con_subtitulo1,
+.rectangle_con_subtitulo2,
+.rectangle_subtitulo2,
+.rectangle_con_subtitulo3,
+.rectangle_subtitulo3,
+.rectangle_con_subtitulo4,
+.rectangle_subtitulo4,
+.rectangle_con_subtitulo5,
+.rectangle_con_subtitulo6,
+.rectangle_subtitulo5,
+.rectangle_subtitulo6
+
+
+{
+  position: absolute; /* Asegura el posicionamiento absoluto de los elementos */
+  box-sizing: border-box; /* Incluye el borde en el cálculo del tamaño */
+}
+
+
+
+
+.rectangletitulo {
+  width: 200px;
+  height: 50px;
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 5%;
+  left: 43%;
+  background: linear-gradient(45deg, #889230, #c3e664);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_titulo {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.rectangle_definition {
+  width: 500px;
+  height: 150px;
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 13%;
+  left: 30%;
+  background: linear-gradient(45deg, #9ea09e, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_definition {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: #c3e664; /* Fondo transparente */
+}
+
+.rectangle_uno {
+  width: 250px;
+  height: 300px;
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 35%;
+  left: 10%;
+  background: linear-gradient(45deg, #3ea6dd, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_uno {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.rectangle_dos {
+  width: 250px;
+  height: 300px;
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 35%;
+  left: 31%;
+  background: linear-gradient(45deg, #e7db7f, #e8eaeb);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_dos {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.rectangle_tres {
+  width: 250px;
+  height: 300px;
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 35%;
+  left: 52%;
+  background: linear-gradient(45deg, #f19c9c, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_tres {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.rectangle_cuatro {
+  width: 250px;
+  height: 300px;
+  border: 2px solid rgb(33, 185, 12);
+  padding: 10px;
+  top: 35%;
+  left: 73%;
+  background: linear-gradient(45deg, #90c0a5, #dee2e4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#rectangleimput_cuatro {
+  width: 100%; /* Ocupa todo el ancho del rectángulo */
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+}
+
+
+.horizontal-lineOne {
+  border-top: 3px solid black;
+  width: 13%;
+  left: 17%;
+  top: 20%;
+  transform: translateY(-50%);
+}
+
+.horizontal-lineTwo {
+  border-top: 3px solid black;
+  width: 13%;
+  left: 70.3%;
+  top: 20%;
+  transform: translateY(-50%);
+}
+
+.vertical-linePrincipal {
+  width: 2px;
+  height: 2.5%;
+  background-color: black;
+  left: 50%;
+  top: 10.5%;
+}
+
+.vertical-lineOne {
+  width: 2px;
+  height: 14.5%;
+  background-color: black;
+  left: 17%;
+  top: 20.5%;
+}
+
+.vertical-lineDos {
+  width: 2px;
+  height: 5.5%;
+  background-color: black;
+  left: 41.5%;
+  top: 29.5%;
+}
+
+.vertical-lineTres {
+  width: 2px;
+  height: 5.5%;
+  background-color: black;
+  left: 62%;
+  top: 29.5%;
+}
+
+.vertical-lineCuatro {
+  width: 2px;
+  height: 14.5%;
+  background-color: black;
+  left: 83%;
+  top: 20.5%;
+}
+
+
+#rectangleimput_definition,
+#rectangleimput_uno,
+#rectangleimput_dos,
+#rectangleimput_tres,
+#rectangleimput_cuatro {
+  width: 100%; 
+  height: 100%; /* Ocupa todo el alto del rectángulo */
+  border: none; /* Sin borde para el input */
+  outline: none; /* Sin contorno al recibir foco */
+  font-size: 16px; /* Tamaño de la fuente */
+  background-color: transparent; /* Fondo transparente */
+  white-space: pre-wrap; /* Ajusta el texto al contenedor */
+  text-align: justify; /* Justifica el texto */
+  overflow: hidden; /* Oculta el texto que excede el tamaño del contenedor */
+  resize: none; /* Evita que el usuario redimensione el input */
+}
+
+
+.loading-message {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-spacing {
+  margin-right: 8px; 
+}
+
+.mr-2 {
+  margin-right: 8px; 
+}
