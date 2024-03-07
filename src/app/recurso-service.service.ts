@@ -18,7 +18,7 @@ export class RecursoServiceService {
     formData.append('file', archivo, archivo.name);
     formData.append('categoriaId', categoriaId.toString());
 
-    return this.http.post(`${baseURL}/subir`, formData, { responseType: 'text' });
+    return this.http.post(`${baseURL}/archivos/subir`, formData, { responseType: 'text' });
   }
 
   getArchivosPorCategoria(idCategoria: number): Observable<any> {
