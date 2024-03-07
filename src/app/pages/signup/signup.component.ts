@@ -42,6 +42,7 @@ export class SignupComponent  implements OnInit{
       (data)=>{
         console.log(data);
         Swal.fire('Usuario Guardado','Usuario registrado con éxito en el sistema','success')
+        this.router.navigate(['login']);
       },(error)=>{
         console.log(error);
         this.snack.open('Ya hay un usuario registrado con ese nombre!!','Aceptar',{
@@ -49,6 +50,6 @@ export class SignupComponent  implements OnInit{
         })
       }
     )
-    this.router.navigate(['login']);
+    
   }
 }
