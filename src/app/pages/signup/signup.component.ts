@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -22,7 +23,7 @@ export class SignupComponent  implements OnInit{
     rolFormulario:''
   }
 
-  constructor(private userService:UserService, private snack:MatSnackBar){ }
+  constructor(private userService:UserService, private snack:MatSnackBar, private router:Router){ }
 
   ngOnInit(): void {
     
@@ -48,5 +49,6 @@ export class SignupComponent  implements OnInit{
         })
       }
     )
+    this.router.navigate(['login']);
   }
 }
