@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import baseURL from './helper';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class LoginService {
 
   public loginStatusSubjec = new Subject<boolean>();
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router: Router) { }
 
   //generamos el token
   public generateToken(loginData:any){
@@ -45,6 +46,8 @@ export class LoginService {
   public logout(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    this.loginStatusSubjec.next(false); // Si estás utilizando esto para manejar el estado de la sesión
+    this.router.navigate(['/home']);
     return true;
   }
 
