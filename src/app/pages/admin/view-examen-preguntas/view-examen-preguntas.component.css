@@ -97,3 +97,14 @@ button[mat-button][color="warn"]:hover {
     display: none;
   }
 }
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente si es necesario */
+  left: 100%;
+}
+
+.button-container > button {
+  margin: 0 10px; /* Añade espacio horizontal entre los botones */
+}

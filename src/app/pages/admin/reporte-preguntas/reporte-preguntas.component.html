@@ -1,7 +1,17 @@
 
 <mat-dialog-content class="mat-typography">
+  <div class="instructions-container">
+    <h2>¡Preparación de la Prueba Fácil y Rápida!</h2>
+    <p>Estimado docente, siga los pasos a continuación para imprimir las preguntas del examen:</p>
+    <ol>
+      <li>Seleccionar las preguntas y hacer clic derecho y selecionar copiar</li>
+     <li>Pegarlas en su procesador de textos favorito como Word o Google Docs para realizar ajustes adicionales antes de imprimir</li>
+      <li>Una vez que tenga el documento listo, utilice la función de impresión de su procesador de textos para obtener una copia en papel que pueda entregar a sus estudiantes.</li>
+    </ol>
+    <p>Este método garantiza flexibilidad y control total sobre el material de examen que proporcionará a sus estudiantes.</p>
+  </div>
     <!-- Solo las preguntas y opciones, sin botones ni acciones -->
-    <h2>Nombre:__________________________     Curso:____________________    Fecha:__________________</h2>
+    <h2>Aqui puedes copiar las preguntas y pegarlas en tu documento preferido para imprimirlas</h2>
     <div *ngFor="let pregunta of data.preguntas; let i = index" class="pregunta">
         
       <p class="pregunta-titulo"><strong>Pregunta {{ i + 1 }}:</strong> {{ pregunta.contenido }}</p>

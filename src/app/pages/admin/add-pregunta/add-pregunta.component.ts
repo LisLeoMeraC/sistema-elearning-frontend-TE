@@ -17,6 +17,8 @@ export class AddPreguntaComponent implements OnInit {
   preguntasAgregadas: number = 0;
   showField = false; 
   
+
+  isButtonDisabled: boolean = false;
   pregunta: any = {
     examen: {},
     contenido: '',
@@ -25,6 +27,7 @@ export class AddPreguntaComponent implements OnInit {
     opcion3: '',
     opcion4: '',
     respuesta: '',
+    justificacion:'',
     url: '',
   };
 
@@ -89,6 +92,14 @@ export class AddPreguntaComponent implements OnInit {
       return;
     }
 
+    if (
+      this.pregunta.justificacion.trim() == '' ||
+      this.pregunta.justificacion == null
+    ) {
+      return;
+    }
+
+
     this.preguntaService.guardarPregunta(this.pregunta).subscribe(
       (data) => {
         this.preguntasAgregadas++;
@@ -103,6 +114,7 @@ export class AddPreguntaComponent implements OnInit {
         this.pregunta.opcion3 = '';
         this.pregunta.opcion4 = '';
         this.pregunta.respuesta = '';
+        this.pregunta.justificaion='',
         this.pregunta.url='';
       },
       
@@ -118,11 +130,9 @@ export class AddPreguntaComponent implements OnInit {
   }
 
   generarPregunta(): void {
+    this.isButtonDisabled = true;
     this.chatgptService
-      .generateQuestion(
-        `Hazme una pregunta con 4 opciones pero con texto no muy largos mas la respuesta que diga: 
-        Respuesta: (....... con el literal por ejemplo a)) sobre el tema de ${this.titulo} mas la URL valida relacionada a la repuesta que no sea wikipedia con el formato URL: `
-      )
+      .generateQuestion(this.titulo)
       .subscribe(
         (response) => {
           if (response && response.choices && response.choices.length > 0) {
@@ -141,7 +151,9 @@ export class AddPreguntaComponent implements OnInit {
               let correctAnswer = splitContent[5]
                 .replace('Respuesta: ', '')
                 .trim();
-                          this.pregunta.url = splitContent[6].replace('URL: ', '').trim(); // Añade esta línea para la URL
+                this.pregunta.justificacion = splitContent[6].replace('Argumentación: ','').trim();
+                
+                          this.pregunta.url = splitContent[7].replace('URL: ', '').trim(); // Añade esta línea para la URL
               const answerLetter = correctAnswer.charAt(0).toUpperCase();
 
               switch (answerLetter) {
@@ -167,12 +179,18 @@ export class AddPreguntaComponent implements OnInit {
                 'Respuesta correcta asignada:',
                 this.pregunta.respuesta
               );
+              setTimeout(() => {
+                this.isButtonDisabled = false;
+              }, 5000);
             } else {
               Swal.fire(
                 'Error',
                 'La respuesta generada no tiene el formato esperado.',
                 'error'
               );
+              setTimeout(() => {
+                this.isButtonDisabled = false;
+              }, 5000);
             }
           } else {
             Swal.fire(
@@ -180,6 +198,7 @@ export class AddPreguntaComponent implements OnInit {
               'La respuesta no tiene el formato esperado.',
               'error'
             );
+            this.isButtonDisabled=false;
           }
         },
         (error) => {
@@ -189,6 +208,7 @@ export class AddPreguntaComponent implements OnInit {
             'Ocurrió un error al obtener la pregunta: ' + error.message,
             'error'
           );
+          this.isButtonDisabled = false;
         }
       );
   }

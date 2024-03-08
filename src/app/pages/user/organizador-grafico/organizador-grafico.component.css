@@ -328,12 +328,12 @@ button.mat-raised-button {
 
 
 .rectangle_subtitulo1{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 5%;
-  left: 70%;
+  left: 72%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -351,12 +351,12 @@ button.mat-raised-button {
 }
 
 .rectangle_con_subtitulo1{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 12%;
-  left: 70%;
+  left: 72%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -374,12 +374,12 @@ button.mat-raised-button {
 
 
 .rectangle_subtitulo2{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 36%;
-  left: 70%;
+  left: 72%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -399,12 +399,12 @@ button.mat-raised-button {
 
 
 .rectangle_con_subtitulo2{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 43%;
-  left: 70%;
+  left: 72%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -516,12 +516,12 @@ button.mat-raised-button {
 
 
 .rectangle_subtitulo5{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 5%;
-  left: 8%;
+  left: 12%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -539,12 +539,12 @@ button.mat-raised-button {
 }
 
 .rectangle_con_subtitulo5{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 12%;
-  left: 8%;
+  left: 12%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -562,12 +562,12 @@ button.mat-raised-button {
 
 
 .rectangle_subtitulo6{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 50px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 36%;
-  left: 8%;
+  left: 12%;
   border-radius: 10px;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -586,12 +586,12 @@ button.mat-raised-button {
 
 
 .rectangle_con_subtitulo6{
-  width: 350px; /*Largo*/
+  width: 280px; /*Largo*/
   height: 180px; /*ancho*/
   border: 2px solid rgb(33, 185, 12);
   padding: 10px;
   top: 43%;
-  left: 8%;
+  left: 12%;
   border-radius: 10px;
   background: linear-gradient(45deg, #cce4f1, #dee2e4);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);

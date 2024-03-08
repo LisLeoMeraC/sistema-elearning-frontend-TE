@@ -30,3 +30,24 @@
     }
   }
   
+
+  .instructions-container {
+  border: 1px solid #007bff;
+  background-color: #e7f3ff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.instructions-container h2 {
+  color: #0056b3;
+  margin-bottom: 15px;
+}
+
+.instructions-container ol {
+  margin-bottom: 15px;
+}
+
+.instructions-container p {
+  font-style: italic;
+}

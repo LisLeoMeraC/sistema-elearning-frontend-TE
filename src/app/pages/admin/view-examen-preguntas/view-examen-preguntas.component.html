@@ -1,8 +1,11 @@
 <h1 class="page-title">Preguntas de {{ titulo }}</h1>
 <div class="questions-container">
-  <div class="add-question-button">
+  <div class="button-container">
     <button mat-raised-button color="primary" [routerLink]="'/admin/add-pregunta/' + examenId + '/' + titulo">
       Agregar pregunta
+    </button>
+    <button mat-raised-button color="primary" (click)="openDialog()">
+      Deseo imprimir las preguntas
     </button>
   </div>
   <div class="question-cards">
@@ -37,8 +40,5 @@
     </mat-card>
    
   </div>
-  <div class="print-button">
-    <button mat-raised-button color="primary" (click)="openDialog()">Imprimir Preguntas</button>
-
-  </div>
+  
 </div>

@@ -109,7 +109,10 @@
               <div class="resultados">
                 <p><strong>Respuesta correcta: </strong> {{ pregunta.respuesta }}</p>
                 <p><strong>Tu respuesta: </strong> <span class="respuesta-incorrecta">{{ pregunta.respuestaDada }}</span></p>
+                <p><strong>Justificación: </strong> <span class="justificacion">{{ pregunta.justificacion }}</span></p>
               </div>
+
+
               <div class="flex-spacer"></div>
               <a mat-button color="accent" [href]="pregunta.url" target="_blank">
                 <mat-icon>launch</mat-icon>

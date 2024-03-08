@@ -37,7 +37,7 @@ export class AddCategoriaComponent implements OnInit {
         this.categoria.descripcion = '';
         this.categoria.uniqueCode='',
         Swal.fire('Categoría agregada','La categoría ha sido agregada con éxito','success');
-        this.router.navigate(['/admin/categorias']);
+        this.router.navigate(['/admin/asignaturas']);
       },
       (error) => {
         console.log(error);

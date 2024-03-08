@@ -1,7 +1,7 @@
 .question-form-container {
   display: flex;
   align-items: center;
-  height: 80vh;
+  height: 140vh;
   background-color: #f2f2f2;
 }
 
@@ -75,11 +75,14 @@ textarea, input[type="text"], select {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px; /* Esta es la distancia entre las opciones, puedes ajustarla según sea necesario */
 }
 
 .option {
-  flex: 1;
-  margin-right: 10px;
+  flex: 0 0 48%; /* Esto hará que cada opción tenga un ancho máximo del 48% del contenedor */
+  /* La suma del porcentaje de flex-basis y el espacio (gap) debe ser <= 100% para que dos elementos quepan por fila */
+  box-sizing: border-box; /* Asegúrate de que padding y border estén incluidos en el ancho */
+  margin-bottom: 10px; /* Espacio debajo de cada opción */
 }
 
 .save-button {
@@ -98,4 +101,14 @@ textarea, input[type="text"], select {
 
 .button-space {
   margin-left: 10px; /* Ajusta el valor según el espacio deseado */
+}
+
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical; /* Permite al usuario ajustar el tamaño verticalmente si es necesario */
 }
