@@ -114,7 +114,7 @@ export class AddPreguntaComponent implements OnInit {
         this.pregunta.opcion3 = '';
         this.pregunta.opcion4 = '';
         this.pregunta.respuesta = '';
-        this.pregunta.justificaion='',
+        this.pregunta.justificacion='',
         this.pregunta.url='';
       },
       
