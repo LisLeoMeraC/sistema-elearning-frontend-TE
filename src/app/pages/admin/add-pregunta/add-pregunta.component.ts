@@ -198,7 +198,9 @@ export class AddPreguntaComponent implements OnInit {
               'La respuesta no tiene el formato esperado.',
               'error'
             );
-            this.isButtonDisabled=false;
+            setTimeout(() => {
+              this.isButtonDisabled = false;
+            }, 5000);
           }
         },
         (error) => {
