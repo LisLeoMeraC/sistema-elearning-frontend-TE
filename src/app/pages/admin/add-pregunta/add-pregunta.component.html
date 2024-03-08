@@ -46,10 +46,11 @@
             <input type="text" id="url" name="url" [(ngModel)]="pregunta.url">
           </div>
 
-          <div class="option">
-            <label for="justificacion">justificacion</label>
-            <input type="text" id="justificacion" name="justificacion" [(ngModel)]="pregunta.justificacion">
+          <div class="form-group">
+            <label for="justificacion">Justificación</label>
+            <textarea id="justificacion" name="justificacion" [(ngModel)]="pregunta.justificacion" rows="4"></textarea>
           </div>
+          
 
           <div class="text-center">
             <button class="save-button">Guardar</button>
