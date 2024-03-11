@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class RecursoServiceService {
 
-  private baseUrl = 'https://sistemaelearning-backendte-1.onrender.com/archivos';
-  private viewRecursos= 'https://sistemaelearning-backendte-1.onrender.com/categoria'
+  private baseUrl = 'http://localhost:8080/archivos';
+  private viewRecursos= 'http://localhost:8080/archivos/categoria'
 
   constructor(private http: HttpClient) { }
 

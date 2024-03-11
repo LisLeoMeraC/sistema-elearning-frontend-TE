@@ -1,59 +1,46 @@
+.test-form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
 
-  .test-form-card {
-    
-    padding: 50px;
-    margin: auto;
-    max-width: 700px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 50px;
+.test-form {
+  display: flex;
+  flex-direction: column;
+}
 
-    
-    
-  }
-  
-  .form-title {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  .full-width {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .half-width {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-  }
-  
-  .form-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .publish-toggle {
-    margin: 20px 0;
-  }
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
-  .container{
-    margin-top: 100px;
-  }
-  
-  .submit-container {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  /* Estilos para pantallas pequeñas */
-  @media (max-width: 600px) {
-    .half-width {
-      width: 100%;
-    }
-    
-    .form-row {
-      flex-direction: column;
-    }
-  }
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
 
- 
+.half-width {
+  width: calc(50% - 10px);
+  margin-right: 20px;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.publish-toggle {
+  margin-bottom: 20px;
+}
+
+.submit-container {
+  text-align: center;
+}
+
+.submit-container button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+}
