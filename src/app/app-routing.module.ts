@@ -118,7 +118,7 @@ const routes: Routes = [
     canActivate:[NormalGuard],
     children : [
       {
-        path:'load-examen',
+        path:'load-examen/:id',
         component:LoadExamenComponent
       },
       {

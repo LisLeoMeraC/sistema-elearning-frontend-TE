@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baserUrl from './helper';
 
@@ -18,7 +18,12 @@ export class CategoriaService {
   }
 
   public listartodasCategorias(){
-    return this.http.get(`${baserUrl}/categoria/todas`);
+    return this.http.get(`${baserUrl}/categoria/usuario-logueado`);
+  }
+
+  public verificarCodigo(codigoAcceso: string) {
+    const params = new HttpParams().set('codigoAcceso', codigoAcceso);
+    return this.http.post(`${baserUrl}/categoria/verificar`, params);
   }
 }
 

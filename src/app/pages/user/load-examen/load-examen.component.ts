@@ -18,23 +18,21 @@ export class LoadExamenComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.route.params.subscribe((params) => {
-        this.catId = params['catId'];
-
-          console.log("Cargando todos las evaluaciones");
-          this.examenService.obtenerExamenesActivos().subscribe(
-            (data) => {
-              console.log("Respuesta completa: ",data);
-              this.examenes = data;
-              //console.log(this.examenes);
-            },
-            (error) => {
-              console.log(error);
-            }
-          )
+    this.route.params.subscribe((params) => {
+      const catId = params['id']; // Obtén el ID de la categoría de los parámetros de la ruta
+  
+      console.log("Cargando todos las evaluaciones");
+      this.examenService.obtenerExamenesActivosDeUnaCategoria(catId).subscribe(
+        (data) => {
+          console.log("Respuesta completa: ", data);
+          this.examenes = data;
+        },
+        (error) => {
+          console.log(error);
         }
-        
-      )
+      );
+    });
+
   }
 
 }

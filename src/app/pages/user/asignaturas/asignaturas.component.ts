@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class AsignaturasComponent {
 
+  codigoAcceso: string = '';
+
   categorias:any = [
 
   ]
@@ -19,6 +21,11 @@ export class AsignaturasComponent {
   verRecursos(idCategoria: number) {
     // Navegar al componente que muestra los recursos pasando el ID de categoría
     this.router.navigate(['/user-dashboard/view-recursos', idCategoria]);
+  }
+
+  verCuestionarios(idCategoria: number) {
+    // Navegar al componente que muestra los recursos pasando el ID de categoría
+    this.router.navigate(['/user-dashboard/load-examen', idCategoria]);
   }
 
 
@@ -34,5 +41,16 @@ export class AsignaturasComponent {
       }
     )
   }
+
+  verificarCodigo() {
+    this.categoriaService.verificarCodigo(this.codigoAcceso)
+        .subscribe(
+            () => {
+              Swal.fire('Error !!','Se ha aregistrado correctamente','error');
+             },
+            error => { /* Manejar el error */ }
+        )
+}
+
 
 }
