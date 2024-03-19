@@ -40,4 +40,10 @@ export class ExamenService {
   public obtenerExamenesActivosDeUnaCategoria(categoriaId:any){
     return this.http.get(`${baserUrl}/examen/categoria/activo/${categoriaId}`);
   }
+
+
+  //listar examenes por docente 
+  public listarCuestionariosPorUsuario() {
+    return this.http.get(`${baserUrl}/examen/usuario`);
+  }
 }

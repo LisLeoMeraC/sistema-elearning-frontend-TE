@@ -42,13 +42,15 @@
           ></textarea>
         </mat-form-field>
 
-        
-        
-        
+        <div class="unique-code-generator">
+          <button mat-button (click)="generateUniqueCode()" [disabled]="!categoria.titulo" type="button" class="generate-button">Código de asignatura</button>
+          <input matInput placeholder="Código único" [value]="categoria.uniqueCode" readonly class="code-input">
+        </div>
+      
         <br>
 
         <div class="button-container">
-          <button mat-raised-button color="primary"  type="submit">Guardar</button>
+          <button mat-raised-button color="primary" [disabled]="!categoria.uniqueCode"  type="submit">Guardar</button>
         </div>
       </form>
     </div>

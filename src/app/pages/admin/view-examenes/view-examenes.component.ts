@@ -16,7 +16,7 @@ export class ViewExamenesComponent {
   constructor(private examenService:ExamenService) { }
 
   ngOnInit(): void {
-    this.examenService.listarCuestionarios().subscribe(
+    this.examenService.listarCuestionariosPorUsuario().subscribe(
       (dato:any) => {
         this.examenes = dato;
         this.examenesFiltrados = dato;
@@ -58,5 +58,7 @@ export class ViewExamenesComponent {
       }
     })
   }
+
+
 
 }
