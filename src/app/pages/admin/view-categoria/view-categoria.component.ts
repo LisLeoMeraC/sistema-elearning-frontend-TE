@@ -23,7 +23,7 @@ export class ViewCategoriaComponent {
         this.categorias = dato;
         console.log(this.categorias);
       },
-      (error) => {
+      (error: any) => {
         console.log(error);
         Swal.fire('Error !!','Error al cargar las categorias','error');
       }
@@ -36,7 +36,7 @@ export class ViewCategoriaComponent {
       // otras propiedades como height, data, etc.
     });
   
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       console.log('El modal se cerró');
       // Vuelve a listar las asignaturas después de cerrar el modal
       this.listarAsignaturas();
@@ -50,7 +50,7 @@ export class ViewCategoriaComponent {
         this.categorias = dato;
         console.log(this.categorias);
       },
-      (error) => {
+      (error: any) => {
         console.log(error);
         Swal.fire('Error !!', 'Error al cargar las categorias', 'error');
       }

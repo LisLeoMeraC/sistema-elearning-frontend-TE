@@ -1,80 +1,64 @@
-<p-button label="Submit"></p-button>
-<div class="bootstrap-wrapper">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Contenido del texto -->
-        <div class="col-lg-6 col-md-12">
+<div class="login-wrapper">
+  <div class="login-container">
+    <mat-card class="login-card">
+      <div class="card-content">
+        <div class="image-section">
           <mat-card class="welcome-card">
             <mat-card-header>
               <mat-card-title class="welcome-title">Bienvenido a EduGeniusAI</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <p class="texto">
-                EduGeniusAI es una sistema web que mejora la educación mediante la creación y compartición 
+                EduGeniusAI es un sistema web que mejora la educación mediante la creación y compartición 
                 de cuestionarios y recursos didácticos para docentes, y la posibilidad para los estudiantes 
                 de medir su conocimiento, recibir recomendaciones personalizadas de videos y enlaces, así 
                 como crear organizadores gráficos. Explore todas las funciones disponibles para mejorar su 
                 experiencia educativa
               </p>
-              <div class="actions-container">
-                <button mat-raised-button color="primary" routerLink="/login">Iniciar sesión</button>
-                <button mat-stroked-button color="accent" routerLink="/signup">Registrarse</button>
-                
-
-                <p-button icon="pi pi-check"></p-button>
-<p-button label="Submit" icon="pi pi-check"></p-button>
-<p-button label="Submit" icon="pi pi-check" iconPos="right"></p-button>
-                
-              </div>
             </mat-card-content>
           </mat-card>
         </div>
-        <!-- Contenedor de la imagen -->
-        <div class="col-lg-5 col-md-12 align-self-start">
-          <mat-card class="login-card">
-            <div class="card-content">
-              <div class="form-section">
-                <h1 class="login-title">Iniciar Sesión</h1>
-                <form (ngSubmit)="formSubmit()" class="login-form">
-                  <mat-form-field class="full-width">
-                    <input
-                      [(ngModel)]="loginData.username"
-                      name="username"
-                      required
-                      matInput
-                      placeholder="Nombre de usuario"
-                    />
-                  </mat-form-field>
-      
-                  <mat-form-field class="full-width">
-                    <input
-                      [(ngModel)]="loginData.password"
-                      name="password"
-                      required
-                      type="password"
-                      matInput
-                      placeholder="Contraseña"
-                    />
-                  </mat-form-field>
-      
-                  <button mat-flat-button color="primary" class="login-btn">
-                    Entrar
-                  </button>
-                  <div class="additional-options">
-                    <a  class="forgot-password">Olvidé mi contraseña</a>
-                    <a [routerLink]="'/signup'" class="create-account">¿Sin cuenta? ¡Crear una ahora!</a>
-                  </div>
-      
-                  <div class="social-login">
-                    <button mat-button class="social-btn google">G+</button>
-                    <button mat-button class="social-btn facebook">f</button>
-                  </div>
-                </form>
-              </div>
+        <div class="form-section">
+          <h1 class="login-title">Iniciar Sesión</h1>
+          <form (ngSubmit)="formSubmit()" class="login-form">
+            <div class="p-inputgroup full-width">
+              <input
+                [(ngModel)]="loginData.username"
+                name="username"
+                required
+                pInputText
+                placeholder="Nombre de usuario"
+                (keyup.enter)="formSubmit()"
+              />
             </div>
-          </mat-card>
+
+            <div class="p-inputgroup full-width">
+              <input
+                [(ngModel)]="loginData.password"
+                name="password"
+                required
+                type="password"
+                pInputText
+                placeholder="Contraseña"
+                (keyup.enter)="formSubmit()"
+              />
+            </div>
+
+            <button pButton type="button" label="Entrar" class="login-btn" (click)="formSubmit()"></button>
+
+             
+            <div class="additional-options">
+              <a  class="forgot-password">Olvidé mi contraseña</a>
+              <a class="create-account">¿Sin cuenta? ¡Crear una ahora!</a>
+            </div>
+
+            <div class="social-login">
+              <p-button label="Registrarse" [raised]="true" severity="danger" (click)="showDialog()"></p-button>
+              
+            </div>
+          </form>
         </div>
       </div>
-    </div>
+    </mat-card>
   </div>
-  
+</div>

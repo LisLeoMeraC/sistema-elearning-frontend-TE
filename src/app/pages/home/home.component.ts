@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { SignupComponent } from '../signup/signup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +12,13 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class HomeComponent implements OnInit{
 
+  visible: boolean = false;
   loginData = {
     "username" : '',
     "password" : ''
   }
 
-  constructor(private snack:MatSnackBar,private loginService:LoginService,private router:Router) { }
+  constructor(private snack:MatSnackBar,private loginService:LoginService,private router:Router,private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -67,6 +70,19 @@ export class HomeComponent implements OnInit{
       }
     )
   }
+
+  showDialog() {
+    const dialogRef = this.dialog.open(SignupComponent, {
+      width: '700px', // ajusta el ancho según tus necesidades
+      // otras propiedades como height, data, etc.
+    });
+  
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('El modal se cerró');
+      // Vuelve a listar las asignaturas después de cerrar el modal
+      
+    });
+}
 
 }
 

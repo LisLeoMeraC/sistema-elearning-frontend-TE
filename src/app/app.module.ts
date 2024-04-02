@@ -7,7 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //componente de un boton de angular material
 import { ButtonModule } from 'primeng/button';
-
+import { InputTextModule } from 'primeng/inputtext';
+import { CardModule } from 'primeng/card';
+import { MenubarModule } from 'primeng/menubar';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -132,7 +135,12 @@ import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.
     MatSidenavModule,
     MatExpansionModule,
 
-    ButtonModule
+
+    InputTextModule,
+    ButtonModule,
+    CardModule,
+    MenubarModule,
+    DropdownModule
 
   ],
   providers: [authInterceptorProviders],

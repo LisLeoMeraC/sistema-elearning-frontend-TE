@@ -1,66 +1,109 @@
-<div class="bootstrap-wrapper">
-    <div class="container">
-      <div class="row" style="margin-top: 20px;">
-        <div class="col-md-6 offset-md-3">
-          <mat-card class="login-card">
-            <div class="container text-center">
-              <img src="../../../assets/agregar-usuario.png" width="100" height="100">
-            </div>
-            <h1 class="text-center">Regístrate aquí</h1>
-            <form (ngSubmit)="formSubmit()">
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Nombre de Usuario</mat-label>
-                        <input required [(ngModel)]="user.username" name="username" matInput placeholder="Escriba su nombre de usuario">
-                        <mat-hint>El nombre del usuario debe ser unico</mat-hint>
-                    </mat-form-field>
-                    
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Contraseña</mat-label>
-                        <input required [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Escriba su contraseña">
-                    </mat-form-field>
+<div class="text-center">
+  <h1 class="titulo-registro">
+    <img src="../../../assets/usuario.png" class="icono-registro" alt="Icon">
+    Regístrate aquí
+  </h1>
+</div>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Nombres</mat-label>
-                        <input [(ngModel)]="user.nombre" name="nombre" matInput placeholder="Escriba su Nombres">
-                    </mat-form-field>
+<form (ngSubmit)="formSubmit()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>person</mat-icon>
+          Nombre de Usuario
+        </mat-label>
+        <input required [(ngModel)]="user.username" name="username" matInput placeholder="Escriba su nombre de usuario">
+        <mat-hint>El nombre del usuario debe ser único</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>lock</mat-icon>
+          Contraseña
+        </mat-label>
+        <input required [(ngModel)]="user.password" name="password" type="password" matInput
+          placeholder="Escriba su contraseña">
+      </mat-form-field>
+    </div>
+  </div>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Apellidos</mat-label>
-                        <input [(ngModel)]="user.apellido" name="apellido" matInput placeholder="Escriba sus Apellidos">
-                    </mat-form-field>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>person</mat-icon>
+          Nombres
+        </mat-label>
+        <input [(ngModel)]="user.nombre" name="nombre" matInput placeholder="Escriba su Nombres">
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>person</mat-icon>
+          Apellidos
+        </mat-label>
+        <input [(ngModel)]="user.apellido" name="apellido" matInput placeholder="Escriba sus Apellidos">
+      </mat-form-field>
+    </div>
+  </div>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Correo electronico</mat-label>
-                        <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Escriba su Email">
-                    </mat-form-field>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>email</mat-icon>
+          Correo electrónico
+        </mat-label>
+        <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Escriba su Email">
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>phone</mat-icon>
+          Contacto
+        </mat-label>
+        <input [(ngModel)]="user.telefono" name="telefono" matInput placeholder="Escriba su numero de Contacto">
+      </mat-form-field>
+    </div>
+  </div>
 
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Contacto</mat-label>
-                        <input [(ngModel)]="user.telefono" name="telefono"  matInput placeholder="Escriba su numero de Contacto">
-                    </mat-form-field>
-
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Nro. Identidad</mat-label>
-                        <input [(ngModel)]="user.identidad" name="identidad"  matInput placeholder="Escriba su numero de Identidad">
-                    </mat-form-field>
-
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Rol</mat-label>
-                        <mat-select [(ngModel)]="user.rolFormulario" name="rol">
-                            <mat-option value="docente">Docente</mat-option>
-                            <mat-option value="estudiante">Estudiante</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    
-
-                    <div class="container text-center">
-                        <button mat-raised-button class="custom-orange-btn">Registrar</button>
-                        <button type="reset" mat-raised-button class="custom-clear-btn">Limpiar</button>
-                      </div>
-                    </form>
-                    <br><br><br>
-                  </mat-card>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>assignment_ind</mat-icon>
+          Nro. Identidad
+        </mat-label>
+        <input [(ngModel)]="user.identidad" name="identidad" matInput placeholder="Escriba su numero de Identidad">
+      </mat-form-field>
+    </div>
+    <div class="form-group col-md-6">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          <mat-icon>assignment_ind</mat-icon>
+          Rol
+        </mat-label>
+        <mat-select [(ngModel)]="user.rolFormulario" name="rol">
+          <mat-option value="docente">Docente</mat-option>
+          <mat-option value="estudiante">Estudiante</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  
+  <div class="container text-center">
+    <button mat-raised-button color="primary" class="mat-button mr-2">
+      <mat-icon>person_add</mat-icon>
+      Registrar
+    </button>
+    <button type="button" mat-raised-button color="warn" class="mat-button" (click)="CloseModal()">
+      <mat-icon>clear</mat-icon>
+      Cancelar
+    </button>
+  </div>
+</form>
+<br><br><br>
