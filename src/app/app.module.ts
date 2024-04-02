@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //componente de un boton de angular material
+import { ButtonModule } from 'primeng/button';
+
+
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -127,7 +130,9 @@ import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.
     MatGridListModule,
     MatProgressBarModule,
     MatSidenavModule,
-    MatExpansionModule
+    MatExpansionModule,
+
+    ButtonModule
 
   ],
   providers: [authInterceptorProviders],

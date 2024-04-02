@@ -84,3 +84,10 @@
   margin-top: 5px; 
   margin-left: -20px;
 }
+
+.mat-button {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  margin: 80px;
+}

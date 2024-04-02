@@ -1,76 +1,93 @@
 .w100{
-    width: 100%;
-  }
+  width: 100%;
+}
 
 .container{
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 /* Estilos para el control de Generar Código Único */
 .unique-code-generator {
-  display: flex;
-  align-items: center;
-  margin-top: 16px;
+display: flex;
+align-items: center;
+margin-top: 16px;
 }
 
 .generate-button {
-  background-color: #4caf50; /* Color de fondo */
-  color: #fff; /* Color del texto */
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Transición suave */
+background-color: #4caf50; /* Color de fondo */
+color: #fff; /* Color del texto */
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+cursor: pointer;
+font-weight: bold;
+transition: background-color 0.3s ease; /* Transición suave */
 }
 
 .generate-button:disabled {
-  background-color: #ccc; /* Color de fondo cuando está deshabilitado */
-  cursor: not-allowed;
+background-color: #ccc; /* Color de fondo cuando está deshabilitado */
+cursor: not-allowed;
 }
 
 .generate-button:hover {
-  background-color: #45a049; /* Color de fondo al pasar el mouse */
+background-color: #45a049; /* Color de fondo al pasar el mouse */
 }
 
 .code-input {
-  flex: 1;
-  margin-left: 16px;
-  color: #333; /* Color del texto del código único */
-  background-color: #f9f9f9; /* Color de fondo del código único */
-  border: 1px solid #ccc;
-  padding: 8px; /* Reducir el padding para hacerlo más angosto */
-  border-radius: 4px;
-  font-family: Arial, sans-serif;
-  font-size: 14px; /* Tamaño de fuente ajustado */
-  width: 120px; /* Ajustar el ancho del input según tus preferencias */
+flex: 1;
+margin-left: 16px;
+color: #333; /* Color del texto del código único */
+background-color: #f9f9f9; /* Color de fondo del código único */
+border: 1px solid #ccc;
+padding: 8px; /* Reducir el padding para hacerlo más angosto */
+border-radius: 4px;
+font-family: Arial, sans-serif;
+font-size: 14px; /* Tamaño de fuente ajustado */
+width: 120px; /* Ajustar el ancho del input según tus preferencias */
 }
 
 
 
 .content-flex {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
+display: flex;
+align-items: center;
+margin-top: 20px;
 }
 
 .imagenReducida {
-  width: 50px;
-  height: auto;
-  margin-right: 15px;
+width: 50px;
+height: auto;
+margin-right: 15px;
 }
 
 @media (max-width: 600px) {
-  .content-flex {
-      flex-direction: column;
-  }
+.content-flex {
+    flex-direction: column;
+}
 
-  .imagenReducida {
-      margin-right: 0;
-      margin-bottom: 20px;
-  }
+.imagenReducida {
+    margin-right: 0;
+    margin-bottom: 20px;
+}
 }
 .flex-wrapper {
-  margin-top: 5px; 
-  margin-left: -20px;
+margin-top: 5px; 
+margin-left: -20px;
+}
+
+.titulo{
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.button-margin {
+  margin-left: 10px;
 }

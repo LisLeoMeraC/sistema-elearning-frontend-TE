@@ -1,17 +1,17 @@
 <div class="flex-wrapper">
   <mat-card>
-    <mat-card-content class="content-flex">
-      <img class="imagenReducida" mat-card-image src="../../../../assets/logolibro.png" alt="Descripción de la imagen">
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/asginatura.png" alt="Descripción de la imagen">
       <div>
         <h2>Listado de asignaturas</h2>
         <p>
           En este panel se visualiza el listado de todas las asignaturas registradas en el sistema
         </p>
       </div>
+      <button mat-raised-button color="accent" class="mat-button" (click)="openAsignaturaModal()">Nueva Asignatura</button>
     </mat-card-content>
   </mat-card>
 </div>
-
 
 
 <div class="categories-container">
