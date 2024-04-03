@@ -1,65 +1,19 @@
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
-    <mat-nav-list>
-      <mat-accordion>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <img src="../../../../assets/libros.png" class="menu-icon"/> <!-- Imagen personalizada para Mis asignaturas -->
-            <mat-panel-title routerLinkActive="active-link">
-              Mis asignaturas
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <a mat-list-item routerLink="/admin/asignaturas" routerLinkActive="active-link">
-            <span>Listado de asignaturas</span>
-          </a>
-          <a mat-list-item routerLink="/admin/add-asignatura" routerLinkActive="active-link">
-            <span>Agregar asignatura</span>
-          </a>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <img src="../../../../assets/cuestionario.png" class="menu-icon"/>
-            <mat-panel-title routerLinkActive="active-link">
-              Cuestionarios
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <a mat-list-item routerLink="/admin/cuestionarios" routerLinkActive="active-link">
-            <span>Listado de cuestionarios</span>
-          </a>
-          <a mat-list-item routerLink="/admin/add-cuestionario" routerLinkActive="active-link">
-            <span>Crear Cuestionario</span>
-          </a>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <img src="../../../../assets/recursoseducativos.png" class="menu-icon"/>
-            <mat-panel-title routerLinkActive="active-link">
-              Recursos educativos
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <a mat-list-item routerLink="/admin/recursos-educativos" routerLinkActive="active-link">
-            <span>Subir recursos</span>
-          </a>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <img src="../../../../assets/usuario.png" class="menu-icon"/>
-            <mat-panel-title routerLinkActive="active-link">
-              Mis datos personales
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <a mat-list-item routerLink="/admin/datos-personales" routerLinkActive="active-link">
-            <span>Ver datos personales</span>
-          </a>
-        </mat-expansion-panel>
-
-      </mat-accordion>
-    </mat-nav-list>
+  <mat-sidenav mode="side" opened class="sidone">
+    <mat-nav-list appAccordion class="accordion">
+    
+      <mat-card class="menu-card" routerLink="/admin/asignaturas" routerLinkActive="active-link">
+          <div class="menu-item">
+            <img src="../../../../assets/acceso.png" class="menu-icon"/> <!-- Add your icon here -->
+            <mat-card-content class="menu-content">
+              <mat-card-title>Mis asignaturas</mat-card-title>
+              <mat-card-subtitle>Genera tu organizador gráfico  </mat-card-subtitle>
+            </mat-card-content>
+          </div>
+        </mat-card>
+</mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <!-- Main content goes here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

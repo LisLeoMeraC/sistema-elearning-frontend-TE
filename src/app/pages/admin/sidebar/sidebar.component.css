@@ -1,20 +1,28 @@
 mat-sidenav-container {
-    height: 150vh;
-    
+    height: 96vh;
+    width: 40vh;
+    background-color: #efeff1fb;
     font-family: 'Roboto', sans-serif;
     
 }
+
+mat-sidenav-content {
+  background-color: rgba(255, 250, 250, 0.966);
+  padding: 0px; /* Agrega un espacio de relleno para separar el contenido del borde */
+  width: 10%;
+}
   
   mat-sidenav {
-    width: 300px; /* Ajusta el ancho para que coincida con tus opciones desplegadas */
+    width: 100px; /* Ajusta el ancho para que coincida con tus opciones desplegadas */
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.24);
   }
   
   .mat-expansion-panel-header {
-    background-color: #eff0f3; /* Un azul más oscuro similar al de la imagen */
+    background-color: #f2f3ef; /* Un azul más oscuro similar al de la imagen */
     color: white;
+    
 
-    width: calc(100% - 10px);
+    width: calc(1200% - 10px);
     box-sizing: border-box;
     border-radius: 4px; /* Esquinas redondeadas para los headers */
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 
@@ -31,10 +39,12 @@ mat-sidenav-container {
   .mat-expansion-panel-body {
     background-color: #E8EAF6; /* Fondo claro para el cuerpo del panel */
     padding: 0; /* Elimina el padding para que las opciones ocupen todo el ancho */
+    
   }
   
   mat-icon {
     color: white; /* Iconos en blanco para contrastar con el fondo azul */
+    
   }
   
   a {
@@ -68,13 +78,46 @@ mat-sidenav-container {
 }
   
   /* Establece el color de fondo blanco para el contenido principal */
-  mat-sidenav-content {
-    background-color: white;
-    padding: 20px; /* Agrega un espacio de relleno para separar el contenido del borde */
-  }
+
 
   .menu-icon {
-    height: 24px; /* Ajusta el tamaño según necesites */
-    width: 24px;  /* Ajusta el tamaño según necesites */
-    margin-right: 12px; /* Ajusta el margen a tu preferencia */
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space between icon and text */
+    
+  }
+
+  .menu-card {
+    transition: box-shadow 0.30s;
+    cursor: pointer;
+    text-align: center; /* Center the text */
+    width: 230px;
+    
+  }
+  
+  .menu-card:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items */
+   
+  }
+  
+  .menu-icon {
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space between icon and text */
+    
+  }
+  
+  .menu-content {
+    padding: 0; /* Remove padding if needed */
+    
+  }
+
+  .sidone{
+    width: 250px;
   }

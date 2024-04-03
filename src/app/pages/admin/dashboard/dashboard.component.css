@@ -1,0 +1,10 @@
+.container-fluid{
+    background-color: white;
+}
+.bootstrap-wrapper{
+    background-color: white;
+}
+
+.col-md-9{
+    width: 500px;
+}
