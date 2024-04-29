@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import Swal from 'sweetalert2';
 import { ReportePreguntasComponent } from '../reporte-preguntas/reporte-preguntas.component';
+import { AddPreguntaComponent } from '../add-pregunta/add-pregunta.component';
 
 @Component({
   selector: 'app-view-examen-preguntas',
@@ -42,6 +43,20 @@ export class ViewExamenPreguntasComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('El dialogo fue cerrado');
+    });
+  }
+
+
+  openAddPreguntasModal() {
+    const dialogRef = this.dialog.open(AddPreguntaComponent, {
+      width: '1000px', // ajusta el ancho según tus necesidades
+      // otras propiedades como height, data, etc.
+    });
+  
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('El modal se cerró');
+      // Vuelve a listar las asignaturas después de cerrar el modal
+      //this.listarAsignaturas();
     });
   }
 

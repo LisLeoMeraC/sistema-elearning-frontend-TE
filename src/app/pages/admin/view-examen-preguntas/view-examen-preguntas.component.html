@@ -1,44 +1,31 @@
 <h1 class="page-title">Preguntas de {{ titulo }}</h1>
 <div class="questions-container">
   <div class="button-container">
-    <button mat-raised-button color="primary" [routerLink]="'/admin/add-pregunta/' + examenId + '/' + titulo">
-      Agregar pregunta
-    </button>
-    <button mat-raised-button color="primary" (click)="openDialog()">
-      Deseo imprimir las preguntas
-    </button>
+    <button pButton label="Agregar pregunta" icon="pi pi-plus" class="p-button-secondary" [routerLink]="'/admin/add-pregunta/' + examenId + '/' + titulo"></button>
+    <button pButton label="Deseo imprimir las preguntas" icon="pi pi-print" class="p-button-secondary" (click)="openDialog()"></button>
   </div>
-  <div class="question-cards">
-    <mat-card *ngFor="let p of preguntas; let i = index" class="question-card">
-      <mat-card-content>
-        <p class="question-number"><b>{{ i + 1 }})</b></p>
-        <p class="question-content">{{ p.contenido }}</p>
-        <div class="options">
-          <div class="option">
-            <p><b>1) {{ p.opcion1 }}</b></p>
-          </div>
-          <div class="option">
-            <p><b>2) {{ p.opcion2 }}</b></p>
-          </div>
-          <div class="option">
-            <p><b>3) {{ p.opcion3 }}</b></p>
-          </div>
-          <div class="option">
-            <p><b>4) {{ p.opcion4 }}</b></p>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
-        <p class="correct-answer">
-          <b>Respuesta correcta: {{ p.respuesta }}</b>
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="eliminarPregunta(p.preguntaId)" color="warn">Eliminar</button>
-        <button mat-button [routerLink]="'/admin/pregunta/' + p.preguntaId" color="primary">Actualizar</button>
-        
-      </mat-card-actions>
-    </mat-card>
-   
-  </div>
-  
+  <p-accordion>
+    <p-accordionTab *ngFor="let p of preguntas; let i = index" header="{{ i + 1 }}) {{ p.contenido }}">
+      <div class="options">
+        <ul>
+          <li><b>1) {{ p.opcion1 }}</b></li>
+          <li><b>2) {{ p.opcion2 }}</b></li>
+          <li><b>3) {{ p.opcion3 }}</b></li>
+          <li><b>4) {{ p.opcion4 }}</b></li>
+        </ul>
+      </div>
+      <mat-divider></mat-divider>
+      <p class="correct-answer">
+        <b>Respuesta correcta: {{ p.respuesta }}</b>
+      </p>
+      <div class="action-buttons">
+        <button mat-mini-fab color="warn" (click)="eliminarPregunta(p.preguntaId)" matTooltip="Eliminar pregunta">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" [routerLink]="'/admin/pregunta/' + p.preguntaId" matTooltip="Actualizar pregunta">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </p-accordionTab>
+  </p-accordion>
 </div>

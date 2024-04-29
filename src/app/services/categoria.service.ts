@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baserUrl from './helper';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,7 @@ export class CategoriaService {
     const params = new HttpParams().set('codigoAcceso', codigoAcceso);
     return this.http.post(`${baserUrl}/categoria/verificar`, params);
   }
+
+  
 }
 

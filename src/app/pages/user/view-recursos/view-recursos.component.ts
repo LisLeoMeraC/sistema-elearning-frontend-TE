@@ -17,6 +17,7 @@ export class ViewRecursosComponent implements OnInit {
       const idCategoria = +params['id']; // El signo '+' convierte la cadena a número
       this.recursoService.getArchivosPorCategoria(idCategoria).subscribe(data => {
         this.archivos = data;
+        console.log(data)
         
       });
     });
@@ -33,5 +34,42 @@ export class ViewRecursosComponent implements OnInit {
       return 'insert_drive_file'; // Ícono por defecto para otros tipos de archivos
     }
   }
+
+  descargarArchivo(id: number) {
+    this.recursoService.descargarArchivo(id).subscribe((data: Blob) => {
+
+      const randomString = Math.random().toString().slice(2,12);
+      // Crea un enlace en el documento
+      const a = document.createElement('a');
+      const objectUrl = window.URL.createObjectURL(data);
+  
+      // Utiliza el nombre del archivo original cuando lo asignas
+      a.href = objectUrl;
+      a.download = `archivo_${randomString}`;// Aquí deberías poner el nombre real del archivo que deseas.
+      document.body.appendChild(a); // Añade el enlace al documento
+      a.click();
+      window.URL.revokeObjectURL(objectUrl); // Limpia la URL del objeto Blob
+      a.remove(); // Elimina el enlace una vez que se ha hecho clic
+    });
+  }
+  
+  convertirTamanoA_MB(tamanoEnBytes: number): number {
+    return tamanoEnBytes / 1024 / 1024;
+  }
+
+  obtenerNombreSinExtension(nombreArchivo: string): string {
+    return nombreArchivo.replace(/\.[^/.]+$/, "");
+  }
+
+  // Obtiene la extensión limpia del tipo de archivo
+  obtenerExtensionArchivo(tipoArchivo: string): string {
+    const matches = tipoArchivo.match(/\/([a-z]+)/i);
+    if (matches && matches[1]) {
+      return matches[1].toUpperCase(); // Retorna la extensión en mayúsculas
+    }
+    return "DESCONOCIDO"; // Retorna un valor por defecto si no encuentra la extensión
+  }
+
+  
 
 }

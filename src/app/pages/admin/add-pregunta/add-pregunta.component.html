@@ -5,57 +5,57 @@
       <div class="card-header">
         <h2>Digite los detalles de la nueva pregunta</h2>
         <div class="generate-button-container">
-          <button class="generate-button" (click)="generarPregunta()" [disabled]="isButtonDisabled">Generar Pregunta</button>
+          <button pButton type="button" label="Generar Pregunta" (click)="generarPregunta()" [disabled]="isButtonDisabled" class="generate-button"></button>
         </div>
       </div>
       <div class="card-content">
         <form (submit)="formSubmit()">
           <div class="form-group">
             <label for="preguntaContenido">Contenido de la pregunta</label>
-            <textarea rows="8" id="preguntaContenido" placeholder="Escribe aquí" name="contenido" [(ngModel)]="pregunta.contenido"></textarea>
+            <textarea id="preguntaContenido" placeholder="Escribe aquí" name="contenido" [(ngModel)]="pregunta.contenido" pInputTextarea rows="8"></textarea>
           </div>
           <div class="options">
             <div class="option">
               <label for="opcion1">Opción 1</label>
-              <input type="text" id="opcion1" name="opcion1" [(ngModel)]="pregunta.opcion1">
+              <input id="opcion1" name="opcion1" [(ngModel)]="pregunta.opcion1" pInputText type="text">
             </div>
             <div class="option">
               <label for="opcion2">Opción 2</label>
-              <input type="text" id="opcion2" name="opcion2" [(ngModel)]="pregunta.opcion2">
+              <input id="opcion2" name="opcion2" [(ngModel)]="pregunta.opcion2" pInputText type="text">
             </div>
             <div class="option">
               <label for="opcion3">Opción 3</label>
-              <input type="text" id="opcion3" name="opcion3" [(ngModel)]="pregunta.opcion3">
+              <input id="opcion3" name="opcion3" [(ngModel)]="pregunta.opcion3" pInputText type="text">
             </div>
             <div class="option">
               <label for="opcion4">Opción 4</label>
-              <input type="text" id="opcion4" name="opcion4" [(ngModel)]="pregunta.opcion4">
+              <input id="opcion4" name="opcion4" [(ngModel)]="pregunta.opcion4" pInputText type="text">
             </div>
           </div>
           <div class="form-group">
             <label for="respuesta">Seleccionar respuesta</label>
-            <select id="respuesta" [(ngModel)]="pregunta.respuesta" name="respuesta">
+            <select id="respuesta" [(ngModel)]="pregunta.respuesta" name="respuesta" pDropdown>
               <option *ngIf="pregunta.opcion1" [value]="pregunta.opcion1">{{ pregunta.opcion1 }}</option>
               <option *ngIf="pregunta.opcion2" [value]="pregunta.opcion2">{{ pregunta.opcion2 }}</option>
               <option *ngIf="pregunta.opcion3" [value]="pregunta.opcion3">{{ pregunta.opcion3 }}</option>
               <option *ngIf="pregunta.opcion4" [value]="pregunta.opcion4">{{ pregunta.opcion4 }}</option>
             </select>
           </div>
-          <div class="option">
+         <!-- <div class="option">
             <label for="url">Url de informacion</label>
-            <input type="text" id="url" name="url" [(ngModel)]="pregunta.url">
+            <input id="url" name="url" [(ngModel)]="pregunta.url" pInputText type="text">
           </div>
 
           <div class="form-group">
             <label for="justificacion">Justificación</label>
-            <textarea id="justificacion" name="justificacion" [(ngModel)]="pregunta.justificacion" rows="4"></textarea>
+            <textarea id="justificacion" name="justificacion" [(ngModel)]="pregunta.justificacion" pInputTextarea rows="4"></textarea>
           </div>
-          
+          -->
 
           <div class="text-center">
-            <button class="save-button">Guardar</button>
+            <button pButton type="submit" label="Guardar" class="save-button"></button>
             <span class="button-space"></span>
-            <button class="save-button" routerLink="/admin/cuestionarios">Regresar</button>
+            <button pButton type="button" label="Regresar" [routerLink]="['/admin/ver-preguntas', examenId, titulo]" class="save-button"></button>
           </div>          
         </form>
       </div>

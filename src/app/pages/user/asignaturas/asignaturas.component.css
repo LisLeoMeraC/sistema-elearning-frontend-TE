@@ -1,47 +1,59 @@
-.categorias-container {
+.categories-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  justify-content: flex-start;
-  margin-left: -50px;
+  gap: 10px; /* Espacio entre los cards */
+  justify-content: flex-start; /* Alinea al inicio o usa 'center' para centrar */
+  padding: 10px; /* Padding alrededor del contenedor de los cards */
 }
 
-.categoria-card {
-  width: calc(100% / 3 - 20px); /* Asume 3 tarjetas por fila, ajusta según tus necesidades */
-  display: flex;
-  margin-top: 30px;
-  flex-direction: column;
-  overflow: hidden; /* Para evitar cualquier desbordamiento de contenido */
+.category-card {
+  width: calc(33.3% - 10px); /* Ancho de los cards para 3 por fila con gap de 10px */
+  margin-bottom: 20px; /* Margen inferior para separar los cards verticalmente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
+
 
 .card-content {
+  padding: 12px; /* Reduce el padding dentro de los cards */
+}
+
+.card-title {
+  font-size: 1em; /* Tamaño del título */
+  font-weight: bold; /* Fuente en negrita para dar énfasis */
+  color: #333; /* Color oscuro para el título */
+  margin-bottom: 8px; /* Espacio debajo del título */
+}
+
+.card-info {
+  font-size: 0.9em; /* Tamaño del texto de la descripción */
+  color: #555; /* Un color un poco más claro para la descripción */
+  margin-bottom: 16px; /* Más espacio debajo de la descripción */
+}
+
+.action-buttons {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Esto separará los botones automáticamente */
+  margin-bottom: 12px; /* Espacio debajo de los botones */
+  gap: 10px; /* Espacio entre los botones */
 }
 
-.image-and-title {
-  display: flex; /* Nuevo contenedor con flexbox para la imagen y el título */
-  align-items: center; /* Centra verticalmente la imagen y el título */
+.action-buttons button {
+  padding: 10px 20px; /* Aumenta el espacio interno */
+  font-size: 0.8rem; /* Asegúrate de que el tamaño de fuente permita que el texto quepa */
+  min-width: 100px; /* Establece un ancho mínimo para los botones */
+  white-space: nowrap; /* Evita que el texto pase a la siguiente línea */
+  overflow: hidden; /* Oculta cualquier contenido que desborde */
+  text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
 }
 
-.card-image img {
-  width: auto; /* O un tamaño fijo para la imagen */
-  height: 80px; /* Altura fija para la imagen */
-  display: block;
+.card-image {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+  max-height: 200px; /* O el valor que prefieras para la altura máxima de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área designada sin distorsionarse */
+  border-radius: 8px; /* Si quieres bordes redondeados en la imagen, igual al radius del card */
 }
 
-.mat-card-header {
-  padding: 0 16px; /* Añade un padding si es necesario */
-}
-
-.mat-card-content {
-  padding: 16px;
-}
-
-.card-actions {
-  margin-top: auto; /* Empuja las acciones al fondo de la tarjeta */
-  padding: 12px;
-}
 
 
 .content-flex {
@@ -50,10 +62,31 @@
   margin-top: 20px;
 }
 
+
 .imagenReducida {
-  width: 50px;
+  width: 70px;
   height: auto;
-  margin-right: 20px;
+  margin-right: 15px;
+}
+
+.p-button-secondary {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  margin: 80px;
+}
+
+
+@media (max-width: 768px) {
+  .category-card {
+    max-width: calc(50% - 20px); /* Para pantallas más pequeñas, 2 cards por fila */
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    max-width: 100%; /* Para pantallas muy pequeñas, 1 card por fila */
+  }
 }
 
 @media (max-width: 600px) {
@@ -67,6 +100,51 @@
   }
 }
 .flex-wrapper {
-  margin-top: 2px;
-  margin-left: -50px;
+  margin-top: 5px; 
+  margin-left: -20px;
+}
+
+.mat-button {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  margin: 80px;
+}
+
+
+:host ::ng-deep .p-dialog .p-button {
+  width: 100%;
+  padding: 10px 0;
+}
+
+:host ::ng-deep .p-dialog .p-inputtext {
+  width: 100%;
+  padding: 10px;
+}
+
+:host ::ng-deep .p-dialog {
+  min-width: 300px; /* Ajusta el ancho mínimo según tus necesidades */
+}
+
+:host ::ng-deep .p-dialog .p-field {
+  margin-bottom: 15px; /* Espacio entre los campos */
+}
+
+:host ::ng-deep .p-dialog .p-field label {
+  display: block;
+  margin-bottom: 0.5em;
+  color: #333; /* Color de la etiqueta */
+}
+
+:host ::ng-deep .p-messages {
+  margin-top: 20px; /* Espacio encima de los mensajes */
+}
+
+:host ::ng-deep .p-messages .p-message {
+  max-width: 100%; /* Ajusta este valor según prefieras */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

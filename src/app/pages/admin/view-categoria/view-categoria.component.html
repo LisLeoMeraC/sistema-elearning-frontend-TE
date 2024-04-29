@@ -1,14 +1,14 @@
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
 <div class="flex-wrapper">
   <mat-card>
     <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
-      <img class="imagenReducida" mat-card-image src="../../../../assets/asginatura.png" alt="Descripción de la imagen">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/biblioteca.png" alt="Descripción de la imagen">
       <div>
         <h2>Listado de asignaturas</h2>
-        <p>
-          En este panel se visualiza el listado de todas las asignaturas registradas en el sistema
-        </p>
+       
       </div>
-      <button mat-raised-button color="accent" class="mat-button" (click)="openAsignaturaModal()">Nueva Asignatura</button>
+      <button pButton type="button" label="Nueva Asignatura" icon="pi pi-plus" class="p-button-secondary" (click)="openAsignaturaModal()"></button>
     </mat-card-content>
   </mat-card>
 </div>
@@ -25,7 +25,14 @@
       </mat-card-header>
       <mat-card-content class="card-info">
         <p>{{ c.descripcion }}</p>
-       
+        <div class="action-buttons">
+          <button mat-raised-button color="primary" (click)=" verCuestionariosPorCategoria(c.id)">Cuestionarios</button>
+          <button mat-raised-button color="warn">Recursos</button>
+        </div>
+        <div class="access-code">
+          <h3>{{ c.uniqueCode }}</h3>
+          <h3>Código de acceso</h3>
+        </div>
       </mat-card-content>
     </div>
   </mat-card>

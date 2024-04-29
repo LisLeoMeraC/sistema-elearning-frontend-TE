@@ -9,6 +9,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./asignaturas.component.css']
 })
 export class AsignaturasComponent {
+  mensajes: any[] = [];
+  mostrarModal: boolean = false;
 
   codigoAcceso: string = '';
 
@@ -17,6 +19,10 @@ export class AsignaturasComponent {
   ]
 
   constructor(private categoriaService:CategoriaService, private router: Router) { }
+
+  mostrarModalCodigo() {
+    this.mostrarModal = true;
+  }
 
   verRecursos(idCategoria: number) {
     // Navegar al componente que muestra los recursos pasando el ID de categoría
@@ -44,13 +50,46 @@ export class AsignaturasComponent {
 
   verificarCodigo() {
     this.categoriaService.verificarCodigo(this.codigoAcceso)
-        .subscribe(
-            () => {
-              Swal.fire('Error !!','Se ha aregistrado correctamente','error');
-             },
-            error => { /* Manejar el error */ }
-        )
+      .subscribe({
+        next: () => {
+          // Mensaje de éxito
+          this.mensajes = [{ severity: 'success', summary: 'Éxito', detail: 'Código correcto.' }];
+          this.limpiarMensajesDespuesDeTiempo();
+          // Limpia el campo de texto y cierra el modal después de un tiempo
+          setTimeout(() => {
+            this.codigoAcceso = '';
+            this.mostrarModal = false;
+          }, 1000);
+          // Asume que listartodasCategorias() recarga la lista de categorías
+          this.listartodasCategorias();
+        },
+        error: error => {
+          // Mensaje de error
+          this.mensajes = [{ severity: 'error', summary: 'Error', detail: 'Código incorrecto'}];
+          console.error('Error al verificar el código', error);
+        }
+      });
+  }
+
+  limpiarMensajesDespuesDeTiempo() {
+    setTimeout(() => {
+      this.mensajes = [];
+    }, 1000);
+  }
+
+  
+  
+  listartodasCategorias() {
+    this.categoriaService.listartodasCategorias()
+      .subscribe({
+        next: (categorias) => {
+          this.categorias = categorias;
+        },
+        error: error => {
+          console.error('Error al cargar las categorías', error);
+          Swal.fire('Error', 'No se pudieron cargar las asignaturas', 'error');
+        }
+      });
+  }
 }
 
-
-}

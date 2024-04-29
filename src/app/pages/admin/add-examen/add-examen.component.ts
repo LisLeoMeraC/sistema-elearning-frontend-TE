@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -29,7 +30,8 @@ export class AddExamenComponent implements OnInit {
     private categoriaService:CategoriaService,
     private snack:MatSnackBar,
     private examenService:ExamenService,
-    private router:Router) { }
+    private router:Router,
+    private dialogRef: MatDialogRef<AddExamenComponent>) { }
 
     ngOnInit(): void {
       this.categoriaService.listarCategorias().subscribe(
@@ -50,36 +52,34 @@ export class AddExamenComponent implements OnInit {
       console.log(this.examenData.categoria.id);
     }
 
-  guardarCuestionario(){
-    console.log(this.examenData);
-    if(this.examenData.titulo.trim() == '' || this.examenData.titulo == null){
-      this.snack.open('El título es requerido','',{
-        duration:3000
-      });
-      return ;
+    guardarCuestionario() {
+      if (this.examenData.titulo.trim() == '' || this.examenData.titulo == null) {
+        this.snack.open('El título es requerido', '', { duration: 3000 });
+        return;
+      }
+    
+      // Guardar el cuestionario
+      this.examenService.agregarExamen(this.examenData).subscribe(
+        (data) => {
+          Swal.fire('Test guardado', 'El test ha sido guardado con éxito', 'success').then(() => {
+            // Aquí asumimos que refrescarLista manejará adecuadamente tanto exámenes por categoría como por usuario
+            if (this.examenData.categoria.id) {
+              this.examenService.refrescarLista(+this.examenData.categoria.id);
+            } else {
+              this.examenService.refrescarLista();
+            }
+            // Cierra el modal y pasa un indicador para refrescar.
+            this.dialogRef.close('refrescar');
+          });
+        },
+        (error) => {
+          Swal.fire('Error', 'Error al guardar el test', 'error');
+        }
+      );
     }
 
-    this.examenService.agregarExamen(this.examenData).subscribe(
-      (data) => {
-        console.log(data);
-        Swal.fire('Test guardado','El test ha sido guardado con éxito','success');
-        this.examenData = {
-          titulo : '',
-          descripcion : '',
-          puntosMaximos : '',
-          numeroDePreguntas : '',
-          activo:true,
-          categoria:{
-            id:''
-          }
-        }
-        this.router.navigate(['/admin/cuestionarios']);
-        
-      },
-      (error) => {
-        Swal.fire('Error','Error al guardar el test','error');
-      }
-    )
-  }
+  CloseModal(){
+    this.dialogRef.close();
+   }
 
 }

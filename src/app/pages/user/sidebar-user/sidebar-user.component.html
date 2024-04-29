@@ -1,33 +1,39 @@
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
-    <mat-nav-list>
-      <mat-accordion>
-
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <img src="../../../../assets/libros.png" class="menu-icon"/> <!-- Imagen personalizada para Mis asignaturas -->
-            <mat-panel-title routerLinkActive="active-link">
-              Actividades
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <a mat-list-item routerLink="/user-dashboard/asignaturas" routerLinkActive="active-link">
-            <span>Asignaturas</span>
-          </a>
-          <a mat-list-item routerLink="/user-dashboard/load-examen" routerLinkActive="active-link">
-            <span>Cuestionarios</span>
-          </a>
-          <a mat-list-item routerLink="/user-dashboard/organizador-grafico" routerLinkActive="active-link">
-            <span>Organizadores Gráficos</span>
-          </a>
-          <a mat-list-item routerLink="/user-dashboard/profile-user" routerLinkActive="active-link">
-            <span>Mis Datos</span>
-          </a>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-nav-list>
+  <mat-sidenav mode="side" opened class="sidone">
+    <mat-nav-list appAccordion class="accordion">
+    
+      <mat-card class="menu-card" routerLink="/user-dashboard/asignaturas"routerLinkActive="active-link">
+          <div class="menu-item">
+            <img src="../../../../assets/menu1.png" class="menu-icon"/> <!-- Add your icon here -->
+            <mat-card-content class="menu-content">
+              <mat-card-title>Mis asignaturas</mat-card-title>
+              <mat-card-subtitle>Genera tu organizador gráfico  </mat-card-subtitle>
+            </mat-card-content>
+          </div>
+        </mat-card>
+        <br>
+        <mat-card class="menu-card" routerLink="/user-dashboard/organizador-grafico" routerLinkActive="active-link">
+          <div class="menu-item">
+            <img src="../../../../assets/recursoseducativos.png" class="menu-icon"/> <!-- Add your icon here -->
+            <mat-card-content class="menu-content">
+              <mat-card-title>Organizadores Gráficos</mat-card-title>
+              <mat-card-subtitle>una breve descripción</mat-card-subtitle>
+            </mat-card-content>
+          </div>
+        </mat-card>
+        <br>
+        <mat-card class="menu-card" routerLink="/user-dashboard/profile-user" routerLinkActive="active-link">
+          <div class="menu-item">
+            <img src="../../../../assets/usuario.png" class="menu-icon"/> <!-- Add your icon here -->
+            <mat-card-content class="menu-content">
+              <mat-card-title>Mis Datos Personales</mat-card-title>
+              <mat-card-subtitle>una breve descripción</mat-card-subtitle>
+            </mat-card-content>
+          </div>
+        </mat-card>
+</mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <!-- Main content goes here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
-  
-  

@@ -1,34 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exam Management</title>
-</head>
-<body>
 
-<div class="search-container">
-  <input type="text" id="searchBox" placeholder="Buscar por título del examen" oninput="filtrarExamenes()">
-</div>
 
-<div class="cards-container">
-  <!-- Dynamic card generation start -->
-  <div class="card" *ngFor="let e of examenesFiltrados">
-    <div class="card-header">
-      <h2 class="card-title">{{ e.titulo }}</h2>
-      <h3 class="card-subtitle">{{ e.categoria.titulo }}</h3>
-    </div>
-    <div class="card-body">
-      <button class="btn primary"[routerLink] = "'/admin/ver-preguntas/'+e.examenId+'/'+e.titulo">Preguntas</button>
-      <button class="btn info" [disabled]="true">Puntos máximos {{ e.puntosMaximos }}</button>
-      <button class="btn info" [disabled]="true">Preguntas {{ e.numeroDePreguntas }}</button>
-      <button  [routerLink] = "'/admin/cuestionario/'+e.examenId" class="btn secondary">Actualizar</button>
-      <button class="btn danger" onclick="eliminarExamen(examen)">Eliminar</button>
-    </div>
+
+  <div class="flex-wrapper">
+    <mat-card>
+      <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+        <img class="imagenReducida" mat-card-image src="../../../../assets/asginatura.png" alt="Descripción de la imagen">
+        <div>
+          <h2> Listado de Cuestionarios</h2>
+        </div>
+        <button mat-raised-button color="accent" class="mat-button" (click)="openAddCuestionarioModal()" >Nuevo Cuestionario</button>
+      </mat-card-content>
+    </mat-card>
   </div>
-  <!-- Dynamic card generation end -->
-</div>
+  
+<br>
+<p-table [value]="examenesCategoria" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Puntos Máximos</th>
+          <th>Número de Preguntas</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-examen>
+      <tr >
+          <td >{{ examen.titulo }}</td>
+          <td>{{ examen.descripcion }}</td>
+          <td>{{ examen.puntosMaximos }}</td>
+          <td>{{ examen.numeroDePreguntas }}</td>
+          <td>{{ examen.categoria.titulo }}</td>
+          <td class="buttones">
+              <button pButton type="button" icon="pi pi-question-circle" class="p-button-rounded p-button-primary" [routerLink]="['/admin/ver-preguntas/', examen.examenId, examen.titulo]"></button>
+              <button pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="openUpdateCuestionarioModal(examen)"></button>
+              <button pButton type="button" icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="eliminarExamen(examen)"></button>
+          </td>
+      </tr>
+  </ng-template>
+</p-table>
 
-<button id="addButton" onclick="agregarCuestionario()">Agregar cuestionario</button>
-</body>
-</html>
+
+

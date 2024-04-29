@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import Swal from 'sweetalert2';
 import { AddCategoriaComponent } from '../add-categoria/add-categoria.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-categoria',
@@ -15,20 +16,26 @@ export class ViewCategoriaComponent {
 
   ]
 
-  constructor(private categoriaService:CategoriaService, private dialog: MatDialog) { }
+  constructor(private categoriaService:CategoriaService, private dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
+    this.listarAsignaturas();
+  }
+
+  listarAsignaturas() {
     this.categoriaService.listarCategorias().subscribe(
-      (dato:any) => {
+      (dato: any) => {
         this.categorias = dato;
         console.log(this.categorias);
       },
       (error: any) => {
         console.log(error);
-        Swal.fire('Error !!','Error al cargar las categorias','error');
+        Swal.fire('Error !!', 'Error al cargar las categorias', 'error');
       }
-    )
+    );
   }
+
+
 
   openAsignaturaModal() {
     const dialogRef = this.dialog.open(AddCategoriaComponent, {
@@ -44,16 +51,16 @@ export class ViewCategoriaComponent {
   }
 
 
-  listarAsignaturas() {
-    this.categoriaService.listarCategorias().subscribe(
-      (dato: any) => {
-        this.categorias = dato;
-        console.log(this.categorias);
-      },
-      (error: any) => {
-        console.log(error);
-        Swal.fire('Error !!', 'Error al cargar las categorias', 'error');
-      }
-    );
+  verCuestionariosPorCategoria(idCategoria: number) {
+    // Navegar al componente que muestra los recursos pasando el ID de categoría
+    this.router.navigate(['/admin/view-cuestionarios', idCategoria]);
   }
+
+  verRecursosPorCategoria(idCategoria: number) {
+    // Navegar al componente que muestra los recursos pasando el ID de categoría
+    this.router.navigate(['admin/view-recursos', idCategoria]);
+  }
+  
+
+  
 }

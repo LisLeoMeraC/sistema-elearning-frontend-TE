@@ -1,72 +1,55 @@
-<div class="bootstrap-wrapper" *ngIf = "!esEnviado">
-  <div class="container-fluid">
+<br>
+<br>
+<div class="bootstrap-wrapper" *ngIf="!esEnviado">
+  <div class="container-fluid py-5">
     <div class="row">
       <div class="col-md-2">
-        <!--Instrucciones-->
-        <mat-card style = "margin-top: 70px;">
-          <mat-card-content>
-            <h3><b>Instrucciones</b></h3>
-            <ul>
-              <li>No cambies la pestaña</li>
-              <li>No minimices la ventana</li>
-            </ul>
-
-          </mat-card-content>
-        </mat-card>
+        <!-- Instrucciones -->
+        <p-card class="instruction-card" header="Instrucciones" [ngStyle]="{'margin-top': '70px'}">
+          <ul>
+            <li>No cambies la pestaña</li>
+            <li>No minimices la ventana</li>
+          </ul>
+        </p-card>
       </div>
       <div class="col-md-7">
-        <!--Preguntas-->
-        <ng-container *ngIf = "preguntas">
-          <h1 class="mt20">
-            En curso <b>{{ preguntas[0].examen.titulo }}</b>
-
-          </h1>
+        <!-- Preguntas -->
+        <ng-container *ngIf="preguntas">
+          <h1 class="mt-3">En curso <b>{{ preguntas[0].examen.titulo }}</b></h1>
+          <h2>Total de Preguntas: {{ totalPreguntas }} </h2>
         </ng-container>
-
-        <mat-card *ngFor = "let p of preguntas;let i = index">
-          <mat-card-content>
-            <p><b>{{ i+1 }}) </b> <span [innerHTML] = "p.contenido"></span></p>
-            <mat-divider></mat-divider>
-            <div class="row mt20">
-              <div class="col-md-8 mt10">
-                <input [(ngModel)] = "p.respuestaDada" type="radio" [value] = "p.opcion1" name = {{i}}> {{ p.opcion1 }}
-              </div>
-              <div class="col-md-8 mt10">
-                <input [(ngModel)] = "p.respuestaDada" type="radio" [value] = "p.opcion2" name = {{i}}> {{ p.opcion2 }}
-              </div>
-              <div class="col-md-8 mt10">
-                <input [(ngModel)] = "p.respuestaDada" type="radio" [value] = "p.opcion3" name = {{i}}> {{ p.opcion3 }}
-              </div>
-              <div class="col-md-8 mt10">
-                <input [(ngModel)] = "p.respuestaDada" type="radio" [value] = "p.opcion4" name = {{i}}> {{ p.opcion4 }}
-              </div>
+        
+        <p-tabView class="p-tabview-vertical">
+          <p-tabPanel *ngFor="let p of preguntas; let i = index" header="Pregunta {{ i + 1 }}">
+            <div [innerHTML]="p.contenido"></div>
+            <div class="options">
+              <p-radioButton *ngFor="let option of [p.opcion1, p.opcion2, p.opcion3, p.opcion4]" 
+                [(ngModel)]="p.respuestaDada" value="{{option}}" label="{{option}}" name="group{{i}}">
+              </p-radioButton>
             </div>
-          </mat-card-content>
-        </mat-card>
-
-        <div class="container text-center mt20 mb20">
-          <button (click) = "enviarCuestionario()" mat-raised-button color="primary">Enviar cuestionario</button>
+          </p-tabPanel>
+        </p-tabView>
+        <br>
+        <div class="text-center my-4">
+          <p-button (onClick)="enviarCuestionario()" label="Enviar cuestionario" icon="pi pi-check" styleClass="p-button-success"></p-button>
         </div>
       </div>
       <div class="col-md-3">
-        <!--Progreso-->
-        <mat-card style ="margin-top:70px;">
-          <mat-card-header>
-            <mat-card-title style="text-align: center;">
-              Tiempo
-            </mat-card-title>
-            <mat-card-subtitle>
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <h1 class="text-center">{{ obtenerHoraFormateada() }}</h1>
-            <mat-progress-bar mode="determinate" [value]= "(timer/(this.preguntas?.length * 2 * 60)*100)"></mat-progress-bar>
-          </mat-card-content>
-        </mat-card>
+        <!-- Progreso -->
+        <p-card class="progress-card" header="Tiempo" [ngStyle]="{'margin-top': '70px'}">
+          <div class="text-center my-4">
+            <h1>{{ obtenerHoraFormateada() }}</h1>
+            <p-progressBar [value]="timerProgress" [showValue]="false"></p-progressBar>
+          </div>
+        </p-card>
       </div>
+      
+      
     </div>
   </div>
 </div>
+
+
 
 <div class="bootstrap-wrapper" *ngIf = "esEnviado">
   <div class="container mt20">

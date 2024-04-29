@@ -43,7 +43,7 @@
             <div class="spacer"></div>
             <button mat-raised-button color="primary" [disabled]="!categoria.uniqueCode" type="submit">Guardar</button>
             <div class="button-margin"></div>
-            <button mat-raised-button color="warn" type="reset">Cancelar</button>
+            <button mat-raised-button color="warn" (click)="CloseModal()" type="reset">Cancelar</button>
           </div>
         </form>
       </div>

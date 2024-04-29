@@ -1,10 +1,12 @@
+@import "~primeicons/primeicons.css";
 .container-fluid{
     background-color: white;
 }
 .bootstrap-wrapper{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .col-md-9{
     width: 500px;
 }
+

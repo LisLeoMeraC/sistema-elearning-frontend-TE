@@ -1,7 +1,7 @@
 .test-form-card {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
@@ -13,12 +13,12 @@
 
 .form-title {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .full-width {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .half-width {
@@ -28,11 +28,11 @@
 
 .form-row {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .publish-toggle {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .submit-container {
@@ -43,4 +43,17 @@
   padding: 12px 24px;
   font-size: 16px;
   border-radius: 4px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.button-margin {
+  margin-left: 10px;
 }

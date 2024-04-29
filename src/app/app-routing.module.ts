@@ -13,7 +13,6 @@ import { WelcomeUserComponent } from './pages/user/welcome-user/welcome-user.com
 import { ModuleOneComponent } from './pages/user/module-one/module-one.component';
 import { ModuleTwoComponent } from './pages/user/module-two/module-two.component';
 import { ModuleThreeComponent } from './pages/user/module-three/module-three.component';
-import { ModuleFourComponent } from './pages/user/module-four/module-four.component';
 import { ViewCategoriaComponent } from './pages/admin/view-categoria/view-categoria.component';
 import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
@@ -33,6 +32,7 @@ import { AsignaturasComponent } from './pages/user/asignaturas/asignaturas.compo
 import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/organizador-grafico.component';
 import { RecursosEducativosComponent } from './pages/admin/recursos-educativos/recursos-educativos.component';
 import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.component';
+import { ViewResourcesDocenteComponent } from './pages/admin/view-resources-docente/view-resources-docente.component';
 
 
 const routes: Routes = [
@@ -69,7 +69,9 @@ const routes: Routes = [
       },
       {
         path : '',
-        component : WelcomeComponent
+        component : WelcomeComponent,
+        data: { breadcrumb: 'Inicio' }
+
       },
       {
         path : 'asignaturas',
@@ -81,13 +83,21 @@ const routes: Routes = [
       },
       {
         path:"recursos-educativos",
-        component: RecursosEducativosComponent
+        component: ViewResourcesDocenteComponent
       },
+      
       {
         path:"cuestionarios",
         component: ViewExamenesComponent
-      }
-      ,
+      },
+      {
+          path:"view-cuestionarios/:id",
+          component:ViewExamenesComponent
+      },
+      {
+        path:"view-recursos/:id",
+        component:ViewResourcesDocenteComponent
+      },
       {
         path:"add-cuestionario",
         component: AddExamenComponent

@@ -39,10 +39,7 @@
     transition: background-color 0.3s, transform 0.3s;
   }
   
-  button:hover {
-    background-color: #ff4081;
-    transform: scale(1.1);
-  }
+ 
   
   mat-icon {
     margin-left: 8px;
@@ -75,3 +72,40 @@
     margin-top: 2px; 
     margin-left: -50px;
   }
+
+  :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.5rem 1rem;
+    
+  }
+  
+  :host ::ng-deep .p-datatable p-button {
+    margin-right: 0.5rem;
+  }
+  
+  :host ::ng-deep .p-datatable-header {
+    font-weight: bold;
+  }
+  
+  :host ::ng-deep .p-datatable-thead > tr > th {
+    text-align: left;
+  }
+  
+  :host ::ng-deep .p-datatable-tbody > tr > td {
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  :host ::ng-deep .p-paginator {
+    justify-content: end;
+  }
+
+  :host ::ng-deep .p-datatable {
+    margin-left: -3rem; /* Mueve la tabla hacia la izquierda */
+  }
+
+  :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td:nth-child(2),
+  :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td:nth-child(3),
+  :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td:nth-child(4) {
+  text-align: center;
+}
+
+  

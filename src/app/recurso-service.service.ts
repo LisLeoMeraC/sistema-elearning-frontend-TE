@@ -25,4 +25,8 @@ export class RecursoServiceService {
   getArchivosPorCategoria(idCategoria: number): Observable<any> {
     return this.http.get(`${baseURL}/archivos/categoria/${idCategoria}`);
   }
+
+  descargarArchivo(id: number): Observable<any> {
+    return this.http.get(`${baseURL}/archivos/${id}/descargar`, { responseType: 'blob' });
+  }
 }

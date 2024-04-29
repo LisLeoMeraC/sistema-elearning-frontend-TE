@@ -1,23 +1,12 @@
 
-<div class="flex-wrapper">
-  <mat-card>
-    <mat-card-content class="content-flex">
-      <img class="imagenReducida" mat-card-image src="../../../../assets/files.png" alt="Descripción de la imagen">
-      <div>
-        <h1 style="font-size: 30px;">Hola, Docente</h1>
-        <p style="font-size: 18px;">
-          Aquí podrás compartir tus recursos para que los estudiantes mejoren sus conocimientos. Sube archivos con extensiones PDF, XLS, DOCX, PTTX, etc.
-        </p>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
-<br>
-<br>
+
 
 <div class="container">
-  
-
+  <br>
+  <h1 style="font-size: 20px; text-align: center;">Compartir Recursos Educativos</h1>
+  <p style="font-size: 15px;">
+    Sube archivos con extensiones PDF, XLS, DOCX, PTTX, etc.
+  </p>
   <mat-card class="card">
     <mat-card-content>
       <mat-form-field class="full-width">
@@ -41,4 +30,11 @@
       <button mat-raised-button color="primary" class="upload-button" (click)="onUpload()">Subir Archivo</button>
     </mat-card-actions>
   </mat-card>
+ <br>
+  <div class="button-container">
+    <div class="spacer"></div>
+    
+    <div class="button-margin"></div>
+    <button mat-raised-button color="warn" (click)="CloseModal()" type="reset">Cancelar</button>
+  </div>
 </div>

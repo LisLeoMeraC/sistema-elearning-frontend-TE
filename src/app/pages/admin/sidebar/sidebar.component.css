@@ -1,13 +1,14 @@
 mat-sidenav-container {
-    height: 96vh;
+    height: 100vh;
     width: 40vh;
-    background-color: #efeff1fb;
+    background-color: #fffffffb;
     font-family: 'Roboto', sans-serif;
+    margin-top: 5px;
     
 }
 
 mat-sidenav-content {
-  background-color: rgba(255, 250, 250, 0.966);
+  background-color: rgba(255, 255, 255, 0.966);
   padding: 0px; /* Agrega un espacio de relleno para separar el contenido del borde */
   width: 10%;
 }
@@ -15,6 +16,7 @@ mat-sidenav-content {
   mat-sidenav {
     width: 100px; /* Ajusta el ancho para que coincida con tus opciones desplegadas */
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.24);
+    position: relative;
   }
   
   .mat-expansion-panel-header {
@@ -37,7 +39,7 @@ mat-sidenav-content {
   }
   
   .mat-expansion-panel-body {
-    background-color: #E8EAF6; /* Fondo claro para el cuerpo del panel */
+    background-color: #1e33aa; /* Fondo claro para el cuerpo del panel */
     padding: 0; /* Elimina el padding para que las opciones ocupen todo el ancho */
     
   }

@@ -1,51 +1,53 @@
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
 <div class="flex-wrapper">
   <mat-card>
-    <mat-card-content class="content-flex">
-      <img class="imagenReducida" mat-card-image src="../../../../assets/book.png" alt="Descripción de la imagen">
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/biblioteca.png" alt="Descripción de la imagen">
       <div>
-        <h2>Listado de asignatura</h2>
+        <h2>Listado de asignaturas</h2>
       </div>
+      <button pButton type="button" label="Acceso a Nueva Asignatura" icon="pi pi-plus" class="p-button-secondary" (click)="mostrarModalCodigo()"></button>
     </mat-card-content>
   </mat-card>
 </div>
 
-<form (ngSubmit)="verificarCodigo()">
-  <input type="text" name="codigoAcceso" [(ngModel)]="codigoAcceso">
-  <button type="submit">Verificar</button>
-</form>
 
-
-<div class="categorias-container">
-    <mat-card *ngFor="let c of categorias" class="categoria-card">
-      <div class="card-content">
-        
-        <!-- Contenedor para la imagen y el título -->
-        <div class="image-and-title">
-          <div class="card-image">
-            <img src="../../../../assets/books.png" alt="{{ c.titulo }}" class="categoria-image"/>
-          </div>
-          <mat-card-header>
-            <mat-card-title>
-              {{ c.titulo }}
-            </mat-card-title>
-          </mat-card-header>
-        </div>
-        
-        <!-- Contenedor para la descripción -->
-        <mat-card-content>
-          <p>{{ c.descripcion }}</p>
-        </mat-card-content>
-  
-        <!-- Acciones -->
-        <mat-card-actions class="card-actions">
-            <button mat-button (click)="verRecursos(c.id)">Ver Recursos</button>
-        </mat-card-actions>
-
-        <mat-card-actions class="card-actions">
-          <button mat-button (click)="verCuestionarios(c.id)">Ver Cuestionarios</button>
-      </mat-card-actions>
-  
+<p-dialog header="Verificar Código de Acceso" [(visible)]="mostrarModal" [modal]="true" [closable]="true" [resizable]="false">
+  <div class="p-fluid">
+    <form (ngSubmit)="verificarCodigo()">
+      <div class="p-field">
+        <label for="codigoAcceso">Código de Acceso</label>
+        <input id="codigoAcceso" type="text" pInputText name="codigoAcceso" [(ngModel)]="codigoAcceso" placeholder="Ingrese el código de acceso">
       </div>
-    </mat-card>
+      <div class="p-field">
+        <button type="submit" pButton label="Verificar" class="p-button-rounded p-button-success p-mt-2"></button>
+      </div>
+      <p-messages [value]="mensajes"></p-messages>
+    </form>
+    
   </div>
-  
+</p-dialog>
+
+
+
+<div class="categories-container">
+  <ng-container *ngFor="let c of categorias">
+    <!-- Asegúrate de que las clases correspondan a 3 columnas por fila -->
+    <div class="category-card p-col-12 p-md-4 p-lg-4 p-xl-4">
+      <p-card [style]="{ 'border-radius': '8px' }">
+        <img src="../../../../assets/asginatura.png" alt="{{ c.titulo }}" class="card-image"/>
+        <div class="card-content">
+          <p-header class="card-title">
+            {{ c.titulo }}
+          </p-header>
+          <p class="card-info">{{ c.descripcion }}</p>
+          <div class="action-buttons">
+            <button mat-raised-button color="primary" pButton type="button" label="Cuestionarios" (click)="verCuestionarios(c.id)"></button>
+            <button mat-raised-button color="warn" pButton type="button" label="Recursos" (click)="verRecursos(c.id)"></button>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </ng-container>
+</div>

@@ -11,6 +11,17 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { DropdownModule } from 'primeng/dropdown';
+import { TableModule } from 'primeng/table';
+import { SliderModule } from 'primeng/slider';
+import { AccordionModule } from 'primeng/accordion';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { DialogModule } from 'primeng/dialog';
+import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast';
+import { TabViewModule } from 'primeng/tabview';
+import { MessageModule } from 'primeng/message';
+import { PanelModule } from 'primeng/panel';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -43,7 +54,6 @@ import { ProfileUserComponent } from './pages/user/profile-user/profile-user.com
 import { ModuleOneComponent } from './pages/user/module-one/module-one.component';
 import { ModuleTwoComponent } from './pages/user/module-two/module-two.component';
 import { ModuleThreeComponent } from './pages/user/module-three/module-three.component';
-import { ModuleFourComponent } from './pages/user/module-four/module-four.component';
 import { ViewCategoriaComponent } from './pages/admin/view-categoria/view-categoria.component';
 import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
@@ -67,6 +77,13 @@ import { OrganizadorGraficoComponent } from './pages/user/organizador-grafico/or
 import { ReportePreguntasComponent } from './pages/admin/reporte-preguntas/reporte-preguntas.component';
 import { RecursosEducativosComponent } from './pages/admin/recursos-educativos/recursos-educativos.component';
 import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ViewResourcesDocenteComponent } from './pages/admin/view-resources-docente/view-resources-docente.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ProgressBarModule } from 'primeng/progressbar'; 
+
+
+
 
 
 @NgModule({
@@ -87,7 +104,6 @@ import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.
     ModuleOneComponent,
     ModuleTwoComponent,
     ModuleThreeComponent,
-    ModuleFourComponent,
     ViewCategoriaComponent,
     AddCategoriaComponent,
     ViewExamenesComponent,
@@ -106,14 +122,16 @@ import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.
     OrganizadorGraficoComponent,
     ReportePreguntasComponent,
     RecursosEducativosComponent,
-    ViewRecursosComponent
+    ViewRecursosComponent,
+    ViewResourcesDocenteComponent
     
-    
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AccordionModule,
 
     //importamos
     MatButtonModule,
@@ -134,16 +152,30 @@ import { ViewRecursosComponent } from './pages/user/view-recursos/view-recursos.
     MatProgressBarModule,
     MatSidenavModule,
     MatExpansionModule,
+    TableModule,
+    ToastModule,
+    
 
 
     InputTextModule,
+    InputTextareaModule,
     ButtonModule,
     CardModule,
     MenubarModule,
-    DropdownModule
+    DropdownModule,
+    SliderModule,
+    BreadcrumbModule,
+    DialogModule,
+    MessagesModule,
+    TabViewModule,
+    MessageModule,
+    PanelModule,
+    ProgressBarModule,
+    RadioButtonModule 
 
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

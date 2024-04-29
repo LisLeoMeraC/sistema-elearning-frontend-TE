@@ -23,6 +23,8 @@ export class StartComponent implements OnInit, OnDestroy {
   puntosConseguidos = 0;
   respuestasCorrectas = 0;
   intentos = 0;
+  timerProgress: number = 0;
+  totalPreguntas: number = 0;
 
   preguntasFallidas: any[] = [];
   videos: any[] = [];
@@ -53,12 +55,14 @@ export class StartComponent implements OnInit, OnDestroy {
     this.datosService.cambiarEstadoEnviado(false); // Restablecer el estado al salir del componente
   }
 
+  
+
   cargarPreguntas() {
     this.preguntaService.listarPreguntasDelExamenParaLaPrueba(this.examenId).subscribe(
       (data: any) => {
         console.log(data);
         this.preguntas = data;
-  
+        this.totalPreguntas = this.preguntas.length;
         // Si hay preguntas, obtenemos el título del examen
         if (this.preguntas && this.preguntas.length > 0) {
           this.tituloExamen = this.preguntas[0].examen.titulo;
@@ -85,14 +89,19 @@ export class StartComponent implements OnInit, OnDestroy {
  
 
   iniciarTemporizador() {
+    let tiempoTotal = this.preguntas.length * 2 * 60; // Tiempo total en segundos
+    let intervalo = 1000; // Intervalo de actualización en milisegundos
+
     let t = window.setInterval(() => {
       if (this.timer <= 0) {
         this.evaluarExamen();
         clearInterval(t);
       } else {
+        let tiempoTranscurrido = tiempoTotal - this.timer;
+        this.timerProgress = (tiempoTranscurrido / tiempoTotal) * 100;
         this.timer--;
       }
-    }, 1000);
+    }, intervalo);
   }
 
   prevenirElBotonDeRetroceso() {

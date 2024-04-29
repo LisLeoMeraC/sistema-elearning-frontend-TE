@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { RecursoServiceService } from 'src/app/recurso-service.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import Swal from 'sweetalert2';
@@ -18,7 +19,7 @@ export class RecursosEducativosComponent implements OnInit{
 
   constructor(
     private archivoService: RecursoServiceService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService, private dialogRef: MatDialogRef<RecursosEducativosComponent>
     ) {}
 
     ngOnInit(): void {
@@ -59,4 +60,8 @@ export class RecursosEducativosComponent implements OnInit{
         console.error('Debe seleccionar un archivo y una categoría');
       }
     }
+
+    CloseModal(){
+      this.dialogRef.close();
+     }
 }

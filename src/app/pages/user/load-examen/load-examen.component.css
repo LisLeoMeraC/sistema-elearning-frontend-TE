@@ -2,4 +2,30 @@
     background-image: url('../../../../assets/aprendizaje-digital.png');
     background-size: cover;
   }
+  @media (max-width: 600px) {
+    .content-flex {
+        flex-direction: column;
+    }
   
+    .imagenReducida {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+  }
+  .flex-wrapper {
+    margin-top: 5px; 
+    margin-left: -20px;
+  }
+
+
+  .content-flex {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .imagenReducida {
+    width: 70px;
+    height: auto;
+    margin-right: 15px;
+  }

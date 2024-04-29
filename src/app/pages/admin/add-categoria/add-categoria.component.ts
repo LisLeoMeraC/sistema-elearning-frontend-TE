@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoriaService } from './../../../services/categoria.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-categoria',
@@ -18,7 +19,8 @@ export class AddCategoriaComponent implements OnInit {
   }
   
 
-  constructor(private CategoriaService:CategoriaService,private snack:MatSnackBar,private router:Router) { }
+  constructor(private CategoriaService:CategoriaService,private snack:MatSnackBar,
+    private router:Router, private dialogRef: MatDialogRef<AddCategoriaComponent>) { }
 
   ngOnInit(): void {
   }
@@ -37,6 +39,7 @@ export class AddCategoriaComponent implements OnInit {
         this.categoria.descripcion = '';
         this.categoria.uniqueCode='',
         Swal.fire('Categoría agregada','La categoría ha sido agregada con éxito','success');
+        this.dialogRef.close();
         this.router.navigate(['/admin/asignaturas']);
       },
       (error) => {
@@ -50,5 +53,9 @@ export class AddCategoriaComponent implements OnInit {
   generateUniqueCode(){
     this.categoria.uniqueCode=Math.random().toString(36).substr(2,9);
   }
+
+  CloseModal(){
+    this.dialogRef.close();
+   }
 
 }

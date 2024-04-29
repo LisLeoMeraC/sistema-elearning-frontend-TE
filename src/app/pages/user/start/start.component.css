@@ -29,4 +29,27 @@
     flex: 1;
   }
   
+  .options {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
   
+  .instruction-card, .progress-card {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  
+  /* Para la barra de progreso de PrimeNG, puedes personalizar el color a través de la clase */
+  .p-progressbar .p-progressbar-value {
+    background-color: #007bff; /* El color azul primario de bootstrap */
+  }
+
+  .p-tabview-vertical .p-tabview-nav {
+    flex-direction: column; /* Cambiar la dirección del flujo de los elementos a columna */
+  }
+  
+  .p-tabview-vertical .p-tabview-nav .p-tabview-title {
+    display: block; /* Mostrar los títulos de las pestañas en bloques separados */
+    margin-bottom: 8px; /* Añadir espacio entre los títulos de las pestañas */
+  }

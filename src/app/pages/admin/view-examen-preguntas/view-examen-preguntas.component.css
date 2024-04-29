@@ -1,110 +1,74 @@
 .page-title {
-  font-size: 24px;
-  margin: 20px 0;
+  padding-top: 10px;
+  font-size: 2rem;
+  text-align: center;
+  color: #424242;
+  margin-bottom: 2rem;
+  font-size: 30px;
 }
 
 .questions-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-}
-
-.add-question-button {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.question-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.question-card {
-  width: 900px;
-  margin: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-}
-
-.question-card:hover {
-  transform: translateY(-5px);
-}
-
-.question-card-content {
-  padding: 20px;
-}
-
-.question-number {
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.question-content {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-
-.options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.option {
-  flex: 1;
-  margin-right: 10px;
-}
-
-.correct-answer {
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.mat-card-actions {
-  display: flex;
-  justify-content: space-between;
-}
-
-.mat-card-actions button {
-  font-weight: bold;
-}
-
-button[mat-raised-button] {
-  background-color: #007bff;
-  color: #fff;
-}
-
-button[mat-raised-button]:hover {
-  background-color: #0056b3;
-}
-
-button[mat-button][color="warn"] {
-  color: #f44336;
-}
-
-button[mat-button][color="warn"]:hover {
-  color: #d32f2f;
-}
-
-
-@media print {
-  .add-question-button, .mat-card-actions, .print-button {
-    display: none;
-  }
+  padding: 2rem;
+  padding-left: 5px;
 }
 
 .button-container {
   display: flex;
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente si es necesario */
-  left: 100%;
+  justify-content: center;
+  margin-bottom: 2rem;
+  
 }
 
-.button-container > button {
-  margin: 0 10px; /* Añade espacio horizontal entre los botones */
+.options ul {
+  list-style-type: none;
+  padding: 0;
 }
+
+.options li {
+  background: #f5f5f5;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.correct-answer {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #e8f5e9;
+  border-left: 3px solid #66bb6a;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.action-buttons button {
+  margin-right: 1rem;
+}
+
+@media print {
+  .page-title,
+  .button-container,
+  .action-buttons {
+    display: none;
+  }
+}
+
+/* PrimeNG button overrides */
+.p-button {
+  margin-right: .5rem;
+}
+
+.p-button-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.p-button-help {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+

@@ -29,8 +29,12 @@
         <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.titulo}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <div class="submit-container">
-      <button mat-raised-button color="primary" type="submit">Guardar</button>
+    <div class="button-container">
+      <div class="spacer"></div>
+       <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <div class="button-margin"></div>
+      <button mat-raised-button color="warn" (click)="CloseModal()" type="reset">Cancelar</button>
     </div>
   </form>
 </mat-card>
+

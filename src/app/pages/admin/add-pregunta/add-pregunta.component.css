@@ -1,15 +1,16 @@
 .question-form-container {
   display: flex;
   align-items: center;
-  height: 155vh;
-  background-color: #f2f2f2;
+  height: auto; /* Ajusta la altura según el contenido */
+  background-color: #ffffff;
+  margin-top: 10px;
 }
 
 .question-form {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  padding: 40px;
+  padding: 0px;
   width: 90%;
   max-width: 1600px;
   text-align: center;
@@ -17,15 +18,14 @@
 
 .question-title {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  margin-top: 8px;
 }
 
-.highlight {
-  color: #FF5722;
-}
+
 
 .card {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -34,7 +34,7 @@
 
 .card-header h2 {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .generate-button-container {
@@ -42,8 +42,7 @@
 }
 
 .generate-button {
-  background-color: #FF5722;
-  color: #fff;
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -56,7 +55,8 @@
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  
 }
 
 label {
@@ -82,7 +82,7 @@ textarea, input[type="text"], select {
   flex: 0 0 48%; /* Esto hará que cada opción tenga un ancho máximo del 48% del contenedor */
   /* La suma del porcentaje de flex-basis y el espacio (gap) debe ser <= 100% para que dos elementos quepan por fila */
   box-sizing: border-box; /* Asegúrate de que padding y border estén incluidos en el ancho */
-  margin-bottom: 10px; /* Espacio debajo de cada opción */
+  margin-bottom: 5px; /* Espacio debajo de cada opción */
 }
 
 .save-button {
@@ -108,7 +108,4 @@ textarea, input[type="text"], select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  resize: vertical; /* Permite al usuario ajustar el tamaño verticalmente si es necesario */
 }
