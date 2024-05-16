@@ -1,16 +1,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
+
 <div class="flex-wrapper">
   <mat-card>
     <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
       <img class="imagenReducida" mat-card-image src="../../../../assets/biblioteca.png" alt="Descripción de la imagen">
-      <div>
-        <h2>Listado de asignaturas</h2>
+      <div style="margin-top: 10px; text-align: center;">  <h2 class="titulo p-text-uppercase p-text-bold">Listado de Asignaturas</h2>
       </div>
+      <div class="buttons-header">
       <button pButton type="button" label="Acceso a Nueva Asignatura" icon="pi pi-plus" class="p-button-secondary" (click)="mostrarModalCodigo()"></button>
+      <button pButton type="button" icon="pi pi-arrow-circle-left"  [routerLink]="['/user-dashboard']"></button>
+    </div>
     </mat-card-content>
   </mat-card>
 </div>
+
+
 
 
 <p-dialog header="Verificar Código de Acceso" [(visible)]="mostrarModal" [modal]="true" [closable]="true" [resizable]="false">

@@ -3,7 +3,7 @@
 
 <div class="container">
   <br>
-  <h1 style="font-size: 20px; text-align: center;">Compartir Recursos Educativos</h1>
+  <h2 class="titulo">Compartir Recursos Educativos</h2>
   <p style="font-size: 15px;">
     Sube archivos con extensiones PDF, XLS, DOCX, PTTX, etc.
   </p>
@@ -27,7 +27,7 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" class="upload-button" (click)="onUpload()">Subir Archivo</button>
+      <button mat-raised-button color="primary" class="upload-button" (click)="onUpload()"><mat-icon [inline]="true">save</mat-icon>Subir Archivo</button>
     </mat-card-actions>
   </mat-card>
  <br>
@@ -35,6 +35,6 @@
     <div class="spacer"></div>
     
     <div class="button-margin"></div>
-    <button mat-raised-button color="warn" (click)="CloseModal()" type="reset">Cancelar</button>
+    <button mat-raised-button color="warn" (click)="CloseModal(true)" type="reset"><mat-icon [inline]="true">close</mat-icon>Cancelar</button>
   </div>
 </div>

@@ -1,45 +1,70 @@
-<mat-card style="margin-left: 10px;">
-    <h1>Detalles del perfil</h1>
-    <mat-card-content>
-      <div class = "bootstrap-wrapper">
-        <div class = "container">
-          <div class = "text-center">
-            <img
-            src="https://www.unmc.edu/cihc/_images/faculty/default.jpg"
-            alt=""
-            class = "profile-image">
-  
-            <h1 class="mt20">{{user.nombre}} {{user.apellido}}</h1>
-          </div>
-          <div class = "row">
-            <div class = "col-md-10 offset-md-1">
-              <table class = "table text-center">
-                <tr>
-                  <td>Nombre de usuario</td>
-                  <td>{{user.username}}</td>
-                </tr>
-                <tr>
-                  <td>ID</td>
-                  <td>{{user.id}}</td>
-                </tr>
-                <tr>
-                  <td>Teléfono</td>
-                  <td>{{user.telefono}}</td>
-                </tr>
-                <tr>
-                  <td>Rol</td>
-                  <td>{{user.authorities[0].authority}}</td>
-                </tr>
-                <tr>
-                  <td>Estado</td>
-                  <td>{{user.enabled?"Activo": "No activo"}}</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </mat-card-content>
-  </mat-card>
-  
+<br>
+<p-card header="Detalles del perfil"  class="profile-cardS ml-10">
+  <div class="profile-container">
+    <div class="profile-image-container">
+      <img src="../../../assets/perfil.png" alt="Imagen de perfil" class="profile-image">
+    </div>
+    <div class="profile-details">
+      <h1><ng-container *ngIf="!editingMode; else editName">
+        {{user.nombre}} {{user.apellido}}
+      </ng-container>
+      <ng-template #editName>
+        <input type="text" [(ngModel)]="user.nombre" class="p-inputtext">
+        <input type="text" [(ngModel)]="user.apellido" class="p-inputtext">
+      </ng-template></h1>
+      <table class="p-table">
+        <tbody>
+          <tr>
+            <td>Nombre de usuario</td>
+            <td>
+                {{user.username}}
+            </td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td>{{user.id}}</td>
+          </tr>
+          <tr>
+            <td>Teléfono</td>
+            <td>
+              <ng-container *ngIf="!editingMode; else editTelefono">
+                {{user.telefono}}
+              </ng-container>
+              <ng-template #editTelefono>
+                <input type="text" [(ngModel)]="user.telefono" class="p-inputtext">
+              </ng-template>
+            </td>
+          </tr>
+          <tr>
+            <td>Correo Electrónico</td>
+            <td>
+              <ng-container *ngIf="!editingMode; else editEmail">
+                {{user.email}}
+              </ng-container>
+              <ng-template #editEmail>
+                <input type="email" [(ngModel)]="user.email" class="p-inputtext">
+              </ng-template>
+            </td>
+          </tr>
+          <tr>
+            <td>Nro. de Identidad</td>
+            <td>{{user.identidad}}</td>
+          </tr>
+          <tr>
+            <td>Rol</td>
+            <td>{{user.authorities[0].authority}}</td>
+          </tr>
+          <tr>
+            <td>Estado</td>
+            <td>{{user.enabled ? "Activo" : "No activo"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <button pButton type="button" label="Editar Datos" icon="pi pi-file-edit" class="p-button-secondary butoon-position" (click)="toggleEditingMode()" ></button>
+<span>&nbsp;&nbsp;</span> <!-- Agrega un espacio entre los botones -->
+<button *ngIf="editingMode" pButton type="button" label="Guardar" icon="pi pi-check" class="p-button-primary" (click)="guardarCambios()"></button>
+
+</p-card>

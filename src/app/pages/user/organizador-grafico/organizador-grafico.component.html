@@ -1,7 +1,24 @@
+
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/mapa.png" alt="Descripción de la imagen">
+      <div style="margin-top: 10px; text-align: center;">  <h2 class="titulo p-text-uppercase p-text-bold">Generación de Organizador Gráfico</h2>
+      </div>
+      <div class="buttons-header">
+      <button pButton type="button" icon="pi pi-arrow-circle-left"  [routerLink]="['/user-dashboard/asignaturas']"></button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
 <div class="container">
   <div class="personal-container">
-    <mat-card class="datos-personales-card">
+    <div>
+      <br>
       <mat-card-title>Datos para generar el organizador gráfico</mat-card-title>
+      <br>
       <mat-card-content>
         <mat-form-field appearance="fill">
           <mat-label>Tema</mat-label>
@@ -11,127 +28,102 @@
         <mat-form-field appearance="fill">
           <mat-label>Asignatura</mat-label>
           <input matInput [(ngModel)]="asignatura" placeholder="Ejemplo: Informática" required>
+          
         </mat-form-field>
+          <button pButton type="button" icon="pi pi-hourglass" label="Organizador 1" (click)="toggleMapa(1); generarContenido();" 
+          [disabled]="!tema || !asignatura" class="p-button-primary btn-spacing level-button"></button>
     
-        <!-- Botones para seleccionar el tipo de organizador -->
-        <button mat-raised-button color="primary" (click)="toggleMapa(1)" (click)=" generarContenido()" [disabled]="!tema || !asignatura" class="btn-spacing">
-          Organizador 1
-        </button>
-        <button mat-raised-button color="primary" (click)="toggleMapa(2)" (click)=" generarContenido2()" [disabled]="!tema || !asignatura" class="btn-spacing">
-          Organizador 2
-        </button>
-
-        <button mat-raised-button color="primary" (click)="resetMap()" class="btn-spacing">
-          Nuevo
-        </button>
+          <button pButton type="button" icon="pi pi-hourglass" label="Organizador 2" (click)="toggleMapa(2); generarContenido2();" 
+          [disabled]="!tema || !asignatura" class="p-button-success btn-spacing level-button"></button>
+    
+          <button pButton type="button" icon="pi pi-refresh" (click)="resetMap()" 
+          class="p-button-warning btn-spacing level-button"></button>
+       <br>
+        
       </mat-card-content>
-    </mat-card>
+  
+      <!-- Botones para seleccionar el tipo de organizador -->
+      
+    </div>
   </div>
-  <br>
-  <br>
-  <div *ngIf="loading" class="loading-message">Cargando...</div>
+  <div *ngIf="loading" class="loading-container">
+    <p-progressSpinner class="spinner" [style]="{ 'width': '100px', 'height': '100px' }" strokeWidth="8"></p-progressSpinner>
+    <div class="loading-message" [ngClass]="{'hidden': !loading}">Generando</div>
+  </div>
   <div class="map-container" *ngIf="!loading && showMap" [ngClass]="{'hidden': !showMap}">
-    
     <!-- Contenido del organizador 1 -->
     <div *ngIf="organizadorSeleccionado === 1">
-     
-      
       <div class="rectangletitulo">
         <input type="text" id="rectangleimput_titulo" [(ngModel)]="tema" style="text-align: center;">
       </div>
-      
       <div class="rectangle_definition">
         <textarea id="rectangleimput_definition" [(ngModel)]="contenido1" readonly></textarea>
       </div>
-      
       <div class="rectangle_uno">
-       <textarea id="rectangleimput_uno" [(ngModel)]="contenido2" readonly></textarea>
+        <textarea id="rectangleimput_uno" [(ngModel)]="contenido2" readonly></textarea>
       </div>
-      
       <div class="rectangle_dos">
         <textarea id="rectangleimput_dos" [(ngModel)]="contenido3" readonly></textarea>
       </div>
-      
       <div class="rectangle_tres">
         <textarea id="rectangleimput_tres" [(ngModel)]="contenido4" readonly></textarea>
       </div>
-      
       <div class="rectangle_cuatro">
         <textarea id="rectangleimput_cuatro" [(ngModel)]="contenido5" readonly></textarea>
       </div>
-      
       <hr class="horizontal-lineOne">
       <hr class="horizontal-lineTwo">
-      
       <div class="vertical-lineOne"></div>
       <div class="vertical-linePrincipal"></div>
       <div class="vertical-lineDos"></div>
       <div class="vertical-lineTres"></div>
       <div class="vertical-lineCuatro"></div>
-      
     </div>
-    
+  
     <!-- Contenido del organizador 2 -->
     <div *ngIf="organizadorSeleccionado === 2">
-      
       <div class="rectangle_titulo2">
-        <textarea id="rectangleimput_titulo2"  [(ngModel)]="tema" readonly></textarea>
+        <textarea id="rectangleimput_titulo2" [(ngModel)]="tema" readonly></textarea>
       </div>
-
-
       <div class="rectangle_subtitulo1">
         <textarea id="rectangleimput_subtitulo1" [(ngModel)]="subtema1" readonly></textarea>
       </div>
-
       <div class="rectangle_con_subtitulo1">
-        <textarea id="rectangleimput_con_subtitulo1" [(ngModel)]="contSubtema1"  readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo1" [(ngModel)]="contSubtema1" readonly></textarea>
       </div>
-
-
       <div class="rectangle_subtitulo2">
-        <textarea id="rectangleimput_subtitulo2"  [(ngModel)]="subtema2"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo2" [(ngModel)]="subtema2" readonly></textarea>
       </div>
-
       <div class="rectangle_con_subtitulo2">
-        <textarea id="rectangleimput_con_subtitulo2"  [(ngModel)]="contSubtema2" readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo2" [(ngModel)]="contSubtema2" readonly></textarea>
       </div>
-
-
       <div class="rectangle_subtitulo3">
-        <textarea id="rectangleimput_subtitulo3"  [(ngModel)]="subtema3"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo3" [(ngModel)]="subtema3" readonly></textarea>
       </div>
-
       <div class="rectangle_con_subtitulo3">
-        <textarea id="rectangleimput_con_subtitulo3"  [(ngModel)]="contSubtema3" readonly></textarea>
+        <textarea id="rectangleimput_con_subtitulo3" [(ngModel)]="contSubtema3" readonly></textarea>
       </div>
-
       <div class="rectangle_subtitulo4">
-        <textarea id="rectangleimput_subtitulo4"   [(ngModel)]="subtema4" readonly></textarea>
+        <textarea id="rectangleimput_subtitulo4" [(ngModel)]="subtema4" readonly></textarea>
       </div>
-
       <div class="rectangle_con_subtitulo4">
         <textarea id="rectangleimput_con_subtitulo4" [(ngModel)]="contSubtema4" readonly></textarea>
       </div>
-
       <div class="rectangle_subtitulo5">
-        <textarea id="rectangleimput_subtitulo5"  [(ngModel)]="subtema5"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo5" [(ngModel)]="subtema5" readonly></textarea>
       </div>
-
       <div class="rectangle_con_subtitulo5">
         <textarea id="rectangleimput_con_subtitulo5" [(ngModel)]="contSubtema5" readonly></textarea>
       </div>
-
       <div class="rectangle_subtitulo6">
-        <textarea id="rectangleimput_subtitulo6"  [(ngModel)]="subtema6"  readonly></textarea>
+        <textarea id="rectangleimput_subtitulo6" [(ngModel)]="subtema6" readonly></textarea>
       </div>
-
       <div class="rectangle_con_subtitulo6">
         <textarea id="rectangleimput_con_subtitulo6" [(ngModel)]="contSubtema6" readonly></textarea>
       </div>
-
-      
     </div>
   </div>
+  
 </div>
 
 

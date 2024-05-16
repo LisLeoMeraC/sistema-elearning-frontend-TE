@@ -1,22 +1,26 @@
+
 <div class="flex-wrapper">
   <mat-card>
-    <mat-card-content class="content-flex">
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
       <img class="imagenReducida" mat-card-image src="../../../../assets/activo.png" alt="Descripción de la imagen">
-      <div>
-        <h2>Recursos compartidos por el docente</h2>
+      <div style="margin-top: 10px; text-align: center;">  <h2 class="titulo p-text-uppercase p-text-bold">Recursos compartidos por el docente</h2>
       </div>
+      <div class="buttons-header">
+      <button pButton type="button" icon="pi pi-arrow-circle-left"  [routerLink]="['/user-dashboard/asignaturas']"></button>
+    </div>
     </mat-card-content>
   </mat-card>
 </div>
+
 
 <br>
 <p-table [value]="archivos" responsiveLayout="scroll" class="table">
   <ng-template pTemplate="header">
     <tr>
-      <th>Nombre del archivo</th>
-      <th>Tipo de archivo</th>
-      <th>Tamaño (MB)</th>
-      <th>Acciones</th>
+      <th >Nombre del archivo</th>
+      <th style="text-align: center;">Tipo de archivo</th>
+      <th style="text-align: center;">Tamaño (MB)</th>
+      <th style="text-align: center;">Acciones</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-archivo>

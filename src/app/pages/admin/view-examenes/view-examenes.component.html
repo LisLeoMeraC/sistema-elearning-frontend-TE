@@ -1,17 +1,17 @@
 
-
-
-  <div class="flex-wrapper">
-    <mat-card>
-      <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
-        <img class="imagenReducida" mat-card-image src="../../../../assets/asginatura.png" alt="Descripción de la imagen">
-        <div>
-          <h2> Listado de Cuestionarios</h2>
-        </div>
-        <button mat-raised-button color="accent" class="mat-button" (click)="openAddCuestionarioModal()" >Nuevo Cuestionario</button>
-      </mat-card-content>
-    </mat-card>
-  </div>
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/menu2.png" alt="Descripción de la imagen">
+      <div style="margin-top: 10px; text-align: center;">  <h2 class="titulo p-text-uppercase p-text-bold">Listado de Cuestionarios</h2>
+      </div>
+      <div class="buttons-header">
+      <button pButton type="button" label="Nuevo Cuestionario" icon="pi pi-plus" class="p-button-secondary" (click)="openAddCuestionarioModal()"></button>
+      <button pButton type="button" icon="pi pi-arrow-circle-left"  [routerLink]="['/admin/asignaturas']"></button>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>
   
 <br>
 <p-table [value]="examenesCategoria" responsiveLayout="scroll">
@@ -35,7 +35,7 @@
           <td class="buttones">
               <button pButton type="button" icon="pi pi-question-circle" class="p-button-rounded p-button-primary" [routerLink]="['/admin/ver-preguntas/', examen.examenId, examen.titulo]"></button>
               <button pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="openUpdateCuestionarioModal(examen)"></button>
-              <button pButton type="button" icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="eliminarExamen(examen)"></button>
+              <button pButton type="button" icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="eliminarExamen(examen.examenId)"></button>
           </td>
       </tr>
   </ng-template>

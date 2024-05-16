@@ -59,22 +59,17 @@
 .content-flex {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: -5px;
 }
 
 
 .imagenReducida {
-  width: 70px;
+  width: 60px;
   height: auto;
   margin-right: 15px;
 }
 
-.p-button-secondary {
-  position: absolute;
-  bottom: 20%;
-  right: 0;
-  margin: 80px;
-}
+
 
 
 @media (max-width: 768px) {
@@ -100,16 +95,11 @@
   }
 }
 .flex-wrapper {
-  margin-top: 5px; 
-  margin-left: -20px;
+  margin-top: -10px; 
+  margin-left: -25px;
 }
 
-.mat-button {
-  position: absolute;
-  bottom: 20%;
-  right: 0;
-  margin: 80px;
-}
+
 
 
 :host ::ng-deep .p-dialog .p-button {
@@ -147,4 +137,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.buttons-header {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  margin-left: 250px; /* Ajusta el margen superior según sea necesario */
+}
+
+.buttons-header button {
+  margin-left: 15px; /* Agrega un espacio entre los botones y el título */
+}
+
+.titulo{
+  font-size: 25px;
 }

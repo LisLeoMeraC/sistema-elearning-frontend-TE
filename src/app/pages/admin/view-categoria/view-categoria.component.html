@@ -2,16 +2,19 @@
 
 <div class="flex-wrapper">
   <mat-card>
-    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between" style="align-items: center;">
       <img class="imagenReducida" mat-card-image src="../../../../assets/biblioteca.png" alt="Descripción de la imagen">
-      <div>
-        <h2>Listado de asignaturas</h2>
-       
+      <div style="margin-top: 10px; text-align: center;">
+        <h2 class="titulo p-text-uppercase p-text-bold">Listado de asignaturas</h2>
       </div>
-      <button pButton type="button" label="Nueva Asignatura" icon="pi pi-plus" class="p-button-secondary" (click)="openAsignaturaModal()"></button>
+      <div class="buttons-header">
+        <button pButton type="button" label="Nueva Asignatura" icon="pi pi-plus" class="p-button-secondary" (click)="openAsignaturaModal()"></button>
+        <button pButton type="button" icon="pi pi-arrow-circle-left"  [routerLink]="['/admin']"></button>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
+  
 
 
 <div class="categories-container">
@@ -27,7 +30,7 @@
         <p>{{ c.descripcion }}</p>
         <div class="action-buttons">
           <button mat-raised-button color="primary" (click)=" verCuestionariosPorCategoria(c.id)">Cuestionarios</button>
-          <button mat-raised-button color="warn">Recursos</button>
+          <button mat-raised-button color="warn"  icon="pi pi-plus" (click)=" verRecursosPorCategoria(c.id)">Recursos</button>
         </div>
         <div class="access-code">
           <h3>{{ c.uniqueCode }}</h3>

@@ -166,11 +166,14 @@ body {
   }
 }
 
+.titulo{
+  font-size: 25px;
+}
 
 .content-flex {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: -5px;
 }
 
 .imagenReducida {
@@ -194,12 +197,6 @@ body {
   margin-left: -20px;
 }
 
-.mat-button {
-  position: absolute;
-  bottom: 20%;
-  right: 0;
-  margin: 80px;
-}
 
 
 :host ::ng-deep {
@@ -242,3 +239,14 @@ body {
       margin-left: -20px; /* Ajusta este valor según sea necesario para mover la tabla a la izquierda */
   }
 }
+
+.buttons-header {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  margin-left: 300px; /* Ajusta el margen superior según sea necesario */
+}
+
+.buttons-header button {
+  margin-left: 15px; /* Agrega un espacio entre los botones y el título */
+}
+

@@ -19,7 +19,8 @@ export class RecursosEducativosComponent implements OnInit{
 
   constructor(
     private archivoService: RecursoServiceService,
-    private categoriaService: CategoriaService, private dialogRef: MatDialogRef<RecursosEducativosComponent>
+    private categoriaService: CategoriaService, 
+    private dialogRef: MatDialogRef<RecursosEducativosComponent>
     ) {}
 
     ngOnInit(): void {
@@ -50,18 +51,23 @@ export class RecursosEducativosComponent implements OnInit{
               this.selectedFile = null;
               this.categoriaId = null;
               this.selectedFileName='';
+              this.CloseModal(true);
             },
+            
             (error) => {
               console.error('Error al subir el archivo', error);
               Swal.fire('Error','Error al subir el recurso','error');
             }
+            
           );
+          
       } else {
         console.error('Debe seleccionar un archivo y una categoría');
       }
+      this.CloseModal(true);
     }
 
-    CloseModal(){
-      this.dialogRef.close();
-     }
+    CloseModal(success:boolean) {
+      this.dialogRef.close(success);
+    }
 }

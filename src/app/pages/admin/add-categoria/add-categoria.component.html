@@ -1,52 +1,42 @@
+<mat-card class="container">
+  <div class="header">
+    <h2 class="titulo">Nueva Asignatura</h2>
+  </div>
+  <mat-card-content>
+    <div class="form-container">
+      <form #form="ngForm" (ngSubmit)="formSubmit()" novalidate>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nombre de la asignatura</mat-label>
+          <input required autofocus type="text" name="titulo" matInput placeholder="Ejemplo: Matemáticas"
+            [(ngModel)]="categoria.titulo" #titulo="ngModel">
+          <mat-error *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">El nombre de la asignatura es
+            requerido.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Descripción</mat-label>
+          <textarea name="descripcion" matInput placeholder="Ejemplo: Una breve descripción de la materia" rows="5"
+            [(ngModel)]="categoria.descripcion"></textarea>
+        </mat-form-field>
 
-  
-  <mat-card class="container">
-    <div class="header">
-      <h2 class="titulo">Nueva Asignatura</h2>
+        <div class="unique-code-generator">
+          <button mat-button (click)="generateUniqueCode()" [disabled]="!categoria.titulo" type="button"
+            class="generate-button">Código de asignatura</button>
+          <input matInput placeholder="Código único" [value]="categoria.uniqueCode" readonly class="code-input">
+        </div>
+
+        <br>
+
+        <div class="button-container">
+          <div class="spacer"></div>
+          <button mat-raised-button color="primary" [disabled]="!categoria.uniqueCode" type="submit">
+            <mat-icon [inline]="true">save</mat-icon> Guardar
+          </button>
+          <div class="button-margin"></div>
+          <button mat-raised-button color="warn" (click)="CloseModal()" type="reset">
+            <mat-icon [inline]="true">close</mat-icon> Cancelar
+          </button>
+        </div>
+      </form>
     </div>
-    <mat-card-content>
-      <div class="form-container">
-        <form #form="ngForm" (ngSubmit)="formSubmit()" novalidate>
-          <mat-form-field appearance="fill" class="full-width">
-            <mat-label>Nombre de la asignatura</mat-label>
-            <input
-              required
-              autofocus
-              type="text"
-              name="titulo"
-              matInput
-              placeholder="Ejemplo: Matemáticas"
-              [(ngModel)]="categoria.titulo"
-              #titulo="ngModel"
-            >
-            <mat-error *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">El nombre de la asignatura es requerido.</mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="fill" class="full-width">
-            <mat-label>Descripción</mat-label>
-            <textarea
-              name="descripcion"
-              matInput
-              placeholder="Ejemplo: Una breve descripción de la materia"
-              rows="5"
-              [(ngModel)]="categoria.descripcion"
-            ></textarea>
-          </mat-form-field>
-  
-          <div class="unique-code-generator">
-            <button mat-button (click)="generateUniqueCode()" [disabled]="!categoria.titulo" type="button" class="generate-button">Código de asignatura</button>
-            <input matInput placeholder="Código único" [value]="categoria.uniqueCode" readonly class="code-input">
-          </div>
-        
-          <br>
-  
-          <div class="button-container">
-            <div class="spacer"></div>
-            <button mat-raised-button color="primary" [disabled]="!categoria.uniqueCode" type="submit">Guardar</button>
-            <div class="button-margin"></div>
-            <button mat-raised-button color="warn" (click)="CloseModal()" type="reset">Cancelar</button>
-          </div>
-        </form>
-      </div>
-    </mat-card-content>
-  </mat-card>
-  
+  </mat-card-content>
+</mat-card>

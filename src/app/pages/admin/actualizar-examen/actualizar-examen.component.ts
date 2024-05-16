@@ -80,4 +80,8 @@ export class ActualizarExamenComponent implements OnInit {
       }
     );
   }
+
+  CloseModal(){
+    this.dialogRef.close();
+   }
 }

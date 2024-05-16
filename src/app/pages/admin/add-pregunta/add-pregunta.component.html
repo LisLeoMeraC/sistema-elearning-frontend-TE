@@ -1,11 +1,13 @@
 <div class="question-form-container">
   <div class="question-form">
-    <h1 class="question-title">Añadir Preguntas a <span class="highlight">{{ titulo }}</span></h1>
+    <h2 class="question-title">Añadir Preguntas a <span class="highlight">{{ titulo }}</span></h2>
     <div class="card">
       <div class="card-header">
         <h2>Digite los detalles de la nueva pregunta</h2>
         <div class="generate-button-container">
-          <button pButton type="button" label="Generar Pregunta" (click)="generarPregunta()" [disabled]="isButtonDisabled" class="generate-button"></button>
+          <button mat-raised-button color="primary" class="generate-button" (click)="generarPregunta()" [disabled]="isButtonDisabled"  class="save-button">
+            <mat-icon [inline]="true">sync</mat-icon> Generar Pregunta
+          </button>
         </div>
       </div>
       <div class="card-content">
@@ -53,10 +55,10 @@
           -->
 
           <div class="text-center">
-            <button pButton type="submit" label="Guardar" class="save-button"></button>
+            <button mat-raised-button color="primary" type="submit"><mat-icon [inline]="true">save</mat-icon>Guardar</button>
             <span class="button-space"></span>
-            <button pButton type="button" label="Regresar" [routerLink]="['/admin/ver-preguntas', examenId, titulo]" class="save-button"></button>
-          </div>          
+            <button button mat-raised-button color="warn"  type="button" [routerLink]="['/admin/ver-preguntas', examenId, titulo]"> <mat-icon [inline]="true">arrow_back</mat-icon>Regresar</button>
+          </div>     
         </form>
       </div>
     </div>

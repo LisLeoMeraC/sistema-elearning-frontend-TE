@@ -1,4 +1,16 @@
-<h1 class="page-title">Preguntas de {{ titulo }}</h1>
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+      <img class="imagenReducida" mat-card-image src="../../../../assets/menu2.png" alt="Descripción de la imagen">
+      <div style="margin-top: 10px; text-align: center;">  <h2 class="titulo p-text-uppercase p-text-bold">Preguntas de {{titulo}}</h2>
+      </div>
+      <div class="buttons-header">
+        <button pButton type="button" icon="pi pi-arrow-circle-left"  [routerLink]="['/admin/cuestionarios']"></button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+  
 <div class="questions-container">
   <div class="button-container">
     <button pButton label="Agregar pregunta" icon="pi pi-plus" class="p-button-secondary" [routerLink]="'/admin/add-pregunta/' + examenId + '/' + titulo"></button>

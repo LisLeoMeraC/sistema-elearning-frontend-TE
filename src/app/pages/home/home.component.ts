@@ -71,6 +71,8 @@ export class HomeComponent implements OnInit{
     )
   }
 
+  
+
   showDialog() {
     const dialogRef = this.dialog.open(SignupComponent, {
       width: '700px', // ajusta el ancho según tus necesidades
@@ -83,6 +85,7 @@ export class HomeComponent implements OnInit{
       
     });
 }
+
 
 }
 

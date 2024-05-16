@@ -72,7 +72,11 @@
   .content-flex {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: -5px;
+  }
+
+  .titulo{
+    font-size: 25px;
   }
   
   .imagenReducida {
@@ -96,12 +100,7 @@
     margin-left: -20px;
   }
   
-  .mat-button {
-    position: absolute;
-    bottom: 20%;
-    right: 0;
-    margin: 80px;
-  }
+
   
   .db {
     display: flex; /* Utiliza Flexbox */
@@ -145,7 +144,18 @@
 
   .buttones {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
   }
+  .buttones button {
+    margin-right: 4px; /* Ajusta el margen según sea necesario */
+  }
+
+  .buttons-header {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente */
+    margin-left: 340px; /* Ajusta el margen superior según sea necesario */
+  }
+  
+  .buttons-header button {
+    margin-left: 15px; /* Agrega un espacio entre los botones y el título */
+  }
+  

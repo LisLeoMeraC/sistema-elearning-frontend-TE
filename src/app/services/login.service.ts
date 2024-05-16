@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import baseURL from './helper';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject, throwError } from 'rxjs';
+import { Observable, Subject, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -73,6 +73,15 @@ export class LoginService {
   public getUserRole(){
     let user = this.getUser();
     return user.authorities[0].authority;
+  }
+
+  actualizarUsuario(id: number, usuarioActualizado: any): Observable<any> {
+    // Elimina el campo 'authorities' del objeto 'usuarioActualizado'
+    return this.http.put(`${baseURL}/usuarios/${id}`, usuarioActualizado);
+  }
+
+  forgotPassword(email: string): Observable<any> {
+    return this.http.post(`${baseURL}/forgot-password`, { email });
   }
 
 }

@@ -1,20 +1,75 @@
+.content-flex {
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.imagenReducida {
+  width: 60px;
+  height: auto;
+  margin-right: 20px;
+}
+
+@media (max-width: 600px) {
+  .content-flex {
+      flex-direction: column;
+  }
+
+  .imagenReducida {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+}
+.flex-wrapper {
+  margin-top: -10px;
+  margin-left: -50px;
+}
+
+.buttons-header {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  margin-left: 445px; /* Ajusta el margen superior según sea necesario */
+}
+
+.buttons-header button {
+  margin-left: 15px; /* Agrega un espacio entre los botones y el título */
+}
+
+.titulo{
+  font-size: 25px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+
+
+
+
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Alinea el contenido a la izquierda */
-  width: 100%; /* Ocupa todo el ancho disponible */
+  width: 100%; 
 }
 
 /* Contenedor para todos los campos de datos personales */
 .personal-container {
-  display: flex; /* Usa flexbox para alinear los elementos en línea */
-  justify-content: space-between; /* Espacia los elementos uniformemente */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 16px; /* Espacia los elementos uniformemente */
   /* Ajusta la anchura y el margen como sea necesario */
 }
 
 .map-container.hidden {
   display:none;
 }
+
+.level-button{
+  margin-bottom: 25px;
+}
+
 
 
 .datos-personales-card {
@@ -26,12 +81,40 @@
   border-radius: 4px;
 }
 
+.button-container {
+  display: flex; /* Usa flexbox para alinear los botones en línea */
+  gap: 2px; /* Espacio entre los botones */
+}
+
 mat-form-field {
   margin-right: 10px; /* Espacio entre los campos de entrada */
 }
 
 mat-form-field:last-child {
   margin-right: 0;
+}
+
+.generating-message {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.loading-container {
+  margin-left: 350px;
+}
+
+.spinner {
+  margin-bottom: 20px; /* Añade espacio entre el spinner y el mensaje */
+}
+
+
+.loading-message {
+  transition: opacity 0.3s ease-in-out; /* Agrega una transición suave de opacidad */
+}
+
+.loading-message.hidden {
+  opacity: 0; /* Cuando el elemento está oculto, establece la opacidad a 0 */
 }
 
 button.mat-raised-button {
@@ -44,7 +127,7 @@ button.mat-raised-button {
   width: 130%; /* Ahora es 100% en lugar de 1500px */
   height: 900px;
   right: 20%;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .rectangletitulo,

@@ -12,6 +12,7 @@ export class InstruccionesComponent implements OnInit {
 
   examenId:any;
   examen:any = new Object();
+  catId: any;
 
   constructor(
     private examenService:ExamenService,
@@ -21,6 +22,8 @@ export class InstruccionesComponent implements OnInit {
 
   ngOnInit(): void {
     this.examenId = this.route.snapshot.params['examenId'];
+    this.catId = this.route.snapshot.queryParams['catId'];
+    console.log('catId en instrucciones:', this.catId);
     this.examenService.obtenerExamen(this.examenId).subscribe(
       (data:any) => {
         console.log(data);
@@ -41,9 +44,12 @@ export class InstruccionesComponent implements OnInit {
       icon:'info'
     }).then((result:any) => {
       if(result.isConfirmed){
-        this.router.navigate(['/start/'+this.examenId]);
+        this.router.navigate(['/start/'+this.examenId], { queryParams: { catId: this.catId } });
       }
     })
   }
 
+  regresar() {
+    this.router.navigate(['/user-dashboard/load-examen/',+ this.catId]);
+  }
 }

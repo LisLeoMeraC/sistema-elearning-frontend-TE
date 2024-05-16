@@ -20,7 +20,8 @@ export class LoadExamenComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const catId = params['id']; // Obtén el ID de la categoría de los parámetros de la ruta
-  
+      this.catId = params['id']; // Asigna el ID de la categoría de los parámetros de la ruta
+      console.log('catId:', this.catId); // Verifica el valor de catId
       console.log("Cargando todos las evaluaciones");
       this.examenService.obtenerExamenesActivosDeUnaCategoria(catId).subscribe(
         (data) => {

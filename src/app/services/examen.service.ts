@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baserUrl from './helper';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,12 @@ export class ExamenService {
   }
 
   public eliminarExamen(examenId:any){
-    return this.http.delete(`${baserUrl}/examen/${examenId}`);
+    if (typeof examenId === 'number') {
+      return this.http.delete(`${baserUrl}/examen/${examenId}`);
+    } else {
+      console.error('Error: el ID del examen no es válido');
+      return throwError('Error: el ID del examen no es válido');
+    }
   }
 
   public obtenerExamen(examenId:any){

@@ -51,8 +51,6 @@ export class ViewExamenesComponent implements OnInit, OnDestroy{
   }
 
   
-
-
   listarexamenesporAsignatura() {
     this.subscription.add(
       this.route.params.subscribe(params => {
@@ -107,19 +105,27 @@ export class ViewExamenesComponent implements OnInit, OnDestroy{
           (data) => {
             this.examenes = this.examenes.filter((examen:any) => examen.examenId != examenId);
             Swal.fire('Test eliminado','El test ha sido eliminado de la base de datos','success');
+            // Actualizar la tabla llamando a la función correspondiente
+            if (this.categoriaId) {
+              this.listarexamenesporAsignatura();
+            } else {
+              this.listarExamenesporUsuario();
+            }
           },
           (error) => {
             Swal.fire('Error','Error al eliminar el test','error');
           }
         )
       }
+      console.log('Tipo de examenId:', typeof examenId);
+      console.log('Valor de examenId:', examenId);
     })
   }
 
   openAddCuestionarioModal() {
     const dialogRef = this.dialog.open(AddExamenComponent, {
       width: '510px',
-      height: '540px'
+      height: '545px'
       // otras configuraciones, si son necesarias
     });
   
@@ -144,7 +150,7 @@ export class ViewExamenesComponent implements OnInit, OnDestroy{
   openUpdateCuestionarioModal(examen: any) {
     const dialogRef = this.dialog.open(ActualizarExamenComponent, {
       width: '510px',
-      height: '540px',
+      height: '545px',
       data: { examen: examen }
     });
   

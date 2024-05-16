@@ -46,7 +46,7 @@
 }
 
 .action-buttons button {
-  margin-right: 1rem;
+  margin-right: 0rem;
 }
 
 @media print {
@@ -72,3 +72,52 @@
   border-color: #17a2b8;
 }
 
+.titulo{
+  font-size: 25px;
+}
+
+.content-flex {
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.imagenReducida {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+  .content-flex {
+      flex-direction: column;
+  }
+
+  .imagenReducida {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+}
+.flex-wrapper {
+  margin-top: 5px; 
+  margin-left: -20px;
+}
+
+
+
+
+.flex-wrapper {
+  position: relative; /* Establece la posición relativa para el contenedor */
+}
+
+.buttons-header {
+  position: absolute; /* Establece la posición absoluta para el contenedor de botones */
+  top: 18%; /* Coloca el contenedor de botones en la esquina superior */
+  left: 92%; /* Coloca el contenedor de botones en la esquina izquierda */
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+}

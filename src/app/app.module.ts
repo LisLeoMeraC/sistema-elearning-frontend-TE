@@ -22,6 +22,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { MessageModule } from 'primeng/message';
 import { PanelModule } from 'primeng/panel';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
 
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -154,7 +156,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
     MatExpansionModule,
     TableModule,
     ToastModule,
-    
+    ProgressSpinnerModule,
 
 
     InputTextModule,

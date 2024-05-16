@@ -58,14 +58,6 @@ export class AddPreguntaComponent implements OnInit {
   }
 
   formSubmit() {
-    if (this.preguntasAgregadas >= this.numeroDePreguntasActuales) { // Cambia el 10 al número máximo de preguntas que quieres permitir
-      Swal.fire(
-        'Límite alcanzado',
-        'Has alcanzado el número máximo de preguntas para este examen.',
-        'warning'
-      );
-      return;
-    }
 
     if (
       this.pregunta.contenido.trim() == '' ||
@@ -120,9 +112,9 @@ export class AddPreguntaComponent implements OnInit {
       
       (error) => {
         Swal.fire(
-          'Error',
-          'Error al guardar la pregunta en la base de datos',
-          'error'
+          'Límite alcanzado',
+          'Has alcanzado el número máximo de preguntas para este examen.',
+          'warning'
         );
         console.log(error);
       }

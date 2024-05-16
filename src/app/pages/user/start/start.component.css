@@ -14,11 +14,11 @@
   .respuesta-incorrecta {
     color: red;
   }
-
-  .justificacion{
-    color:darkblue
+  
+  .justificacion {
+    color: darkblue;
   }
-
+  
   .card-actions {
     display: flex;
     justify-content: space-between;
@@ -28,6 +28,17 @@
   .flex-spacer {
     flex: 1;
   }
+  
+  .p-accordion-header {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .p-accordion-content {
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+  }
+  
   
   .options {
     display: flex;
@@ -52,4 +63,31 @@
   .p-tabview-vertical .p-tabview-nav .p-tabview-title {
     display: block; /* Mostrar los títulos de las pestañas en bloques separados */
     margin-bottom: 8px; /* Añadir espacio entre los títulos de las pestañas */
+  }
+
+
+  .buttons-header {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente */
+    margin-left: 230px; /* Ajusta el margen superior según sea necesario */
+  }
+  
+  .buttons-header button {
+    margin-left: 15px; /* Agrega un espacio entre los botones y el título */
+  }
+  
+
+  .buttons-head {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente */
+    margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+  }
+  
+  .button-wrapper {
+    margin: 0 5px; /* Espaciado horizontal entre los botones */
+  }
+  
+  .buttons-head p-button {
+    margin-left: 2%; /* Agrega un espacio entre los botones */
   }

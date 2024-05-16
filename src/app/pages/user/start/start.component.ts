@@ -3,7 +3,7 @@ import { LocationStrategy } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { SharedService } from 'src/app/services/shared-service.service';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { YoutubeService } from 'src/app/services/youtube.service';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import { YoutubeVideosComponent } from 'src/app/pages/user/youtube-videos/youtube-videos.component';
@@ -25,12 +25,14 @@ export class StartComponent implements OnInit, OnDestroy {
   intentos = 0;
   timerProgress: number = 0;
   totalPreguntas: number = 0;
+  puntosMaximos: number = 0;
 
   preguntasFallidas: any[] = [];
   videos: any[] = [];
 
   esEnviado = false;
   timer: any;
+  catId: any;
 
   constructor(
     private locationSt: LocationStrategy,
@@ -39,13 +41,17 @@ export class StartComponent implements OnInit, OnDestroy {
     private datosService: DatosService, // Agregar el servicio aquí
     public dialog: MatDialog,
     private sharedService: SharedService,
-    private youtubeService: YoutubeService
+    private youtubeService: YoutubeService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.prevenirElBotonDeRetroceso();
     this.examenId = this.route.snapshot.params['examenId'];
     this.tituloExamen= this.route.snapshot.params['titulo'];
+    
+    this.catId = this.route.snapshot.queryParams['catId'];
+    console.log('catId en examen:', this.catId);
     console.log(this.examenId);
     this.cargarPreguntas();
     this.sharedService.cambiarTitulo(this.tituloExamen);
@@ -173,6 +179,21 @@ export class StartComponent implements OnInit, OnDestroy {
       width: '700px',
       height: '500px',
       data: { tema: this.tituloExamen } // envía el título del examen como data
+    });
+  }
+
+  salirCuestionario() {
+    Swal.fire({
+      title: '¿Estás seguro de que deseas salir del cuestionario?',
+      text: 'No se guardarán tus respuestas.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, salir',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/user-dashboard/load-examen/',+ this.catId]);
+      }
     });
   }
 }

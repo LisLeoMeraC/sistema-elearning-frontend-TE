@@ -75,11 +75,11 @@
 .content-flex {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: -5px;
 }
 
 .imagenReducida {
-  width: 70px;
+  width: 50px;
   height: auto;
   margin-right: 15px;
 }
@@ -99,7 +99,7 @@
   margin-left: -20px;
 }
 
-.p-button-secondary {
+.mat-button {
   position: absolute;
   bottom: 20%;
   right: 0;
@@ -144,4 +144,16 @@ button.mat-raised-button {
   max-height: 20px;
   text-align: center;
   left: 55px;
+}
+
+
+
+.buttons-header {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  margin-left: 390px; /* Ajusta el margen superior según sea necesario */
+}
+
+.buttons-header button {
+  margin-left: 15px; /* Agrega un espacio entre los botones y el título */
 }

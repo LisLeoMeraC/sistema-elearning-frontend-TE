@@ -1,7 +1,7 @@
 <br>
 <mat-card class="test-form-card">
   <form (ngSubmit)="guardarCuestionario()" class="test-form">
-    <h1 class="form-title">Agregar nuevo Cuestionario</h1>
+    <h2 class="form-title">Nuevo Cuestionario</h2>
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Título</mat-label>
       <input matInput [(ngModel)]="examenData.titulo" name="titulo" required placeholder="Ej: Matemáticas Avanzadas">
@@ -31,9 +31,9 @@
     </mat-form-field>
     <div class="button-container">
       <div class="spacer"></div>
-       <button mat-raised-button color="primary" type="submit">Guardar</button>
+       <button mat-raised-button color="primary" type="submit"><mat-icon [inline]="true">save</mat-icon>Guardar</button>
       <div class="button-margin"></div>
-      <button mat-raised-button color="warn" (click)="CloseModal()" type="reset">Cancelar</button>
+      <button mat-raised-button color="warn" (click)="CloseModal()" type="reset"><mat-icon [inline]="true">close</mat-icon>Cancelar</button>
     </div>
   </form>
 </mat-card>

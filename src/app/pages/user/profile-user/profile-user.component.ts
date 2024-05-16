@@ -1,25 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile-user',
   templateUrl: './profile-user.component.html',
   styleUrls: ['./profile-user.component.css']
 })
-export class ProfileUserComponent  implements OnInit{
-  user:any = null;
+export class ProfileUserComponent  implements OnInit {
+  user: any = null;
+  editingMode: boolean = false; 
 
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+      this.loadUserData();
+    });
+  }
 
   ngOnInit(): void {
-    this.user = this.loginService.getUser();
-    /*this.loginService.getCurrentUser().subscribe(
-      (user:any) => {
-        this.user = user;
-      },
-      (error) => {
-        alert("error");
-      }
-    )*/
+    this.loadUserData();
+  }
+
+  toggleEditingMode(): void {
+    this.editingMode = !this.editingMode;
+  }
+
+  guardarCambios(): void {
+    this.loginService.actualizarUsuario(this.user.id, this.user)
+      .subscribe(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: 'Usuario actualizado con éxito'
+        });
+        this.loadUserData();
+        this.editingMode = false;
+      });
+  }
+
+  loadUserData(): void {
+    this.loginService.getCurrentUser().subscribe((userData: any) => {
+      this.user = userData;
+    });
   }
 }
